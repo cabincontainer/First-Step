@@ -8,7 +8,8 @@ class UserSessionsController < ApplicationController
   def create
     unless @user_session = UserSession.new(params[:user_session]) and @user_session.valid?
       message = "Login fail."
-      redirect_to (:back)
+      flash[:error] = message
+      render action: "new"
       destroy_session  
       return      
     end  
@@ -16,6 +17,7 @@ class UserSessionsController < ApplicationController
 
     @user_session = UserSession.create(params[:user_session])
     message = "Login Successfully."
+    flash[:notice] = message
     redirect_back_or_default homes_path
   end
 
