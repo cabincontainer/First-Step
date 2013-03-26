@@ -1,0 +1,21 @@
+<div class="frame">
+<%= form_for @user, :url => password_reset_url(id: @user.perishable_token), :method => :put do |f| %>
+  <table>
+    <tr>
+      <td><%= f.label :password %></td>
+      <td><%= f.password_field :password %></td>
+      <%- if @user.errors[:password].present? -%>
+      <td class="error"><%= @user.errors[:password].join(", ") %></td>
+      <%- end -%>
+    </tr>
+    <tr>
+      <td><%= f.label :password_confirmation %></td>
+      <td><%= f.password_field :password_confirmation %></td>
+      <%- if @user.errors[:password_confirmation].present? -%>
+      <td class="error"><%= @user.errors[:password_confirmation].join(", ") %></td>
+      <%- end -%>
+    </tr>
+  </table>
+  <%= f.submit "Update my password and log me in" %>
+<% end %>
+</div>

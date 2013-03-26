@@ -11,7 +11,22 @@
 <body>
 <div id="wrap">
 	<div id="hmenu">
-		<%= yield %>
+		<div class="navbar">
+	    	<div class="navbar-inner">
+		    	<a class="brand" href="#">Home</a>
+		    	<ul class="nav">
+		    		<li class="active"><a href="#">Link</a></li>
+		    		<li><a href="#">Link</a></li>
+		    		<li><a href="#">Link</a></li>
+		    		<li>
+		    			<%= link_to("Logout", user_session_path, method: "delete", id: "link_logout") unless current_user.blank? %>
+		    		</li>
+	    		</ul>
+	    	</div>
+	    </div>
+	    <div>
+			<%= yield %>
+		</div>
 	</div>
 </div>
 

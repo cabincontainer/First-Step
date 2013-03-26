@@ -1,0 +1,79 @@
+//= require jquery-ui-1.8.24.custom
+@import "variables";
+@import "zebra_tables";
+
+body {
+	height: 700px;
+	width: 100%;
+}
+
+#wrap {
+	width: 75%;
+	min-height: 90%;
+	margin-left: auto;
+	margin-right: auto;	
+}
+
+footer {
+	width: 75%;
+	min-height: 5%;
+	margin-left: auto;
+	margin-right: auto;	
+}
+
+a:hover { 
+	text-decoration: none !important;
+}
+
+.actions {
+	width: 12%;
+}
+
+.false {
+	text-decoration: line-through;
+}
+
+.pagination {
+	margin: 0 !important;
+}
+
+.right {
+	float: right;
+}
+
+.left {
+	float: left;
+}
+
+.clear {
+	clear: both;
+}
+
+.error {
+	color: red;
+}
+
+a {
+    color: #0088CC !important;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.center {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.notice {
+	color: blue;
+}
+
+.screen-only {
+	padding: 10px 10px 10px 0;
+}
+
+h4 {
+	padding: 10px 10px 10px 0;
+}

@@ -1,0 +1,6 @@
+<div class="frame" id="password-reset-form">
+<%= form_tag(password_reset_url) do %>
+  <%= label_tag "email" %> <%= email_field_tag :email, nil, placeholder: "email@example.com", required: true %><br>
+  <%= submit_tag "Reset my password" %>
+<%- end -%>
+</div>
