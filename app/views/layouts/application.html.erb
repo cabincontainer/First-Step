@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cabincontainer</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag controller_name, media: "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag controller_name %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="wrap">
+	<div id="hmenu">
+		<%= yield %>
+	</div>
+</div>
+
+</body>
+</html>

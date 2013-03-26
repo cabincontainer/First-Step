@@ -1,0 +1,26 @@
+@import "variables";
+
+table {
+  border-radius: 20px / 20px;
+  border: 1px solid #DDD;
+  border-spacing: 0px;
+  width: 100%;
+  white-space: nowrap;
+  th {
+  	text-align: left;
+    background-color: $table_background_color;
+  }
+}
+
+tr:nth-child(even) {
+  background-color: $table_even_background_color;
+}
+
+tr:nth-child(odd) {
+  background: $table_odd_background_color;
+}
+
+table.no-zebra tr:nth-child(n) {
+  white-space: auto;
+  background: $table_odd_background_color;
+}
