@@ -1,9 +1,9 @@
 <div class="frame">
   <div id="w-message" class="error"></div>
 <%= form_for @user_session, url: user_session_url do |f| %>
-  <div><%= t("layouts.application.email") %></div>
+  <div><%= "Email" %></div>
   <div><%= f.email_field :email, placeholder: "email@example.com", required: true %></div>
-  <div><%= t("layouts.application.password") %></div>
+  <div><%= "Password" %></div>
   <div><%= f.password_field :password, required: true %></div>
   <div>
     <%= f.check_box :remember_me %>
