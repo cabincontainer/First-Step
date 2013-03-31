@@ -18,7 +18,7 @@ class UserSessionsController < ApplicationController
     @user_session = UserSession.create(params[:user_session])
     message = "Login Successfully."
     flash[:notice] = message
-    redirect_back_or_default homes_path
+    redirect_to(manage_products_path)
   end
 
   def destroy

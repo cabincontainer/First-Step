@@ -10,13 +10,24 @@
 </head>
 <body>
 <div id="wrap">
+	<h3 id="project-name">CABIN CONTAINER</h3>
 	<div id="hmenu">
 		<div class="navbar">
 	    	<div class="navbar-inner">
-		    	<a class="brand" href="#">Home</a>
+		    		<%= link_to("Home", homes_path, class: "brand") %>
 		    	<ul class="nav">
-		    		<li><a href="#">Link</a></li>
-		    		<li><%= link_to "Login", new_user_session_path if current_user.blank? %></li>
+		    		<% if current_user.present? && controller_name == "manage_products" %>
+		    			<li class="active"><%= link_to "Manages", manage_products_path if current_user.present? %></li>
+		    		<% else %>
+		    			<li><%= link_to "Manages", manage_products_path if current_user.present? %></li>
+		    		<% end %>
+
+		    		<% if current_user.blank? && controller_name == "user_sessions" %>
+		    			<li class="active"><%= link_to "Login", new_user_session_path if current_user.blank? %></li>
+		    		<% else %>
+		    			<li><%= link_to "Login", new_user_session_path if current_user.blank? %></li>
+		    		<% end %>
+
 		    		<li>
 		    			<%= link_to("Logout", user_session_path, method: "delete", id: "link_logout") unless current_user.blank? %>
 		    		</li>
@@ -29,6 +40,10 @@
 		</div>
 	</div>
 </div>
-
+<div>
+	<footer>
+			&copy; <%= "#{Time.now.localtime.year}" %> by Cabin Container
+	</footer>
+</div>
 </body>
 </html>
