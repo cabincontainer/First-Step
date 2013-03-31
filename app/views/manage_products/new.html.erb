@@ -1,8 +1,40 @@
 <div id="new_product">
 	<h3>Create new product</h3>
-	<table>
-		<tr>
-			<td>Product Name : </td>
-		</tr>
-	</table>
+  	<%= form_for @product, url: manage_products_path, method: 'post' do |f| %>
+		<table>
+			<tr>
+				<td class="field">Category : </td>
+				<td class="value"><%= f.text_field "category_id", required: true, class: "field" %></td>
+			</tr>
+			<tr>
+				<td class="field">Product Name : </td>
+				<td class="value"><%= f.text_field "name", required: true, class: "field" %></td>
+			</tr>
+			<tr>
+				<td class="field">Product Code : </td>
+				<td class="value"><%= f.text_field "code", required: true, class: "field" %></td>
+			</tr>
+			<tr>
+				<td class="field">Specifications : </td>
+				<td class="value">
+					<div class="specification_row">
+						<div class="inline">
+							<%= text_field_tag "specifications[0][field]", nil, class: "field", placeholder: "Name.." %>
+						</div>
+						:
+						<div class="inline">
+							<%= text_field_tag "specifications[0][value]", nil, class: "field", placeholder: "Value.." %>
+						</div>
+						<%= button_tag "-", class: "delete_row", type: 'button' %>
+					</div>
+					<div id="add_new_row">
+						Add new row
+						<%= button_tag "+", class: "add_new_row", type: 'button' %>
+					</div>
+				</td>
+			</tr>
+		</table>
+		<%= f.submit "Create a product", class: "submit" %>
+		<%= f.button "Clear form", class: "clear", type: "reset" %>
+	<% end %>
 </div>
