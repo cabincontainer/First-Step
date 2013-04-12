@@ -16,10 +16,16 @@
 	    	<div class="navbar-inner">
 		    		<%= link_to("Home", homes_path, class: "brand") %>
 		    	<ul class="nav">
-		    		<% if current_user.present? && controller_name == "manage_products" %>
-		    			<li class="active"><%= link_to "Manages", manage_products_path if current_user.present? %></li>
+		    		<% if current_user.present? && controller_name == "manage_categories" %>
+		    			<li class="active"><%= link_to "Manage Categories", manage_categories_path if current_user.present? %></li>
 		    		<% else %>
-		    			<li><%= link_to "Manages", manage_products_path if current_user.present? %></li>
+		    			<li><%= link_to "Manage Categories", manage_categories_path if current_user.present? %></li>
+		    		<% end %>
+
+		    		<% if current_user.present? && controller_name == "manage_products" %>
+		    			<li class="active"><%= link_to "Manage Products", manage_products_path if current_user.present? %></li>
+		    		<% else %>
+		    			<li><%= link_to "Manage Products", manage_products_path if current_user.present? %></li>
 		    		<% end %>
 
 		    		<% if current_user.blank? && controller_name == "user_sessions" %>

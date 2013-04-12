@@ -1,3 +1,16 @@
 <h3>Product Management</h3>
 
 <%= link_to "Create new product", new_manage_product_path %>
+
+<table id="products_list">
+  <thead>
+    <th>Name</th>
+  </thead>
+  <% @products.each do |product| %>
+    <tr>
+      <td>
+        <%= product.name %>
+      </td>
+    </tr>
+  <% end %>
+</table>

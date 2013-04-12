@@ -1,0 +1,16 @@
+<h3>Categories Management</h3>
+
+<%= link_to "Create new category", new_manage_category_path %>
+
+<table id="categories_list">
+  <thead>
+    <th>Name</th>
+  </thead>
+  <% @categories.each do |category| %>
+    <tr>
+      <td>
+        <%= category.name %>
+      </td>
+    </tr>
+  <% end %>
+</table>
