@@ -5,12 +5,13 @@
 <table id="categories_list">
   <thead>
     <th>Name</th>
+    <th colspan='2'>Actions</th>
   </thead>
   <% @categories.each do |category| %>
     <tr>
-      <td>
-        <%= category.name %>
-      </td>
+      <td><%= category.name %></td>
+      <td><%= link_to "Edit", edit_manage_category_path(category.id) %></td>
+      <td><%= link_to "Delete", manage_category_path(category.id), method: 'delete', confirm: "Are you sure?" %></td>
     </tr>
   <% end %>
 </table>
