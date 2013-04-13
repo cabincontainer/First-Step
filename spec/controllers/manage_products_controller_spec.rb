@@ -58,4 +58,17 @@ describe ManageProductsController do
     end
   end
 
+  describe "show" do
+    it "show product information" do
+      product = FactoryGirl.create(:product)
+      admin = FactoryGirl.create(:user)
+      login_as(admin) do
+        get :show, locale: "en", id: product.id
+
+        response.should be_success
+        response.should render_template("show")
+      end
+    end
+  end
+
 end

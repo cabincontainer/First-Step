@@ -1,0 +1,20 @@
+<h3><%= @product.name %></h3>
+
+<table>
+  <tr>
+    <td>Name</td>
+    <td><%= @product.name %></td>
+  </tr>
+  <tr>
+    <td>Code</td>
+    <td><%= @product.code %></td>
+  </tr>
+  <tr>
+    <td>Specifications</td>
+    <td>
+      <% @product.specifications.each do |key, specification| %>
+        <label><%= "#{specification['field']} : #{specification['value']}" %></label>
+      <% end %>
+    </td>
+  </tr>
+</table>

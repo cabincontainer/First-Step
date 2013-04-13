@@ -27,4 +27,8 @@ class ManageProductsController < ApplicationController
       render(action: "new")
     end
   end
+
+  def show
+    @product = Product.find(params[:id])
+  end
 end
