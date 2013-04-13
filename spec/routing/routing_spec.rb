@@ -29,9 +29,9 @@ describe "routing" do
       get("/manage_categories"              ).should route_to("manage_categories#index"  )
       get("/manage_categories/new"          ).should route_to("manage_categories#new"  )
       post("/manage_categories"             ).should route_to("manage_categories#create"  )
-      get("/manage_categories/1"            ).should route_to(controller: "manage_categories", action: "show", id: "1")
       get("/manage_categories/1/edit"       ).should route_to(controller: "manage_categories", action: "edit", id: "1")
       put("/manage_categories/1"            ).should route_to(controller: "manage_categories", action: "update", id: "1")
+      delete("/manage_categories/1"         ).should route_to(controller: "manage_categories", action: "destroy", id: "1")
     end
   end
 
@@ -39,6 +39,11 @@ describe "routing" do
     it "routes manage products" do
       get("/manage_products"              ).should route_to("manage_products#index"  )
       get("/manage_products/new"          ).should route_to("manage_products#new"  )
+      post("/manage_products"             ).should route_to("manage_products#create"  )
+      get("/manage_products/1"            ).should route_to(controller: "manage_products", action: "show", id: "1")
+      get("/manage_products/1/edit"       ).should route_to(controller: "manage_products", action: "edit", id: "1")
+      put("/manage_products/1"            ).should route_to(controller: "manage_products", action: "update", id: "1")
+      delete("/manage_products/1"         ).should route_to(controller: "manage_products", action: "destroy", id: "1")
     end
   end
 end

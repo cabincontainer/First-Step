@@ -3,6 +3,6 @@ Cabincontainer::Application.routes.draw do
   resource :user_session, only: [:new, :create, :destroy]
   resource :password_reset, only: [:new, :create, :edit, :update]
   resources :manage_categories, except: [:show]
-  resources :manage_products, only: [:index, :new, :create, :edit, :update, :show]
+  resources :manage_products
   root to: "homes#index"
 end

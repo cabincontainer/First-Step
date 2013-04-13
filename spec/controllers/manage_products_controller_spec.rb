@@ -119,4 +119,20 @@ describe ManageProductsController do
     end
   end
 
+  describe "destroy" do
+    it "permanent delete product" do
+      product = FactoryGirl.create(:product)
+      admin = FactoryGirl.create(:user)
+      login_as(admin) do
+        lambda {
+          delete :destroy, locale: "en", id: product.id
+        }.should change(Product, :count).by(-1)
+
+        Product.where(id: product.id).count.should == 0
+        flash[:notice].should include("Delete product successfully.")
+        response.should redirect_to(manage_products_path)
+      end
+    end
+  end
+
 end

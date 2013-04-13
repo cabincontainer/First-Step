@@ -56,4 +56,12 @@ class ManageProductsController < ApplicationController
       render(action: "edit")
     end
   end
+
+  def destroy
+    product = Product.find(params[:id])
+    product.destroy
+    flash[:notice] = "Delete product successfully."
+
+    redirect_to manage_products_path
+  end
 end
