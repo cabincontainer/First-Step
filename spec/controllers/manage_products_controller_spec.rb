@@ -25,4 +25,37 @@ describe ManageProductsController do
     end
   end
 
+  describe "create" do
+    it "create new product" do
+      admin = FactoryGirl.create(:user)
+      name = "Product name"
+      code = "Product code"
+      login_as(admin) do
+        lambda {
+          post :create,
+            product: {
+              name: name,
+              code: code
+            },
+            specifications: {
+              "0"=>{"field"=>"field_1", "value"=>"value_1"},
+              "1"=>{"field"=>"field_2", "value"=>"value_2"},
+              "2"=>{"field"=>"field_3", "value"=>"value_3"}
+            }
+        }.should change(Product, :count).by(1)
+
+        response.should redirect_to(manage_products_path)
+        product = Product.last
+        product.name.should == name
+        product.code.should == code
+        product.specifications.should == {
+          "0"=>{"field"=>"field_1", "value"=>"value_1"},
+          "1"=>{"field"=>"field_2", "value"=>"value_2"},
+          "2"=>{"field"=>"field_3", "value"=>"value_3"}
+        }
+        flash[:notice].should include("Create product successfully.")
+      end
+    end
+  end
+
 end

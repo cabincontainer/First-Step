@@ -4,7 +4,7 @@
 		<table>
 			<tr>
 				<td class="field">Category : </td>
-				<td class="value"><%= f.text_field "category_id", required: true, class: "field" %></td>
+				<td class="value"><%= f.select "category_id", options_for_select(@categories, nil), class: "field" %></td>
 			</tr>
 			<tr>
 				<td class="field">Product Name : </td>
