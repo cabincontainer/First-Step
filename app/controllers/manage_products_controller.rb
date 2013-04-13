@@ -18,6 +18,9 @@ class ManageProductsController < ApplicationController
     @product = Product.new(params[:product])
     @product.specifications = params[:specifications]
 
+    category = Category.where(name: params[:category_name]).first
+    @product.category = category if category.present?
+
     if @product.save
       flash[:notice] = "Create product successfully."
       redirect_to manage_products_path
@@ -30,5 +33,27 @@ class ManageProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+  end
+
+  def edit
+    @product = Product.includes(:category).find(params[:id])
+  end
+
+  def update
+    @product = Product.find(params[:id])
+    @product.assign_attributes(params[:product])
+    @product.specifications = params[:specifications]
+
+    category = Category.where(name: params[:category_name]).first
+    @product.category = category if category.present?
+
+    if @product.save
+      flash[:notice] = "Update product successfully."
+      redirect_to manage_products_path
+    else
+      flash.now[:error] ||= []
+      flash[:error] << "#{@product.errors.full_messages.join(", ")}"
+      render(action: "edit")
+    end
   end
 end
