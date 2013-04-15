@@ -1,6 +1,6 @@
 <div id="edit_product">
   <h3>Edit product</h3>
-    <%= form_for @product, url: manage_product_path(@product.id), method: 'put' do |f| %>
+    <%= form_for @product, :html => { :multipart => true }, url: manage_product_path(@product.id), method: 'put' do |f| %>
     <table>
       <tr>
         <td class="field">Category : </td>
@@ -31,7 +31,7 @@
           <% end %>
 
           <div id="add_new_row">
-            Add new row
+            Add more specification
             <%= button_tag "+", class: "add_new_row", type: 'button' %>
           </div>
         </td>

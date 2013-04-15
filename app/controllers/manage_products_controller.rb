@@ -22,6 +22,12 @@ class ManageProductsController < ApplicationController
     @product.category = category if category.present?
 
     if @product.save
+      params[:photos].each do |photo_params|
+        photo = Photo.new(photo_params)
+        photo.attachable = @product
+        photo.save
+      end
+
       flash[:notice] = "Create product successfully."
       redirect_to manage_products_path
     else

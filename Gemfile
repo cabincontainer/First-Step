@@ -24,6 +24,7 @@ gem "cancan"
 gem 'will_paginate'
 gem 'rb-readline'
 gem 'syslog-logger'
+gem 'paperclip'
 
 group :development, :test do
 	# gem 'capybara'

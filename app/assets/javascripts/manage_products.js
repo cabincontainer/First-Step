@@ -45,21 +45,42 @@ ManageProducts = {
 		row = $(row).append(delete_button);
 
 		$(row).insertBefore($('div#add_new_row'));
+	},
+	addPhotoField: function(){
+		var row = "<div></div>";
+		row = $(row).addClass("photo_row");
 
-		// <div class="specification_row">
-		// 	<div class="inline">
-		// 		<%= text_field_tag "specifications[0][field]", nil, class: "field", placeholder: "Name.." %>
-		// 	</div>
-		// 	:
-		// 	<div class="inline">
-		// 		<%= text_field_tag "specifications[0][value]", nil, class: "field", placeholder: "Value.." %>
-		// 	</div>
-		// 	<%= button_tag "-", class: "delete_row", type: 'button' %>
-		// </div>
+		var div = "<div></div>";
+		div = $(div).addClass("inline");
+
+		var file_field = "<input></input>";
+		file_field = $(file_field).attr("type","file");
+		file_field = $(file_field).attr("name","photos[][attached_file]");
+
+		var delete_button = "<button></button>";
+		delete_button = $(delete_button).addClass("delete_photo");
+		delete_button = $(delete_button).attr("type", "button");
+		delete_button = $(delete_button).text("-");
+
+		$(div).append(file_field);
+
+		var td = $(this).parents('td.value');
+
+		$(row).append(div);
+		$(row).append(delete_button);
+
+		$(row).insertBefore($('div#add_more_photo'));
+	},
+	deletePhoto: function(){
+		if (confirm("Are you sure?")){
+			$(this).parents('div.photo_row').remove();
+		}
 	},
 	init: function(){
 		$('button.delete_row').live('click', ManageProducts.deleteSpecRow);
 		$('button.add_new_row').click(ManageProducts.addSpecRow);
+		$('button.add_more_photo').click(ManageProducts.addPhotoField);
+		$('button.delete_photo').live('click', ManageProducts.deletePhoto);
 	}
 };
 

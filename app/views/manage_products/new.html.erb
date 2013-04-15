@@ -1,6 +1,6 @@
 <div id="new_product">
 	<h3>Create new product</h3>
-  	<%= form_for @product, url: manage_products_path, method: 'post' do |f| %>
+  	<%= form_for @product, :html => { :multipart => true }, url: manage_products_path, method: 'post' do |f| %>
 		<table>
 			<tr>
 				<td class="field">Category : </td>
@@ -28,8 +28,25 @@
 						<%= button_tag "-", class: "delete_row", type: 'button' %>
 					</div>
 					<div id="add_new_row">
-						Add new row
+						Add more specification
 						<%= button_tag "+", class: "add_new_row", type: 'button' %>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="field">Photos : </td>
+				<td class="value">
+			    <%= f.fields_for :photos do |photo_field| %>
+			    	<div class="photo_row">
+							<div class="inline">
+				      	<%= photo_field.file_field :attached_file, name: "photos[][attached_file]" %>
+				      </div>
+							<%= button_tag "-", class: "delete_photo", type: 'button' %>
+						</div>
+			    <% end %>
+			    <div id="add_more_photo">
+						Add more photo
+						<%= button_tag "+", class: "add_more_photo", type: 'button' %>
 					</div>
 				</td>
 			</tr>

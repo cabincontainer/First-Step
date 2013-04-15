@@ -17,4 +17,12 @@
       <% end %>
     </td>
   </tr>
+  <tr>
+    <td>Photos</td>
+    <td>
+      <% @product.photos.each do |photo| %>
+        <%= image_tag photo.attached_file.url(:thumb) %>
+      <% end %>
+    </td>
+  </tr>
 </table>

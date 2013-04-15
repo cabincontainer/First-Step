@@ -6,5 +6,7 @@ class Product < ActiveRecord::Base
     validates :code, uniqueness: true
 
 	  belongs_to :category
+    has_many :photos, as: :attachable
+
   	serialize :specifications, Hash
 end
