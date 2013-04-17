@@ -36,6 +36,24 @@
           </div>
         </td>
       </tr>
+      <tr>
+        <td class="field">Photos : </td>
+        <td class="value">
+          <% @product.photos.each do |photo| %>
+            <div class="photo_row">
+              <div class="inline">
+                <%= image_tag photo.attached_file.url(:thumb) %>
+                <%= hidden_field_tag "current_photos[]", photo.id %>
+              </div>
+              <%= button_tag "-", class: "delete_photo", type: 'button' %>
+            </div>
+          <% end %>
+          <div id="add_more_photo">
+            Add more photo
+            <%= button_tag "+", class: "add_more_photo", type: 'button' %>
+          </div>
+        </td>
+      </tr>
     </table>
     <%= f.submit "Update", class: "submit" %>
     <%= f.button "Clear form", class: "clear", type: "reset" %>

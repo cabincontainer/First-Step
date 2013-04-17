@@ -22,10 +22,13 @@ class ManageProductsController < ApplicationController
     @product.category = category if category.present?
 
     if @product.save
-      params[:photos].each do |photo_params|
-        photo = Photo.new(photo_params)
-        photo.attachable = @product
-        photo.save
+
+      if params[:photos].present?
+        params[:photos].each do |photo_params|
+          photo = Photo.new(photo_params)
+          photo.attachable = @product
+          photo.save
+        end
       end
 
       flash[:notice] = "Create product successfully."
@@ -38,15 +41,15 @@ class ManageProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(params[:id])
+    @product = Product.includes(:category, :photos).find(params[:id])
   end
 
   def edit
-    @product = Product.includes(:category).find(params[:id])
+    @product = Product.includes(:category, :photos).find(params[:id])
   end
 
   def update
-    @product = Product.find(params[:id])
+    @product = Product.includes(:photos).find(params[:id])
     @product.assign_attributes(params[:product])
     @product.specifications = params[:specifications]
 
@@ -54,6 +57,16 @@ class ManageProductsController < ApplicationController
     @product.category = category if category.present?
 
     if @product.save
+      @product.photos.where("id NOT IN (?)", params[:current_photos]).destroy_all
+
+      if params[:photos].present?
+        params[:photos].each do |photo_params|
+          photo = Photo.new(photo_params)
+          photo.attachable = @product
+          photo.save
+        end
+      end
+
       flash[:notice] = "Update product successfully."
       redirect_to manage_products_path
     else
