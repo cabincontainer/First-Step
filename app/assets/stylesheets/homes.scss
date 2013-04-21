@@ -7,9 +7,13 @@
 }
 
 .products-link {
-	border-radius: 3px;
-	border: 1px solid #DDD;
 	padding: 5px 5px 5px 5px;
+  	background-color: #f5f5f5;
+  	border: 1px solid #ccc;
+  	border: 1px solid rgba(0, 0, 0, 0.15);
+  	-webkit-border-radius: 4px;
+     	-moz-border-radius: 4px;
+          	border-radius: 4px;
 }
 
 .photos-class {
@@ -19,11 +23,13 @@
 
 #middle-description{
 	vertical-align: text-top;
-	padding-left: 16px;
-	padding-right: 16px;
+	padding: 0 1%;
 }
 
 #middle-description {
+	min-height: 400px;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
 	width: 58%;
 	margin: 0 1%;
 

@@ -1,43 +1,43 @@
 <div id="edit_product">
-  <h3>Edit product</h3>
+  <h3>แก้ไขสินค้า</h3>
     <%= form_for @product, :html => { :multipart => true }, url: manage_product_path(@product.id), method: 'put' do |f| %>
     <table>
       <tr>
-        <td class="field">Category : </td>
+        <td class="field">หมวดหมู่ : </td>
         <td class="value"><%= select_tag "category_name", options_for_select(@categories, (@product.category.name rescue nil)), class: "field" %></td>
       </tr>
       <tr>
-        <td class="field">Product Name : </td>
+        <td class="field">ชื่อสินค้า : </td>
         <td class="value"><%= f.text_field "name", required: true, class: "field" %></td>
       </tr>
       <tr>
-        <td class="field">Product Code : </td>
+        <td class="field">รหัสสินค้า : </td>
         <td class="value"><%= f.text_field "code", required: true, class: "field" %></td>
       </tr>
       <tr>
-        <td class="field">Specifications : </td>
+        <td class="field">รายละเอียดสินค้า : </td>
         <td class="value">
           <% @product.specifications.each do |key, specification| %>
             <div class="specification_row">
               <div class="inline">
-                <%= text_field_tag "specifications[#{key}][field]", specification['field'], class: "field", placeholder: "Name.." %>
+                <%= text_field_tag "specifications[#{key}][field]", specification['field'], class: "field", placeholder: "ระบุชื่อ.." %>
               </div>
               :
               <div class="inline">
-                <%= text_field_tag "specifications[#{key}][value]", specification['value'], class: "field", placeholder: "Value.." %>
+                <%= text_field_tag "specifications[#{key}][value]", specification['value'], class: "field", placeholder: "ระบุค่า.." %>
               </div>
               <%= button_tag "-", class: "delete_row", type: 'button' %>
             </div>
           <% end %>
 
           <div id="add_new_row">
-            Add more specification
+            เพิ่มรายละเอียดสินค้า
             <%= button_tag "+", class: "add_new_row", type: 'button' %>
           </div>
         </td>
       </tr>
       <tr>
-        <td class="field">Photos : </td>
+        <td class="field">ภาพถ่าย : </td>
         <td class="value">
           <% @product.photos.each do |photo| %>
             <div class="photo_row">
@@ -49,7 +49,7 @@
             </div>
           <% end %>
           <div id="add_more_photo">
-            Add more photo
+            เพิ่มภาพถ่าย
             <%= button_tag "+", class: "add_more_photo", type: 'button' %>
           </div>
         </td>

@@ -1,13 +1,12 @@
 <div id="new_category">
-  <h3>Create new category</h3>
+  <h3>เพิ่มหมวดหมู่สินค้า</h3>
     <%= form_for @category, url: manage_categories_path, method: 'post' do |f| %>
     <table>
       <tr>
-        <td class="field">Category Name : </td>
+        <td class="field">ชื่อหมวดหมู่ : </td>
         <td class="value"><%= f.text_field "name", required: true, class: "field" %></td>
       </tr>
     </table>
-    <%= f.submit "Create a category", class: "submit" %>
-    <%= f.button "Clear form", class: "clear", type: "reset" %>
+    <%= f.submit "บันทึก", class: "submit" %>
   <% end %>
 </div>

@@ -1,18 +1,18 @@
-<h3>Product Management</h3>
+<h3>การจัดการสินค้า</h3>
 
-<%= link_to "Create new product", new_manage_product_path %>
+<%= link_to "เพิ่มสินค้า", new_manage_product_path %>
 
 <table id="products_list">
   <thead>
-    <th>Name</th>
-    <th colspan='3'>Actions</th>
+    <th>ชื่อ</th>
+    <th colspan='3'>จัดการ</th>
   </thead>
   <% @products.each do |product| %>
     <tr>
       <td><%= product.name %></td>
-      <td><%= link_to "Show", manage_product_path(product.id) %></td>
-      <td><%= link_to "Edit", edit_manage_product_path(product.id) %></td>
-      <td><%= link_to "Delete", manage_product_path(product.id), method: 'delete', confirm: "Are you sure?" %></td>
+      <td><%= link_to "ดูข้อมูล", manage_product_path(product.id) %></td>
+      <td><%= link_to "แก้ไข", edit_manage_product_path(product.id) %></td>
+      <td><%= link_to "ลบ", manage_product_path(product.id), method: 'delete', confirm: "Are you sure?" %></td>
     </tr>
   <% end %>
 </table>

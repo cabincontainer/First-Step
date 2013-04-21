@@ -2,15 +2,15 @@
 
 <table>
   <tr>
-    <td>Name</td>
+    <td>ฃื่อสินค้า</td>
     <td><%= @product.name %></td>
   </tr>
   <tr>
-    <td>Code</td>
+    <td>รหัสสินค้า</td>
     <td><%= @product.code %></td>
   </tr>
   <tr>
-    <td>Specifications</td>
+    <td>รายละเอียดสินค้า</td>
     <td>
       <% @product.specifications.each do |key, specification| %>
         <label><%= "#{specification['field']} : #{specification['value']}" %></label>
@@ -18,7 +18,7 @@
     </td>
   </tr>
   <tr>
-    <td>Photos</td>
+    <td>ภาพถ่ายสินค้า</td>
     <td>
       <% @product.photos.each do |photo| %>
         <%= image_tag photo.attached_file.url(:thumb) %>
@@ -27,4 +27,4 @@
   </tr>
 </table>
 <br>
-<%= link_to("Edit", edit_manage_product_path(@product)) %>
+<%= link_to("แก้ไขสินค้า", edit_manage_product_path(@product)) %>

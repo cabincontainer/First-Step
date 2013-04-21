@@ -10,32 +10,32 @@
 </head>
 <body>
 <div id="wrap">
-	<h3 id="project-name">CABIN CONTAINER</h3>
+	<h3 id="project-name">KK CONTAINER</h3>
 	<div id="hmenu">
 		<div class="navbar">
 	    	<div class="navbar-inner">
-		    		<%= link_to("Home", homes_path, class: "brand") %>
+		    		<%= link_to("หน้าหลัก", homes_path, class: "brand") %>
 		    	<ul class="nav">
 		    		<% if current_user.present? && controller_name == "manage_categories" %>
-		    			<li class="active"><%= link_to "Manage Categories", manage_categories_path if current_user.present? %></li>
+		    			<li class="active"><%= link_to "จัดการหมวดหมู่สินค้า", manage_categories_path if current_user.present? %></li>
 		    		<% else %>
-		    			<li><%= link_to "Manage Categories", manage_categories_path if current_user.present? %></li>
+		    			<li><%= link_to "จัดการหมวดหมู่สินค้า", manage_categories_path if current_user.present? %></li>
 		    		<% end %>
 
 		    		<% if current_user.present? && controller_name == "manage_products" %>
-		    			<li class="active"><%= link_to "Manage Products", manage_products_path if current_user.present? %></li>
+		    			<li class="active"><%= link_to "จัดการสินค้า", manage_products_path if current_user.present? %></li>
 		    		<% else %>
-		    			<li><%= link_to "Manage Products", manage_products_path if current_user.present? %></li>
+		    			<li><%= link_to "จัดการสินค้า", manage_products_path if current_user.present? %></li>
 		    		<% end %>
 
 		    		<% if current_user.blank? && controller_name == "user_sessions" %>
-		    			<li class="active"><%= link_to "Login", new_user_session_path if current_user.blank? %></li>
+		    			<li class="active"><%= link_to "เข้าสู่ระบบ", new_user_session_path if current_user.blank? %></li>
 		    		<% else %>
-		    			<li><%= link_to "Login", new_user_session_path if current_user.blank? %></li>
+		    			<li><%= link_to "เข้าสู่ระบบ", new_user_session_path if current_user.blank? %></li>
 		    		<% end %>
 
 		    		<li>
-		    			<%= link_to("Logout", user_session_path, method: "delete", id: "link_logout") unless current_user.blank? %>
+		    			<%= link_to("ออกจากระบบ", user_session_path, method: "delete", id: "link_logout") unless current_user.blank? %>
 		    		</li>
 	    		</ul>
 	    	</div>

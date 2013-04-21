@@ -1,17 +1,17 @@
-<h3>Categories Management</h3>
+<h3>การจัดการหมวดหมู่สินค้า</h3>
 
-<%= link_to "Create new category", new_manage_category_path %>
+<%= link_to "เพิ่มหมวดหมู่", new_manage_category_path %>
 
 <table id="categories_list">
   <thead>
-    <th>Name</th>
-    <th colspan='2'>Actions</th>
+    <th>ชื่อ</th>
+    <th colspan='2'>จัดการ</th>
   </thead>
   <% @categories.each do |category| %>
     <tr>
       <td><%= category.name %></td>
-      <td><%= link_to "Edit", edit_manage_category_path(category.id) %></td>
-      <td><%= link_to "Delete", manage_category_path(category.id), method: 'delete', confirm: "Are you sure?" %></td>
+      <td><%= link_to "แก้ไข", edit_manage_category_path(category.id) %></td>
+      <td><%= link_to "ลบ", manage_category_path(category.id), method: 'delete', confirm: "Are you sure?" %></td>
     </tr>
   <% end %>
 </table>
