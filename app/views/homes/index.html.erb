@@ -1,1 +1,26 @@
-HOME
+<% if @categories.present? %>	
+	<div class="inline-3">
+		<div id="products-categories">
+			<h5>หมวดหมู่สินค้า</h5>	
+			<p class="products-link">
+				<% @categories.each do |c| %>
+					<%= link_to(c.name.titleize, "") %><br>	
+				<% end %>
+			</p>
+		</div>
+		<div id="middle-description">
+			<h5>สินค้าขายดี</h5>
+			<p class="details">
+				<%= image_tag("firefox-logo-only.png", class: "photos-class" ) %>
+				<%= image_tag("Apple_Safari.png", class: "photos-class" ) %>
+			</p>
+		</div>
+		<div id="right-site">
+			<h5>ติดต่อเรา</h5>
+			<p class="products-link">
+				เร็วๆ นี้...
+				cabincontainer@gmail.com
+			</p>
+		</div>
+	</div>
+<% end %>
