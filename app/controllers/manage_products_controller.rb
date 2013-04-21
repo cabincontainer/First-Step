@@ -22,7 +22,7 @@ class ManageProductsController < ApplicationController
     @product.category = category if category.present?
 
     if @product.save
-
+pp params[:photos]
       if params[:photos].present?
         params[:photos].each do |photo_params|
           photo = Photo.new(photo_params)
