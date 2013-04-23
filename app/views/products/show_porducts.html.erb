@@ -3,24 +3,12 @@
 	<% if @category.products.present? %>
 	<% @category.products.each do |p| %>
 		<% next if p.photos.empty? %>
-		<div class="inline panel">
 			<% p.photos.each do |photo| %>
-			<%= link_to image_tag(photo.attached_file.url(:thumb), class: "photos-class" ), "", target: "_blank" %>
-			<label><%= p.name %></label>
+			<div class="inline panel">
+				<%= link_to image_tag(photo.attached_file.url(:thumb), class: "photos-class" ), product_path(p) %>
+				<label><%= p.name %></label>
+			</div>
 			<% end %>
-		</div>
-		<div class="inline details-pro">
-			<p><b>ชื่อสินค้า:</b> <%= p.name %></p>
-			<p><b>รหัสสินค้า:</b> <%= p.code %></p>
-			<p>
-				<b>รายละเอียดสินค้า:</b> 
-				<% if p.specifications.present? %>
-					<% p.specifications.each do |key, value| %>
-						<p><b><%= value["field"] %>: </b><%= value["value"] %></p>
-					<% end %>
-				<% end %>
-			</p>
-		</div>
 	<% end %>
 	<% end %>
 </div>

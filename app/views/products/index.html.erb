@@ -1,1 +1,14 @@
-INDEX
+<h5>สินค้า</h5>
+<div class="products">
+	<% if @products.present? %>
+	<% @products.each do |p| %>
+		<% next if p.photos.empty? %>
+			<% p.photos.each do |photo| %>
+			<div class="inline panel">
+				<%= link_to image_tag(photo.attached_file.url(:thumb), class: "photos-class" ), product_path(p) %>
+				<label><%= p.name %></label>
+			</div>
+			<% end %>
+	<% end %>
+	<% end %>
+</div>
