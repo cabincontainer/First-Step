@@ -46,4 +46,17 @@ describe "routing" do
       delete("/manage_products/1"         ).should route_to(controller: "manage_products", action: "destroy", id: "1")
     end
   end
+
+  describe "show products" do
+    it "routes products" do
+      get("/products"              ).should route_to("products#index" )
+      get("/products/new"          ).should route_to("products#new"  )
+      post("/products"             ).should route_to("products#create"  )
+      get("/products/1"            ).should route_to(controller: "products", action: "show", id: "1")
+      get("/products/1/edit"       ).should route_to(controller: "products", action: "edit", id: "1")
+      put("/products/1"            ).should route_to(controller: "products", action: "update", id: "1")
+      delete("/products/1"         ).should route_to(controller: "products", action: "destroy", id: "1")
+      get("/products/1/show_porducts").should route_to(controller: "products", action: "show_porducts", id: "1")
+    end
+  end
 end

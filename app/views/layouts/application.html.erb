@@ -15,6 +15,12 @@
 		<div class="navbar">
 	    	<div class="navbar-inner">
 		    		<%= link_to("หน้าหลัก", homes_path, class: "brand") %>
+		    		<%= link_to("สินค้าของเรา", homes_path, class: "brand") %>
+		    		<%= link_to("เกี่ยวกับเรา", "", class: "brand") %>
+		    		<%= link_to("ลูกค้าของเรา", "", class: "brand") %>
+		    		<%= link_to("คำถามที่พบบ่อย", "", class: "brand") %>
+		    		<%= link_to("site map", "", class: "brand") %>
+		    		<%= link_to("ติดต่อเรา", "", class: "brand") %>
 		    	<ul class="nav">
 		    		<% if current_user.present? && controller_name == "manage_categories" %>
 		    			<li class="active"><%= link_to "จัดการหมวดหมู่สินค้า", manage_categories_path if current_user.present? %></li>
@@ -26,12 +32,6 @@
 		    			<li class="active"><%= link_to "จัดการสินค้า", manage_products_path if current_user.present? %></li>
 		    		<% else %>
 		    			<li><%= link_to "จัดการสินค้า", manage_products_path if current_user.present? %></li>
-		    		<% end %>
-
-		    		<% if current_user.blank? && controller_name == "user_sessions" %>
-		    			<li class="active"><%= link_to "เข้าสู่ระบบ", new_user_session_path if current_user.blank? %></li>
-		    		<% else %>
-		    			<li><%= link_to "เข้าสู่ระบบ", new_user_session_path if current_user.blank? %></li>
 		    		<% end %>
 
 		    		<li>
