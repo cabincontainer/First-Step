@@ -3,5 +3,7 @@ class HomesController < ApplicationController
 
 	def index
 		@categories = Category.all
+
+    @recomments = Product.limit(3)
 	end
 end

@@ -27,4 +27,4 @@
   </tr>
 </table>
 <br>
-<%= link_to("แก้ไขสินค้า", edit_manage_product_path(@product)) %>
+<%= link_to("แก้ไขสินค้า", edit_manage_product_path(@product)) if current_user.admin? %>
