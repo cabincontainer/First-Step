@@ -36,7 +36,8 @@ describe ManageProductsController do
           post :create,
             product: {
               name: name,
-              code: code
+              code: code,
+              best_seller: true
             },
             specifications: {
               "0"=>{"field"=>"field_1", "value"=>"value_1"},
@@ -50,6 +51,43 @@ describe ManageProductsController do
         product = Product.last
         product.name.should == name
         product.code.should == code
+        product.best_seller.should == true
+        product.specifications.should == {
+          "0"=>{"field"=>"field_1", "value"=>"value_1"},
+          "1"=>{"field"=>"field_2", "value"=>"value_2"},
+          "2"=>{"field"=>"field_3", "value"=>"value_3"}
+        }
+        product.category.should == category
+        flash[:notice].should include("Create product successfully.")
+      end
+    end
+
+    it "create new product best_seller false" do
+      category = FactoryGirl.create(:category)
+      admin = FactoryGirl.create(:user)
+      name = "Product name"
+      code = "Product code"
+      login_as(admin) do
+        lambda {
+          post :create,
+            product: {
+              name: name,
+              code: code,
+              best_seller: nil
+            },
+            specifications: {
+              "0"=>{"field"=>"field_1", "value"=>"value_1"},
+              "1"=>{"field"=>"field_2", "value"=>"value_2"},
+              "2"=>{"field"=>"field_3", "value"=>"value_3"}
+            },
+            category_name: category.name
+        }.should change(Product, :count).by(1)
+
+        response.should redirect_to(manage_products_path)
+        product = Product.last
+        product.name.should == name
+        product.code.should == code
+        product.best_seller.should == false
         product.specifications.should == {
           "0"=>{"field"=>"field_1", "value"=>"value_1"},
           "1"=>{"field"=>"field_2", "value"=>"value_2"},
@@ -95,7 +133,8 @@ describe ManageProductsController do
       login_as(admin) do
         put :update, locale: "en", id: product.id, product: {
           name: "New product name",
-          code: "New product code"
+          code: "New product code",
+          best_seller: true
         },
         specifications: {
           "0"=>{"field"=>"new_field_1", "value"=>"new_value_1"},
@@ -107,6 +146,39 @@ describe ManageProductsController do
         product.reload
         product.name.should == "New product name"
         product.code.should == "New product code"
+        product.best_seller.should == true
+        product.specifications.should == {
+          "0"=>{"field"=>"new_field_1", "value"=>"new_value_1"},
+          "1"=>{"field"=>"new_field_2", "value"=>"new_value_2"},
+          "2"=>{"field"=>"new_field_3", "value"=>"new_value_3"}
+        }
+        product.category.should == category
+        flash[:notice].should include("Update product successfully.")
+        response.should redirect_to(manage_products_path)
+      end
+    end
+
+    it "update product data best_seller from true to false" do
+      category = FactoryGirl.create(:category)
+      product = FactoryGirl.create(:product, best_seller: true)
+      admin = FactoryGirl.create(:user)
+      login_as(admin) do
+        put :update, locale: "en", id: product.id, product: {
+          name: "New product name",
+          code: "New product code",
+          best_seller: nil
+        },
+        specifications: {
+          "0"=>{"field"=>"new_field_1", "value"=>"new_value_1"},
+          "1"=>{"field"=>"new_field_2", "value"=>"new_value_2"},
+          "2"=>{"field"=>"new_field_3", "value"=>"new_value_3"}
+        },
+        category_name: category.name
+
+        product.reload
+        product.name.should == "New product name"
+        product.code.should == "New product code"
+        product.best_seller.should == false
         product.specifications.should == {
           "0"=>{"field"=>"new_field_1", "value"=>"new_value_1"},
           "1"=>{"field"=>"new_field_2", "value"=>"new_value_2"},

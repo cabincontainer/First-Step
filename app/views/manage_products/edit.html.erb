@@ -15,6 +15,10 @@
         <td class="value"><%= f.text_field "code", required: true, class: "field" %></td>
       </tr>
       <tr>
+        <td class="field">สินค้าขายดี : </td>
+        <td class="value"><%= check_box_tag "product[best_seller]", true, @product.best_seller, class: "field" %></td>
+      </tr>
+      <tr>
         <td class="field">รายละเอียดสินค้า : </td>
         <td class="value">
           <% @product.specifications.each do |key, specification| %>

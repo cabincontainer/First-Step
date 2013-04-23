@@ -10,6 +10,10 @@
     <td><%= @product.code %></td>
   </tr>
   <tr>
+    <td>สินค้าขายดี</td>
+    <td><%= @product.best_seller? ? "ขายดี" : "ปกติ" %></td>
+  </tr>
+  <tr>
     <td>รายละเอียดสินค้า</td>
     <td>
       <% @product.specifications.each do |key, specification| %>
