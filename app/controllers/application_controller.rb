@@ -5,8 +5,8 @@ class ApplicationController < ActionController::Base
   #   redirect_to events_path
   # end
 
-  before_filter :require_user  
-  helper_method :current_user_session, :current_user 
+  before_filter :require_user, :load_categories
+  helper_method :current_user_session, :current_user
 
   private
   def destroy_session
@@ -36,6 +36,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def load_categories
+    @categories = Category.all
+  end
+
   def require_no_user
     if current_user
       store_location
@@ -52,5 +56,5 @@ class ApplicationController < ActionController::Base
   def redirect_back_or_default(default)
     redirect_to(session[:return_to] || default)
     session[:return_to] = nil
-  end 
+  end
 end

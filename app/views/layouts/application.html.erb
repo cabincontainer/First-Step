@@ -42,7 +42,12 @@
 	    </div>
 	    <div>
 	    	<%= render partial: "shared/flashes" %>
-			<%= yield %>
+
+	    	<%= render partial: "shared/left_layout" %>
+				<div id="middle_layout" class="left">
+					<%= yield %>
+				</div>
+	    	<%= render partial: "shared/right_layout" %>
 		</div>
 	</div>
 </div>

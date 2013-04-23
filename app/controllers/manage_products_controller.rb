@@ -1,9 +1,9 @@
 class ManageProductsController < ApplicationController
 
-  before_filter :load_categories, only: [:new, :create, :edit, :update]
+  before_filter :load_categories_name, only: [:new, :edit]
 
-  def load_categories
-    @categories = Category.all.map(&:name)
+  def load_categories_name
+    @categories_name = Category.all.map(&:name)
   end
 
 	def index

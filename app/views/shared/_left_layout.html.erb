@@ -1,0 +1,8 @@
+<div id="left_layout" class="left">
+  <h5>หมวดหมู่สินค้า</h5>
+  <p class="products-link">
+    <% @categories.each do |c| %>
+      <%= link_to(c.name.titleize, "") %><br>
+    <% end %>
+  </p>
+</div>

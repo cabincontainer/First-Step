@@ -113,3 +113,58 @@ a.brand {
 .panel {
   @include drop-shadow;
 }
+
+#left_layout{
+	width: 15%;
+	h5 {
+		padding: 0;
+	}
+}
+
+#right_layout {
+	float: left;
+	width: 20%;
+}
+
+.products-link {
+	padding: 5px 5px 5px 5px;
+  	background-color: #f5f5f5;
+  	border: 1px solid #ccc;
+  	border: 1px solid rgba(0, 0, 0, 0.15);
+  	-webkit-border-radius: 4px;
+     	-moz-border-radius: 4px;
+          	border-radius: 4px;
+}
+
+.photos-class {
+	width: 100px;
+	margin: 5px;
+}
+
+#middle_layout{
+	vertical-align: text-top;
+	padding: 0 1%;
+}
+
+#middle_layout {
+	min-height: 400px;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	width: 58%;
+	margin: 0 1%;
+
+	h5 {
+		padding-bottom: 0;
+	}
+
+	div.products{
+    div {
+      padding: 10px;
+      margin: 10px;
+      display: inline-block;
+      text-align: center;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+	}
+}
