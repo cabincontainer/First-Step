@@ -3,7 +3,8 @@ require 'spec_helper'
 describe "routing" do
   describe "homes" do
     it "routes homes" do
-      get("/homes"         ).should route_to("homes#index"  )
+      get("/homes"                      ).should route_to("homes#index"  )
+      get("/homes/coming_soon"          ).should route_to("homes#coming_soon"  )
     end
   end
 

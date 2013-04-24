@@ -19,6 +19,10 @@ footer {
 	min-height: 5%;
 	margin-left: auto;
 	margin-right: auto;
+  clear: both;
+  position: relative;
+  z-index: 10;
+  height: 3em;
 }
 
 a:hover {
@@ -100,8 +104,13 @@ h4 {
 	display: inline-block;
 }
 
-a.brand {
+.brand {
 	font-size: 14px;
+  margin-left: -10px !important;
+}
+
+.brand.first {
+  margin-left: -20px !important;
 }
 
 @mixin drop-shadow {
@@ -167,4 +176,9 @@ a.brand {
       border-radius: 5px;
     }
 	}
+}
+
+.spec_field {
+  font-weight: bold;
+  display: inline-block;
 }

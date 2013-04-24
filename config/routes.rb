@@ -1,5 +1,9 @@
 Cabincontainer::Application.routes.draw do
-  resources :homes, only: [:index]
+  resources :homes, only: [:index] do
+    collection do
+      get :coming_soon
+    end
+  end
   resource :user_session, only: [:new, :create, :destroy]
   resource :password_reset, only: [:new, :create, :edit, :update]
   resources :manage_categories, except: [:show]

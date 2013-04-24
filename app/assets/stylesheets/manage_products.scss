@@ -5,6 +5,12 @@ td.field {
   	padding-left: 10px;
 }
 
+td {
+  label {
+    white-space: normal;
+  }
+}
+
 input.field {
 	margin: 4px;
 }

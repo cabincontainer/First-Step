@@ -14,47 +14,49 @@
 	<div id="hmenu">
 		<div class="navbar">
 	    	<div class="navbar-inner">
-		    		<%= link_to("หน้าหลัก", homes_path, class: "brand") %>
-		    		<%= link_to("สินค้า", products_path, class: "brand") %>
-		    		<%= link_to("เกี่ยวกับเรา", "", class: "brand") %>
-		    		<%= link_to("ลูกค้าของเรา", "", class: "brand") %>
-		    		<%= link_to("คำถามที่พบบ่อย", "", class: "brand") %>
-		    		<%= link_to("site map", "", class: "brand") %>
-		    		<%= link_to("ติดต่อเรา", "", class: "brand") %>
 		    	<ul class="nav">
+		    		<li class='<%= controller_name == "homes" ? "active" : "" %>'>
+		    			<%= link_to("หน้าหลัก", homes_path, class: "brand first") %>
+		    		</li>
+		    		<li class='<%= controller_name == "products" ? "active" : "" %>'>
+		    			<%= link_to("สินค้า", products_path, class: "brand") %>
+		    		</li>
+		    		<li><%= link_to("เกี่ยวกับเรา", coming_soon_homes_path, class: "brand") %></li>
+		    		<li><%= link_to("ลูกค้าของเรา", coming_soon_homes_path, class: "brand") %></li>
+		    		<li><%= link_to("คำถามที่พบบ่อย", coming_soon_homes_path, class: "brand") %></li>
+		    		<li><%= link_to("site map", coming_soon_homes_path, class: "brand") %></li>
+		    		<li><%= link_to("ติดต่อเรา", coming_soon_homes_path, class: "brand") %></li>
 		    		<% if current_user.present? && controller_name == "manage_categories" %>
-		    			<li class="active"><%= link_to "จัดการหมวดหมู่สินค้า", manage_categories_path if current_user.present? %></li>
+		    			<li class="active"><%= link_to "จัดการหมวดหมู่", manage_categories_path, class: "brand" if current_user.present? %></li>
 		    		<% else %>
-		    			<li><%= link_to "จัดการหมวดหมู่สินค้า", manage_categories_path if current_user.present? %></li>
+		    			<li><%= link_to "จัดการหมวดหมู่", manage_categories_path, class: "brand" if current_user.present? %></li>
 		    		<% end %>
 
 		    		<% if current_user.present? && controller_name == "manage_products" %>
-		    			<li class="active"><%= link_to "จัดการสินค้า", manage_products_path if current_user.present? %></li>
+		    			<li class="active"><%= link_to "จัดการสินค้า", manage_products_path, class: "brand" if current_user.present? %></li>
 		    		<% else %>
-		    			<li><%= link_to "จัดการสินค้า", manage_products_path if current_user.present? %></li>
+		    			<li><%= link_to "จัดการสินค้า", manage_products_path, class: "brand" if current_user.present? %></li>
 		    		<% end %>
 
 		    		<li>
-		    			<%= link_to("ออกจากระบบ", user_session_path, method: "delete", id: "link_logout") unless current_user.blank? %>
+		    			<%= link_to("ออกจากระบบ", user_session_path, method: "delete", id: "link_logout", class: "brand") unless current_user.blank? %>
 		    		</li>
 	    		</ul>
 	    	</div>
 	    </div>
-	    <div>
-	    	<%= render partial: "shared/flashes" %>
+		</div>
+    <div>
+    	<%= render partial: "shared/flashes" %>
 
-	    	<%= render partial: "shared/left_layout" %>
-				<div id="middle_layout" class="left">
-					<%= yield %>
-				</div>
-	    	<%= render partial: "shared/right_layout" %>
+    	<%= render partial: "shared/left_layout" %>
+			<div id="middle_layout" class="left">
+				<%= yield %>
+			</div>
+    	<%= render partial: "shared/right_layout" %>
 		</div>
 	</div>
-</div>
-<div>
 	<footer>
-			&copy; <%= "#{Time.now.localtime.year}" %> by Cabin Container
+		&copy; <%= "#{Time.now.localtime.year}" %> by Cabin Container
 	</footer>
-</div>
 </body>
 </html>
