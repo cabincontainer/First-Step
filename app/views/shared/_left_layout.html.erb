@@ -1,8 +1,10 @@
 <div id="left_layout" class="left">
   <h5>หมวดหมู่สินค้า</h5>
-  <p class="products-link">
+  
     <% @categories.each do |c| %>
-      <%= link_to(c.name.titleize, show_porducts_product_path(c.id)) %><br>
+    <p class="products-link panel">
+      <%= link_to(c.name.titleize, show_porducts_product_path(c.id), cat_id: "#{c.id}" ) %><br>
+     </p>
     <% end %>
-  </p>
+  
 </div>

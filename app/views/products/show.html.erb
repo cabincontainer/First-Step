@@ -1,4 +1,5 @@
-<h5><%= @product.name %></h5>
+<h5 class="inline" category-id='<%= "#{@product.category.id}"%>'>หมวดสินค้า: </h5>
+<h5 class="inline"><%= link_to(@product.category.name, show_porducts_product_path(@product.category)) %></h5>
 <div class="products">
 	<% @product.photos.each do |photo| %>
 	<div class="inline panel">

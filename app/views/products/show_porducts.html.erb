@@ -1,4 +1,4 @@
-<h5><%= @category.name %></h5>
+<h5 category-id='<%= "#{@category.id}"%>'><%= @category.name %></h5>
 <div class="products">
 	<% if @category.products.present? %>
 	<% @category.products.each do |p| %>
