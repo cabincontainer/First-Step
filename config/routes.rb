@@ -8,6 +8,7 @@ Cabincontainer::Application.routes.draw do
   resource :password_reset, only: [:new, :create, :edit, :update]
   resources :manage_categories, except: [:show]
   resources :manage_products
+  resources :site_maps, only: [:index]
   resources :products do
   	member do
   		get :show_porducts

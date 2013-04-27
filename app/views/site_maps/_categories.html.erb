@@ -1,0 +1,7 @@
+<div>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- 
+	<%= link_to(category.name.titleize, show_porducts_product_path(category)) %>
+</div>
+<% if category.products.present? %>
+	<%= render partial: "products", collection: category.products, as: "product" %>
+<% end %>
