@@ -22,7 +22,10 @@
 		    			<%= link_to("สินค้า", products_path, class: "brand") %>
 		    		</li>
 		    		<li><%= link_to("เกี่ยวกับเรา", coming_soon_homes_path, class: "brand") %></li>
-		    		<li><%= link_to("ลูกค้าของเรา", coming_soon_homes_path, class: "brand") %></li>
+
+		    		<li class='<%= controller_name == "customers" ? "active" : "" %>'>
+		    			<%= link_to("ลูกค้าของเรา", customers_path, class: "brand") %>
+		    		</li>
 
 		    		<li class='<%= controller_name == "faqs" ? "active" : "" %>'>
 		    			<%= link_to("คำถามที่พบบ่อย", faqs_path, class: "brand") %>
