@@ -9,6 +9,7 @@ Cabincontainer::Application.routes.draw do
   resources :manage_categories, except: [:show]
   resources :manage_products
   resources :site_maps, only: [:index]
+  resources :faqs, only: [:index]
   resources :products do
   	member do
   		get :show_porducts
