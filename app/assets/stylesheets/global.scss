@@ -1,4 +1,18 @@
 //= require jquery-ui-1.8.24.custom
+/*
+*= require jquery.bxslider
+*/
+
+ul.bxslider{
+	margin: 0 auto;
+}
+
+img.slider-img-size {
+	height: 300px;
+	width: 962px;
+}
+
+
 @import "variables";
 @import "zebra_tables";
 

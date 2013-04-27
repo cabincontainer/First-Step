@@ -14,3 +14,5 @@
 //= require jquery_ujs
 //= require global
 //= require bootstrap.js
+//= require jquery.bxslider
+//= require jquery.bxslider.min
