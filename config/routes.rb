@@ -11,6 +11,7 @@ Cabincontainer::Application.routes.draw do
   resources :site_maps, only: [:index]
   resources :faqs, only: [:index]
   resources :customers, only: [:index]
+  resources :abouts, only: [:index]
   resources :products do
   	member do
   		get :show_porducts
