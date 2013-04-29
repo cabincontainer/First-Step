@@ -70,4 +70,17 @@ Cabincontainer::Application.configure do
   config.notifier_default_host = "localhost"
   config.notifier_default_port = "3000"
   config.notifier_from_field = "do-not-reply@cabincontainer.com"
+
+  
+config.action_mailer.delivery_method = :smtp
+
+ActionMailer::Base.smtp_settings = {
+  :address  => "smtp.gmail.com",
+  :port  => 25,
+  :user_name  => "cabincontainer@gmail.com",
+  :password  => "RadioActive",
+  :authentication  => :login
+}
+
+config.action_mailer.raise_delivery_errors = true
 end
