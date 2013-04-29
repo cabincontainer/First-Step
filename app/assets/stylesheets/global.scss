@@ -17,7 +17,7 @@ img.slider-img-size {
 @import "zebra_tables";
 
 body {
-	height: 700px;
+	min-height: 700px;
 	width: 100%;
 }
 
@@ -85,7 +85,7 @@ a {
 }
 
 .notice {
-	color: blue;
+	color: #FF8000;
 }
 
 .screen-only {
@@ -145,6 +145,7 @@ h4 {
 
 	p.products-link {
 		margin: 0 0 6px;
+		cursor: pointer;
 	}
 
 	p.products-link:hover {
@@ -232,18 +233,28 @@ table {
 	float: right;
 }
 
+div.bx-wrapper {
+	margin: 0 auto 40px;
+}
+
+div.navbar-inner {
+	h2 {
+		text-align: center;
+	}
+}
+
 /*
 body{
-background-image: -ms-radial-gradient(center, ellipse farthest-corner, #FFFFFF 0%, #EBEBEB 100%);
+	background-image: -ms-radial-gradient(center, circle farthest-corner, #FFFFFF 0%, #EBEBEB 100%);
 
-background-image: -moz-radial-gradient(center, ellipse farthest-corner, #FFFFFF 0%, #EBEBEB 100%);
+	background-image: -moz-radial-gradient(center, circle farthest-corner, #FFFFFF 0%, #EBEBEB 100%);
 
-background-image: -o-radial-gradient(center, ellipse farthest-corner, #FFFFFF 0%, #EBEBEB 100%);
+	background-image: -o-radial-gradient(center, circle farthest-corner, #FFFFFF 0%, #EBEBEB 100%);
 
-background-image: -webkit-gradient(radial, center center, 0, center center, 505, color-stop(0, #FFFFFF), color-stop(1, #EBEBEB));
+	background-image: -webkit-gradient(radial, center center, 0, center center, 505, color-stop(0, #FFFFFF), color-stop(1, #EBEBEB));
 
-background-image: -webkit-radial-gradient(center, ellipse farthest-corner, #FFFFFF 0%, #EBEBEB 100%);
+	background-image: -webkit-radial-gradient(center, circle farthest-corner, #FFFFFF 0%, #EBEBEB 100%);
 
-background-image: radial-gradient(ellipse farthest-corner at center, #FFFFFF 0%, #EBEBEB 100%);
+	background-image: radial-gradient(circle farthest-corner at center, #FFFFFF 0%, #EBEBEB 100%);
 }
-*/ 
+*/
