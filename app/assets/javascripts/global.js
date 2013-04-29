@@ -1,7 +1,9 @@
 Globals = {
   init: function(){
 	$('.bxslider').bxSlider({
-	  auto: true
+	  auto: true,
+	  mode: 'fade',
+	  randomStart: true
 	});
 
   	var category_id = $("#middle_layout").find("h5").attr("category-id");
