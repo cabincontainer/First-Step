@@ -1,1 +1,28 @@
 <h5>ติดต่อเรา</h5>
+<%= form_tag(contacts_path, :method => "post", id: "form_callback") do %>
+  <div class="field">
+    <%= label_tag(:name, "ชื่อ", class: "uppercase") %>
+    <%= text_field_tag(:name, nil) %>
+  </div>
+  <div class="field">
+    <%= label_tag(:callback_email, "อีเมล์", class: "uppercase") %>
+    <%= text_field_tag(:callback_email, nil) %>
+  </div>
+  <div class="field">
+    <%= label_tag(:phone_number, "หมายเลขติดต่อกลับ", class: "uppercase") %>
+    <%= text_field_tag(:phone_number, nil) %>
+  </div>
+  <div class="field">
+    <%= label_tag(:details, "ข้อความ", class: "uppercase") %>
+    <%= text_area_tag(:details, nil, size: "36x3") %>
+  </div>
+  <div>
+    <div class="callback_submit right_submit">
+      <div id="callback_submit_button" class="callback_submit_button submit-button uppercase">
+      	<%= button_tag "ส่ง" %>
+      </div>
+    </div>
+    <div id="errorMessage">
+    </div>
+  </div>
+<% end %>

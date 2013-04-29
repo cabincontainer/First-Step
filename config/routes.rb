@@ -12,7 +12,7 @@ Cabincontainer::Application.routes.draw do
   resources :faqs, only: [:index]
   resources :customers, only: [:index]
   resources :abouts, only: [:index]
-  resources :contacts, only: [:index]
+  resources :contacts, only: [:index, :create]
   resources :products do
   	member do
   		get :show_porducts

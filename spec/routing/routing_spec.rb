@@ -60,4 +60,11 @@ describe "routing" do
       get("/products/1/show_porducts").should route_to(controller: "products", action: "show_porducts", id: "1")
     end
   end
+
+  describe "contacts" do
+    it "routes contacts" do
+      get("/contacts"                      ).should route_to("contacts#index"  )
+      post("/contacts/create"              ).should route_to("contacts#create"  )
+    end
+  end
 end
