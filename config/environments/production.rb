@@ -71,7 +71,7 @@ Cabincontainer::Application.configure do
   config.notifier_default_port = "3000"
   config.notifier_from_field = "do-not-reply@cabincontainer.com"
 
-  
+
 config.action_mailer.delivery_method = :smtp
 
 ActionMailer::Base.smtp_settings = {
@@ -82,5 +82,5 @@ ActionMailer::Base.smtp_settings = {
   :authentication  => :login
 }
 
-config.action_mailer.raise_delivery_errors = true
+config.action_mailer.raise_delivery_errors = false
 end
