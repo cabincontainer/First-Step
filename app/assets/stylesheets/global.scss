@@ -9,8 +9,16 @@ ul.bxslider{
 
 img.slider-img-size {
 	height: 300px;
-	width: 962px;
+	width: 952px;
 }
+
+/*
+h5 {
+	border: 1px solid #DDD;
+	padding: 10px !important;
+	background-color: #FE9A2E;
+}
+*/
 
 
 @import "variables";
@@ -37,6 +45,19 @@ footer {
   position: relative;
   z-index: 10;
   height: 3em;
+  /* background-color: #DDD; */
+
+  p {
+  	margin: 0;
+  }
+
+  div.address {
+	display: inline-block;
+	width: 40%;
+	p {
+		margin: 0 14%;
+	}
+  }
 }
 
 a:hover {
@@ -155,7 +176,7 @@ h4 {
 
 #right_layout {
 	float: left;
-	width: 18%;
+	width: 18.5%;
 	p {
 		font-size: 13px;
 	}
@@ -238,9 +259,20 @@ div.bx-wrapper {
 }
 
 div.navbar-inner {
-	h2 {
+	h3 {
 		text-align: center;
 	}
+}
+
+.bx-viewport {
+	width: auto !important;
+}
+
+.map {
+	width: 50%;
+	border: 1px solid #ddd;
+	margin: 20px 0;
+	display: inline-block;
 }
 
 /*
