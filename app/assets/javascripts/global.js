@@ -7,7 +7,7 @@ Globals = {
 	});
 
 	//Show Clock
-	$('#analog-clock').clock({offset: '+5', type: 'analog'});
+	$('#analog-clock').clock({offset: '+7', type: 'analog'});
 	//End Clock
 
   	var category_id = $("#middle_layout").find("h5").attr("category-id");
