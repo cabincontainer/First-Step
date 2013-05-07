@@ -1,6 +1,7 @@
 //= require jquery-ui-1.8.24.custom
 /*
 *= require jquery.bxslider
+*= require jquery.fancybox
 */
 
 ul.bxslider{
@@ -10,6 +11,10 @@ ul.bxslider{
 img.slider-img-size {
 	height: 300px;
 	width: 100%;
+}
+
+.fancybox-lock {
+	overflow: auto;
 }
 
 /*

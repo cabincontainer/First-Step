@@ -3,7 +3,8 @@
 <div class="products">
 	<% @product.photos.each do |photo| %>
 	<div class="inline panel">
-		<%= link_to image_tag(photo.attached_file.url(:thumb), class: "photos-class" ), product_path(@product) %>
+		<%= link_to image_tag(photo.attached_file.url(:thumb), class: "photos-class" ), photo.attached_file.url(:medium), class: "fancy_link" %>
+		<!-- <a id="single_image" href="image_big.jpg"><img src="image_small.jpg" alt=""/></a> -->
 	</div>
 	<% end %>
 </div>

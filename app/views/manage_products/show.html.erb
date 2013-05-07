@@ -26,14 +26,16 @@
         <% end %>
       </td>
     </tr>
-    <tr>
-      <td>ภาพถ่ายสินค้า</td>
-      <td>
-        <% @product.photos.each do |photo| %>
-          <%= image_tag photo.attached_file.url(:thumb) %><br>
-        <% end %>
-      </td>
-    </tr>
+    <% if controller_name == "manage_products"%>
+      <tr>
+        <td>ภาพถ่ายสินค้า</td>
+        <td>
+          <% @product.photos.each do |photo| %>
+            <%= image_tag photo.attached_file.url(:thumb) %><br>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
   </table>
 </div>
 <br>
