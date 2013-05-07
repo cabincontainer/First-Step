@@ -16,3 +16,4 @@
 //= require bootstrap.js
 //= require jquery.bxslider
 //= require jquery.bxslider.min
+//= require jquery.clock

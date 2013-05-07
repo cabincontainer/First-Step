@@ -12,4 +12,6 @@
  *= require global
  *= require bootstrap
  *= require bootstrap-responsive
+ *= require analog
+ *= require digital
  */
