@@ -35,7 +35,7 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	background-color: #fff;
-	border-radius: 0 55px;
+	border-radius: 0 60px;
 	padding: 0 2%;
 }
 
@@ -141,6 +141,7 @@ h4 {
 #project-name {
 	margin-bottom: 0;
 	padding-bottom: 0;
+	margin-top: 0;
 }
 
 .inline {
@@ -168,7 +169,7 @@ h4 {
 
 #left_layout{
 	vertical-align: top;
-	width: 17%;
+	width: 20%;
 	h5 {
 		padding: 0;
 	}
@@ -213,8 +214,8 @@ h4 {
 #middle_layout {
 	min-height: 400px;
 	border-left: 1px solid #ccc;
-	border-right: 1px solid #ccc;
-	width: 59%;
+	/* border-right: 1px solid #ccc; */
+	width: 74%;
 	margin: 0 1%;
 
 	h5 {
@@ -287,16 +288,22 @@ div.navbar-inner {
 
 
 body{
-	background-image: -ms-radial-gradient(center, circle farthest-corner, #FFFFFF 0%, #EBEBEB 100%);
+	/* IE10 Consumer Preview */ 
+	background-image: -ms-linear-gradient(bottom, #FFFFFF 0%, #307CEF 100%);
 
-	background-image: -moz-radial-gradient(center, circle farthest-corner, #FFFFFF 0%, #EBEBEB 100%);
+	/* Mozilla Firefox */ 
+	background-image: -moz-linear-gradient(bottom, #FFFFFF 0%, #307CEF 100%);
 
-	background-image: -o-radial-gradient(center, circle farthest-corner, #FFFFFF 0%, #EBEBEB 100%);
+	/* Opera */ 
+	background-image: -o-linear-gradient(bottom, #FFFFFF 0%, #307CEF 100%);
 
-	background-image: -webkit-gradient(radial, center center, 0, center center, 505, color-stop(0, #FFFFFF), color-stop(1, #EBEBEB));
+	/* Webkit (Safari/Chrome 10) */ 
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #FFFFFF), color-stop(1, #307CEF));
 
-	background-image: -webkit-radial-gradient(center, circle farthest-corner, #FFFFFF 0%, #EBEBEB 100%);
+	/* Webkit (Chrome 11+) */ 
+	background-image: -webkit-linear-gradient(bottom, #FFFFFF 0%, #307CEF 100%);
 
-	background-image: radial-gradient(circle farthest-corner at center, #FFFFFF 0%, #EBEBEB 100%);
+	/* W3C Markup, IE10 Release Preview */ 
+	background-image: linear-gradient(to top, #FFFFFF 0%, #307CEF 100%);
 }
 
