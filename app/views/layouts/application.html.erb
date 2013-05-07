@@ -71,23 +71,23 @@
 	<div class="navbar">
 		<div class="navbar-inner">
 			<h3>KK CONTAINER (ขอนแก่น คอนเทนเนอร์ )</h3>
+  		</div>
   	</div>
-  </div>
   <!-- End Search Form -->
 
     <div>
     	<%= render partial: "shared/flashes" %>
 
     	<%= render partial: "shared/left_layout" %>
-			<div id="middle_layout" class="left">
+			<div id="middle_layout" class="inline">
 				<%= yield %>
 			</div>
     	<%= render partial: "shared/right_layout" %>
-		</div>
 	</div>
-	<footer>
-		<br>
-		<hr>
+</div>
+<footer>
+	<br>
+	<div id="wrap-footer">
 		<div class='map'>
 			<%= image_tag "map.jpg" %>
 		</div>
@@ -105,7 +105,8 @@
 			</p>
 		</div>
 
-		<p class="inline">&copy; <%= "#{Time.now.localtime.year}" %> by KK CONTAINER</p>
-	</footer>
+		<p class="inline" id="copy-right">&copy; <%= "#{Time.now.localtime.year}" %> by KK CONTAINER</p>
+	</div>
+</footer>
 </body>
 </html>
