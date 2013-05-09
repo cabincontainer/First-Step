@@ -4,6 +4,10 @@
 *= require jquery.fancybox
 */
 
+a.a-forget-password {
+  color: blue !important;
+}
+
 ul.bxslider{
 	margin: 0 auto;
 }
@@ -172,8 +176,8 @@ h4 {
 }
 
 #left_layout{
-  border-right: 1px solid #ccc;
-  padding-right: 2%;
+  border-right: 1px solid #C56006;
+  padding-right: 3%;
 	vertical-align: top;
 	width: 24%;
 	h5 {
@@ -226,7 +230,7 @@ p.left-link-active {
 
 #middle_layout {
 	min-height: 400px;
-	width: 69%;
+	width: 68%;
 	margin-left: 2%;
 
 	h5 {

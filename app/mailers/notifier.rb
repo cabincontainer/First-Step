@@ -6,8 +6,16 @@ class Notifier < ActionMailer::Base
   def contact_message(params)
     @params = params
     mail(
-      to: "cabincontainer@gmail.com",
+      to: "kkcontainer@hotmail.com",
       subject: "Website Contact"
+    )
+  end
+
+  def password_reset_instructions(user)
+    @user = user
+    mail(
+      to: user.email,
+      subject: "Password Reset Instructions"
     )
   end
 end
