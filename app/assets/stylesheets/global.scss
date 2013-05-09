@@ -23,7 +23,7 @@ img.slider-img-size {
 body {
 	min-height: 700px;
 	width: 100%;
-	background-color: #EEE !important;
+	background-color: $body_color !important;
 }
 
 #wrap {
@@ -59,6 +59,7 @@ footer {
 
   div.address {
 	display: inline-block;
+	vertical-align: middle;
 	width: 40%;
 		p {
 			margin: 0 14%;
@@ -68,6 +69,7 @@ footer {
 
 a:hover {
 	text-decoration: none !important;
+	color: #000 !important;
 }
 
 .actions {
@@ -179,6 +181,7 @@ h4 {
 
 	p.products-link:hover {
 		background-color: #DDD;
+		/* background-image: linear-gradient(to bottom, #DDD, #DDD) !important; */
 	}
 }
 
@@ -191,12 +194,18 @@ h4 {
 
 .products-link {
 	padding: 5px;
-  	background-color: #f5f5f5;
+	background-color: #F5F5F5;
+  	/* background-image: linear-gradient(to bottom, #FFFFFF, #F2F2F2) !important; */
   	border: 1px solid #ccc;
   	border: 1px solid rgba(0, 0, 0, 0.15);
-  	-webkit-border-radius: 4px;
-     	-moz-border-radius: 4px;
-          	border-radius: 4px;
+  	-webkit-border-radius: 6px;
+     	-moz-border-radius: 6px;
+          	border-radius: 6px;
+}
+
+p.left-link-active {
+	background-color: #CCC;
+	/* background-image: linear-gradient(to bottom, #CCC, #CCC) !important; */
 }
 
 .photos-class {
@@ -253,10 +262,6 @@ table {
 	color: blue;
 }
 
-.left-link-active {
-	background-color: #CCC;
-}
-
 .right-site {
 	float: right;
 }
@@ -283,8 +288,37 @@ div.navbar-inner {
 	display: inline-block;
 }
 
+h3#company-name {
+}
+
 h5 {
-	color: #71C00A !important;
+	color: $h5_color !important;
+}
+
+img#logo {
+	width: 250px;
+	z-index: 1;
+	position: relative;
+	margin-bottom: -20px;
+	margin-left: -20px;
+}
+
+div#hmenu{
+	.navbar-inner {
+		z-index: 2;
+		position: relative;
+		background-image: linear-gradient(to bottom, #C56006, #C56006) !important;
+		a {
+			text-shadow: none;
+			color: #FFF !important;
+		}
+	}
+}
+li.active {
+	a.brand {
+		background-image: linear-gradient(to bottom, #A73B23, #A73B23) !important;
+		background-color: transparent;
+	}
 }
 
 /*
