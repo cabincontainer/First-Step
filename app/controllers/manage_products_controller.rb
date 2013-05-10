@@ -65,7 +65,12 @@ class ManageProductsController < ApplicationController
     @product.category = category if category.present?
 
     if @product.save
-      @product.photos.where("id NOT IN (?)", params[:current_photos]).destroy_all
+
+      if params[:current_photos].present?
+        @product.photos.where("id NOT IN (?)", params[:current_photos]).destroy_all
+      else
+        @product.photos.destroy_all
+      end
 
       if params[:photos].present?
         params[:photos].each do |photo_params|
@@ -76,7 +81,7 @@ class ManageProductsController < ApplicationController
       end
 
       flash[:notice] = "Update product successfully."
-      redirect_to manage_products_path
+      redirect_to manage_product_path(@product)
     else
       flash.now[:error] ||= []
       flash[:error] << "#{@product.errors.full_messages.join(", ")}"

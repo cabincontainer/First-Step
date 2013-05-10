@@ -3,7 +3,7 @@ development: &default
   adapter: mysql2
   host: localhost
   username: root
-  password: "slayer"
+  password: ""
   pool: 5
   timeout: 5000
   database: cabincontainer_development
