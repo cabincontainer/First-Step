@@ -236,7 +236,7 @@ p.left-link-active {
 	margin-left: 2%;
 
 	h5 {
-		padding-bottom: 0;
+		padding: 10px 0 0 0;
 	}
 
 	div.products{
@@ -338,6 +338,12 @@ hr.brown {
 
 .text-color {
   color: #C56006;
+}
+
+h5.h5-color {
+	background-color: #C56006;
+	padding: 10px !important;
+	color: #FFFFFF !important;
 }
 
 /*
