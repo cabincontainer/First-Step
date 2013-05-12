@@ -77,7 +77,6 @@ footer {
 
 a:hover {
 	text-decoration: none !important;
-	color: #000 !important;
 }
 
 .actions {
@@ -193,7 +192,6 @@ h4 {
 
 	p.products-link:hover {
 		background-color: #DDD;
-		/* background-image: linear-gradient(to bottom, #DDD, #DDD) !important; */
 	}
 }
 
@@ -207,7 +205,6 @@ h4 {
 .products-link {
 	padding: 5px;
 	background-color: #F5F5F5;
-  	/* background-image: linear-gradient(to bottom, #FFFFFF, #F2F2F2) !important; */
   	border: 1px solid #ccc;
   	border: 1px solid rgba(0, 0, 0, 0.15);
   	-webkit-border-radius: 6px;
@@ -217,7 +214,6 @@ h4 {
 
 p.left-link-active {
 	background-color: #CCC;
-	/* background-image: linear-gradient(to bottom, #CCC, #CCC) !important; */
 }
 
 .photos-class {
@@ -317,16 +313,21 @@ div#hmenu{
 	.navbar-inner {
 		z-index: 2;
 		position: relative;
-		background-image: linear-gradient(to bottom, #C56006, #C56006) !important;
+		background-color: #C56006 !important;
+		background-image: none !important;
 		a {
 			text-shadow: none;
 			color: #FFF !important;
+		}
+		.nav {
+			background-color: #C56006 !important;
+			background-image: none !important;
 		}
 	}
 }
 li.active {
 	a.brand {
-		background-image: linear-gradient(to bottom, #A73B23, #A73B23) !important;
+		background-color: #A73B23 !important;
 		background-color: transparent;
 	}
 }
