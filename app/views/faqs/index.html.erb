@@ -1,4 +1,3 @@
 <h5>คำถามที่พบบ่อย</h5>
-<%= will_paginate @faqs %>
-	<%= render partial: "faq_list", collection: @faqs, as: "faq" %>
-<%= will_paginate @faqs %>
+<%= render partial: "faq_list", collection: @faqs, as: "faq" %>
+<div class="paginate-right"><%= will_paginate @faqs %></div>
