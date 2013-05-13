@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   #   redirect_to events_path
   # end
 
-  before_filter :require_user, :load_categories
+  before_filter :require_user, :load_categories, :load_slider
   helper_method :current_user_session, :current_user
 
   private
@@ -38,6 +38,10 @@ class ApplicationController < ActionController::Base
 
   def load_categories
     @categories = Category.all
+  end
+
+  def load_slider
+    @application_slider = Slider.where(active: true).first
   end
 
   def require_no_user

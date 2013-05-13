@@ -50,7 +50,7 @@
 		    		<% if current_user.present? && controller_name == "sliders" %>
 		    			<li class="active"><%= link_to "จัดดาร sliders", sliders_path, class: "brand" if current_user.present? %></li>
 		    		<% else %>
-		    			<li><%= link_to "จัดดาร sliders", sliders_path, class: "brand" if current_user.present? %></li>
+		    			<li><%= link_to "จัดการ sliders", sliders_path, class: "brand" if current_user.present? %></li>
 		    		<% end %>
 
 		    		<% if current_user.present? && controller_name == "manage_categories" %>
@@ -75,8 +75,13 @@
 
 	<!-- SLIDER -->
 	<ul class="bxslider">
-	  <li><%= image_tag("bx-slider/cover1.jpg", alt: "Photo1", class: "slider-img-size") %></li>
-	  <li><%= image_tag("bx-slider/DSC_0003.JPG", alt: "Photo2", class: "slider-img-size") %></li>
+		<% if (@application_slider.photos.present? rescue false) %>
+		  <% @application_slider.photos.each do |photo| %>
+		  	<li>
+		  		<%= image_tag(photo.attached_file.url(:medium), class: "slider-img-size") %>
+		  	</li>
+		  <% end %>
+		 <% end %>
 	</ul>
 	<!-- END SLIDER -->
 

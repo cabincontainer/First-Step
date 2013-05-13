@@ -1,0 +1,20 @@
+<h5><%= @slider.name %></h5>
+
+<div class="panel">
+  <table class="show_product">
+    <tr>
+      <td>ชื่อสไลด์</td>
+      <td><%= @slider.name %></td>
+    </tr>
+    <tr>
+      <td>ภาพถ่าย</td>
+      <td>
+        <% @slider.photos.each do |photo| %>
+          <%= image_tag photo.attached_file.url(:thumb) %><br>
+        <% end %>
+      </td>
+    </tr>
+  </table>
+</div>
+<br>
+<%= link_to("แก้ไขสไลด์", edit_slider_path(@slider)) if (current_user.admin? rescue false) %>

@@ -1,6 +1,6 @@
-<div id="new_slider">
-  <h5>เพิ่มสินค้า</h5>
-    <%= form_for @slider, :html => { :multipart => true }, url: sliders_path, method: 'post' do |f| %>
+<div id="edit_slider">
+  <h5>แก้ไขสไลด์</h5>
+    <%= form_for @slider, :html => { :multipart => true }, url: slider_path(@slider.id), method: 'put' do |f| %>
     <table>
       <tr>
         <td class="field">ชื่อสไลด์ : </td>
@@ -9,10 +9,11 @@
       <tr>
         <td class="field">ภาพถ่าย : </td>
         <td class="value">
-          <%= f.fields_for :photos do |photo_field| %>
+          <% @slider.photos.each do |photo| %>
             <div class="photo_row">
               <div class="inline">
-                <%= photo_field.file_field :attached_file, name: "photos[][attached_file]" %>
+                <%= image_tag photo.attached_file.url(:thumb) %>
+                <%= hidden_field_tag "current_photos[]", photo.id %>
               </div>
               <%= button_tag "-", class: "delete_photo", type: 'button' %>
             </div>
@@ -24,7 +25,7 @@
         </td>
       </tr>
     </table>
-    <%= f.submit "บันทึก", class: "submit" %>
-    <%= f.button "ล้างข้อมูล", class: "clear", type: "reset" %>
+    <%= f.submit "Update", class: "submit" %>
+    <%= f.button "Clear form", class: "clear", type: "reset" %>
   <% end %>
 </div>

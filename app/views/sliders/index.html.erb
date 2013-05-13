@@ -1,1 +1,18 @@
 <h5>Sliders Management</h5>
+<%= link_to "เพิ่มสไลด์", new_slider_path %>
+
+<table id="sliders_list">
+  <thead>
+    <th>ชื่อ</th>
+    <th class="actions" colspan='4'>จัดการ</th>
+  </thead>
+  <% @sliders.each do |slider| %>
+    <tr class='<%= slider.active ? "active" : "" %>'>
+      <td><%= slider.name %></td>
+      <td><%= link_to "ใช้", active_slider_path(slider.id) %></td>
+      <td><%= link_to "ดูข้อมูล", slider_path(slider.id) %></td>
+      <td><%= link_to "แก้ไข", edit_slider_path(slider.id) %></td>
+      <td><%= link_to "ลบ", slider_path(slider.id), method: 'delete', confirm: "Are you sure?" %></td>
+    </tr>
+  <% end %>
+</table>
