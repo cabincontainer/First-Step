@@ -13,6 +13,7 @@ Cabincontainer::Application.routes.draw do
   resources :customers, only: [:index]
   resources :abouts, only: [:index]
   resources :contacts, only: [:index, :create]
+  resources :sliders, only: [:index, :new, :create, :destroy]
   resources :products do
   	member do
   		get :show_porducts
