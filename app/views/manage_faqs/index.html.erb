@@ -1,0 +1,14 @@
+<h5>จัดการถามตอบ</h5>
+<%= link_to("เพิ่มคำถามคำตอบ", new_manage_faq_path) %>
+
+<table>
+	<thead>
+		<th id="question">คำถาม</th>
+		<th id="answer">คำตอบ</th>
+		<th colspan="2" class="actions">Actions</th>
+	</thead>
+	<tbody>
+		<%= render partial: "faq_list", collection: @faqs, as: "faq" %>
+	</tbody>
+</table>
+<div><%= will_paginate @faqs %></div>

@@ -1,0 +1,17 @@
+<h5>เพิ่มคำถาม คำตอบ</h5>
+<%= form_for @faq, url: manage_faqs_path, method: 'post' do |f| %>
+<table>
+  <tr>
+    <td class="field">คำถาม : </td>
+    <td class="value"><%= f.text_area "question", required: true, class: "field" %></td>
+  </tr>
+  <tr>
+    <td class="field">คำตอบ : </td>
+    <td class="value"><%= f.text_area "answer", required: true, class: "field" %></td>
+  </tr>
+  <tr>
+  	<td></td>
+  	<td><%= f.submit "บันทึก", class: "submit" %></td>
+  </tr>
+</table>
+<% end %>

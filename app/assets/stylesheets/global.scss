@@ -369,3 +369,17 @@ h3#company-name {
 		background-image: none;
 	}
 }*/
+
+textarea {
+	height: 100px !important;
+}
+
+table {
+	th#question {
+		width: 20%;
+	}
+	th#answer {
+		width: 30%;
+	}
+	white-space: normal !important;
+}
