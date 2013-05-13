@@ -347,18 +347,23 @@ h5.h5-color {
 	color: #FFFFFF !important;
 }
 
-/*
-body{
-	background-image: -ms-linear-gradient(bottom, #FFFFFF 0%, #307CEF 100%);
-
-	background-image: -moz-linear-gradient(bottom, #FFFFFF 0%, #307CEF 100%);
-
-	background-image: -o-linear-gradient(bottom, #FFFFFF 0%, #307CEF 100%);
-
-	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #FFFFFF), color-stop(1, #307CEF));
-
-	background-image: -webkit-linear-gradient(bottom, #FFFFFF 0%, #307CEF 100%);
-
-	background-image: linear-gradient(to top, #FFFFFF 0%, #307CEF 100%);
+hr.hr-center {
+	border: 1px solid #C56006;
 }
-*/
+
+
+h3#company-name {
+	margin: 5px 0 !important;
+	color: #A73B23 !important;
+}
+
+/* div#comp-name {
+	.navbar {
+		margin-bottom: 0 !important;
+	}
+	.navbar-inner {
+		border: 1px solid #FFF;
+		background-color: #C58806;
+		background-image: none;
+	}
+}*/
