@@ -10,7 +10,7 @@
     <tr class='<%= slider.active ? "active" : "" %>'>
       <td><%= slider.name %></td>
       <td><%= link_to "ใช้", active_slider_path(slider.id) %></td>
-      <td><%= link_to "ดูข้อมูล", slider_path(slider.id) %></td>
+      <td><%= link_to "ข้อมูล", slider_path(slider.id) %></td>
       <td><%= link_to "แก้ไข", edit_slider_path(slider.id) %></td>
       <td><%= link_to "ลบ", slider_path(slider.id), method: 'delete', confirm: "Are you sure?" %></td>
     </tr>
