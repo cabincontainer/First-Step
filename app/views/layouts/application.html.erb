@@ -7,14 +7,13 @@
   <%= javascript_include_tag "application" %>
   <%= javascript_include_tag controller_name %>
   <%= csrf_meta_tags %>
-  <script>document.createElement('footer');</script>
 </head>
 <body>
 <div id="wrap">
 	<h3 id="project-name"><%= image_tag("logo.jpg", id: "logo") %></h3>
 	<div id="hmenu">
 		<div class="navbar">
-	    	<div class="navbar-inner">
+	    	<div class="navbar_inner">
 		    	<ul class="nav">
 		    		<li class='<%= controller_name == "homes" ? "active" : "" %>'>
 		    			<%= link_to("หน้าหลัก", homes_path, class: "brand first") %>
@@ -107,7 +106,7 @@
     	<%#= render partial: "shared/right_layout" %>
 	</div>
 </div>
-<footer>
+<div id="footer">
 	<br>
 	<div id="wrap-footer">
 		<div class='map'>
@@ -133,6 +132,6 @@
 		</div>
 	</div>
 	<p id="copy-right">&copy; <%= "#{Time.now.localtime.year}" %> by KK CONTAINER</p>
-</footer>
+</div>
 </body>
 </html>
