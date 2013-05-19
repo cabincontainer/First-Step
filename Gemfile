@@ -26,10 +26,11 @@ gem 'rb-readline'
 gem 'syslog-logger'
 gem 'paperclip'
 gem 'will_paginate'
+gem "mysql2"
 
 group :development, :test do
 	# gem 'capybara'
-	gem "mysql2"
+	# gem "mysql2"
 	gem 'rspec-rails', '2.12.0'
 	gem 'parallel', '0.5.18'
 	gem 'parallel_tests', '0.8.8'
@@ -40,9 +41,9 @@ group :development, :test do
 	gem 'database_cleaner'
 end
 
-group :production do
-  gem 'pg', '0.12.2'
-end
+# group :production do
+#   gem 'pg', '0.12.2'
+# end
 
 group :ubuntu do
   gem 'therubyracer'
