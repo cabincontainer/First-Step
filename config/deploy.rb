@@ -10,7 +10,7 @@ set :deploy_via, :remote_cache
 set :user, "rails"
 role :web, "198.199.105.109"
 role :app, "198.199.105.109"
-role :db,  "localhost", :primary => true
+role :db,  "127.0.0.1", :primary => true
 
 after "deploy:restart", "deploy:cleanup"
 after "deploy", "rvm:trust_rvmrc"
