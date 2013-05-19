@@ -22,7 +22,7 @@ gem 'jquery-rails', '2.1.3'
 gem 'authlogic'
 gem "cancan"
 gem 'will_paginate'
-# gem 'rb-readline'
+gem 'rb-readline'
 gem 'syslog-logger'
 gem 'paperclip'
 gem 'will_paginate'
