@@ -41,9 +41,10 @@ group :development, :test do
 	gem 'database_cleaner'
 end
 
-# group :production do
+group :production do
 #   gem 'pg', '0.12.2'
-# end
+	gem 'rb-readline', '~> 0.4.2'
+end
 
 group :ubuntu do
   gem 'therubyracer'
