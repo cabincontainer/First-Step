@@ -26,7 +26,7 @@
 		    		</li>
 
 		    		<li class='<%= controller_name == "customers" ? "active" : "" %>'>
-		    			<%= link_to("ลูกค้าของเรา", customers_path, class: "brand") %>
+		    			<%= link_to("ลูกค้าของเรา", customers_path, class: "brand") unless current_user.present? %>
 		    		</li>
 
 		    		<li class='<%= controller_name == "faqs" ? "active" : "" %>'>
@@ -34,11 +34,11 @@
 		    		</li>
 
 		    		<li class='<%= controller_name == "site_maps" ? "active" : "" %>'>
-		    			<%= link_to("site map", site_maps_path, class: "brand") %>
+		    			<%= link_to("site map", site_maps_path, class: "brand") unless current_user.present? %>
 		    		</li>
 
 		    		<li class='<%= controller_name == "contacts" ? "active" : "" %>'>
-		    			<%= link_to("ติดต่อเรา", contacts_path, class: "brand") %>
+		    			<%= link_to("ติดต่อเรา", contacts_path, class: "brand") unless current_user.present? %>
 		    		</li>
 
 		    		<% if current_user.present? && controller_name == "manage_faqs" %>
