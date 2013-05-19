@@ -22,7 +22,7 @@ gem 'jquery-rails', '2.1.3'
 gem 'authlogic'
 gem "cancan"
 gem 'will_paginate'
-gem 'rb-readline'
+# gem 'rb-readline'
 gem 'syslog-logger'
 gem 'paperclip'
 gem 'will_paginate'
@@ -41,10 +41,9 @@ group :development, :test do
 	gem 'database_cleaner'
 end
 
-group :production do
+# group :production do
 #   gem 'pg', '0.12.2'
-	gem 'rb-readline', '~> 0.4.2'
-end
+# end
 
 group :ubuntu do
   gem 'therubyracer'
