@@ -14,7 +14,7 @@ test:
 
 production: &production
   <<: *default
-  host: 198.199.105.109
+  host: localhost
   database: cabincontainer_production
   username: root
   password: "RadioActive22"
