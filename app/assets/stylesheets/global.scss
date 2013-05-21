@@ -27,7 +27,7 @@ img.slider-img-size {
 body {
 	min-height: 700px;
 	width: 100%;
-	background-color: $body_color !important;
+	/* background-color: $body_color !important; */
 }
 
 #wrap {
@@ -39,6 +39,7 @@ body {
 	border-radius: 0 60px;
 	border: 1px solid #F6F4F0;
 	padding: 0 2%;
+	border: 1px solid #DDD;
 }
 
 div#footer {
@@ -178,6 +179,16 @@ h4 {
   -moz-box-shadow: 3px 3px 3px $shadow_color;
   -webkit-box-shadow: 3px 3px 3px $shadow_color;
   box-shadow: 3px 3px 3px $shadow_color;
+}
+
+@mixin w-drop-shadow {
+  -moz-box-shadow: 3px 3px 3px 3px $shadow_color;
+  -webkit-box-shadow: 3px 3px 3px 3px $shadow_color;
+  box-shadow: 3px 3px 3px 3px $shadow_color;
+}
+
+.wrap-drop-shadow {
+	@include w-drop-shadow;
 }
 
 .panel {
@@ -409,4 +420,18 @@ h3.advertise {
 	margin: 40px 0 0 0;
 	color: #666;
 	font-style: italic;
+}
+
+body {
+background-image: -ms-radial-gradient(left center, ellipse farthest-corner, #EEEEEE 0%, #EEEEEE 50%, #C58006 100%);
+
+background-image: -moz-radial-gradient(left center, ellipse farthest-corner, #EEEEEE 0%, #EEEEEE 50%, #C58006 100%);
+
+background-image: -o-radial-gradient(left center, ellipse farthest-corner, #EEEEEE 0%, #EEEEEE 50%, #C58006 100%);
+
+background-image: -webkit-gradient(radial, left center, 0, left center, 980, color-stop(0, #EEEEEE), color-stop(0.5, #EEEEEE), color-stop(1, #C58006));
+
+background-image: -webkit-radial-gradient(left center, ellipse farthest-corner, #EEEEEE 0%, #EEEEEE 50%, #C58006 100%);
+
+background-image: radial-gradient(ellipse farthest-corner at left center, #EEEEEE 0%, #EEEEEE 50%, #C58006 100%);
 }
