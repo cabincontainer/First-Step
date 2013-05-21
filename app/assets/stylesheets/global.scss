@@ -37,9 +37,7 @@ body {
 	margin-right: auto;
 	background-color: #fff;
 	border-radius: 0 60px;
-	border: 1px solid #F6F4F0;
 	padding: 0 2%;
-	border: 1px solid #DDD;
 }
 
 div#footer {
@@ -71,7 +69,7 @@ div#footer {
   		color: #FFF;
 	}
 
-	width: 84%;
+	width: 80%;
 	margin-left: auto;
 	margin-right: auto;
 	clear: both;
@@ -196,7 +194,7 @@ h4 {
 }
 
 #left_layout{
-  border-right: 1px solid #CCC;
+  /* border-right: 1px solid #CCC; */
   padding-right: 3%;
 	vertical-align: top;
 	width: 250px;
@@ -423,6 +421,7 @@ h3.advertise {
 }
 
 body {
+/*
 background-image: -ms-radial-gradient(left center, ellipse farthest-corner, #EEEEEE 0%, #EEEEEE 50%, #C58006 100%);
 
 background-image: -moz-radial-gradient(left center, ellipse farthest-corner, #EEEEEE 0%, #EEEEEE 50%, #C58006 100%);
@@ -434,4 +433,5 @@ background-image: -webkit-gradient(radial, left center, 0, left center, 980, col
 background-image: -webkit-radial-gradient(left center, ellipse farthest-corner, #EEEEEE 0%, #EEEEEE 50%, #C58006 100%);
 
 background-image: radial-gradient(ellipse farthest-corner at left center, #EEEEEE 0%, #EEEEEE 50%, #C58006 100%);
+*/
 }
