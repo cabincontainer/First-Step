@@ -230,7 +230,9 @@ h4 {
 }
 
 p.left-link-active {
-	background-color: #CCC;
+	a {
+		color: #FFAA00;
+	}
 }
 
 .photos-class {
@@ -340,10 +342,10 @@ div#hmenu{
 	padding-right: 20px;
 	padding-left: 20px;
 	background-repeat: repeat-x;
-	border: 1px solid #d4d4d4;
+	/* border: 1px solid #d4d4d4;
 	-webkit-border-radius: 4px;
 	   -moz-border-radius: 4px;
-	        border-radius: 4px;
+	        border-radius: 4px; */
 	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#C56006', endColorstr='#C56006'GradientType=0);
 	*zoom: 1;
 	-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
@@ -421,27 +423,17 @@ h3.advertise {
 }
 
 .left-products-link {
+	color: #A73B23;
 	a {
 		color: #ED3504;
 	}
 
 	a:hover {
-		color: #FF6600;
+		color: #FFAA00;
 	}
 }
 
-body {
-/*
-background-image: -ms-radial-gradient(left center, ellipse farthest-corner, #EEEEEE 0%, #EEEEEE 50%, #C58006 100%);
-
-background-image: -moz-radial-gradient(left center, ellipse farthest-corner, #EEEEEE 0%, #EEEEEE 50%, #C58006 100%);
-
-background-image: -o-radial-gradient(left center, ellipse farthest-corner, #EEEEEE 0%, #EEEEEE 50%, #C58006 100%);
-
-background-image: -webkit-gradient(radial, left center, 0, left center, 980, color-stop(0, #EEEEEE), color-stop(0.5, #EEEEEE), color-stop(1, #C58006));
-
-background-image: -webkit-radial-gradient(left center, ellipse farthest-corner, #EEEEEE 0%, #EEEEEE 50%, #C58006 100%);
-
-background-image: radial-gradient(ellipse farthest-corner at left center, #EEEEEE 0%, #EEEEEE 50%, #C58006 100%);
-*/
+#left-menu {
+	border: 1px solid #DDDDDD; 
+	background-color: #E1E2E6;
 }

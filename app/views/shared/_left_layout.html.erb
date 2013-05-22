@@ -1,14 +1,17 @@
 <div id="left_layout" class="inline">
-  <h5 class="h5-color"><i class="icon-reorder"></i>หมวดหมู่สินค้า</h5>
-
+  
+  <h5 class="h5-color"><i class="icon-bullseye"></i>&nbsp;&nbsp;หมวดหมู่สินค้า</h5>
+  <div id="left-menu">
     <% @categories.each do |c| %>
     <p class="left-products-link">
-      <i class="icon-double-angle-right"></i><%= link_to(c.name.titleize, show_porducts_product_path(c.id), cat_id: "#{c.id}" ) %><br>
+      &nbsp;<i class="icon-double-angle-right"></i>&nbsp;&nbsp;<%= link_to(c.name.titleize, show_porducts_product_path(c.id), cat_id: "#{c.id}" ) %><br>
      </p>
     <% end %>
+  </div>
     <div id="fb-root"></div>
 
-    <hr class="brown">
+    <br>
+    <!-- <hr class="brown"> -->
     <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2FKKcontainer&amp;width=250&amp;height=590&amp;show_faces=true&amp;colorscheme=light&amp;stream=true&amp;border_color&amp;header=true&amp;appId=127681030689706" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:250px; height:590px;" allowTransparency="true"></iframe>
 
     <!-- <hr class="brown">
