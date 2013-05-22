@@ -420,6 +420,16 @@ h3.advertise {
 	font-style: italic;
 }
 
+.left-products-link {
+	a {
+		color: #ED3504;
+	}
+
+	a:hover {
+		color: #FF6600;
+	}
+}
+
 body {
 /*
 background-image: -ms-radial-gradient(left center, ellipse farthest-corner, #EEEEEE 0%, #EEEEEE 50%, #C58006 100%);

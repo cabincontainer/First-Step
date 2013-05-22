@@ -1,9 +1,9 @@
 <div id="left_layout" class="inline">
-  <h5 class="h5-color">หมวดหมู่สินค้า</h5>
+  <h5 class="h5-color"><i class="icon-reorder"></i>หมวดหมู่สินค้า</h5>
 
     <% @categories.each do |c| %>
-    <p class="products-link panel">
-      <%= link_to(c.name.titleize, show_porducts_product_path(c.id), cat_id: "#{c.id}" ) %><br>
+    <p class="left-products-link">
+      <i class="icon-double-angle-right"></i><%= link_to(c.name.titleize, show_porducts_product_path(c.id), cat_id: "#{c.id}" ) %><br>
      </p>
     <% end %>
     <div id="fb-root"></div>

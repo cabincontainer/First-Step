@@ -27,6 +27,7 @@ gem 'syslog-logger'
 gem 'paperclip'
 gem 'will_paginate'
 gem "mysql2"
+gem "font-awesome-rails", "~> 3.1.1.2"
 
 group :development, :test do
 	# gem 'capybara'
