@@ -81,7 +81,7 @@ class ManageProductsController < ApplicationController
       end
 
       flash[:notice] = "Update product successfully."
-      redirect_to manage_product_path(@product)
+      redirect_to manage_products_path
     else
       flash.now[:error] ||= []
       flash[:error] << "#{@product.errors.full_messages.join(", ")}"
