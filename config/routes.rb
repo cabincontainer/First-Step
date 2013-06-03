@@ -24,5 +24,5 @@ Cabincontainer::Application.routes.draw do
   		get :show_porducts
   	end
   end
-  root to: "homes#index"
+  root to: "products#index"
 end

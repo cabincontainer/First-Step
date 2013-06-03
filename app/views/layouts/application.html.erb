@@ -24,12 +24,12 @@
 	<div id="hmenu">
 		<div class="navbar">
 	    	<div class="navbar_inner">
-		    	<ul class="nav">
-		    		<li class='<%= controller_name == "homes" ? "active" : "" %>'>
-		    			<%= link_to("สินค้าขายดี", homes_path, class: "brand first") %>
-		    		</li>
+		    	<ul class="nav">		    		
 		    		<li class='<%= controller_name == "products" ? "active" : "" %>'>
-		    			<%= link_to("สินค้าทั้งหมด", products_path, class: "brand") %>
+		    			<%= link_to("สินค้าทั้งหมด", products_path, class: "brand first") %>
+		    		</li>
+		    		<li class='<%= controller_name == "homes" ? "active" : "" %>'>
+		    			<%= link_to("สินค้าขายดี", homes_path, class: "brand") %>
 		    		</li>
 		    		<li class='<%= controller_name == "abouts" ? "active" : "" %>'>
 		    			<%= link_to("เกี่ยวกับเรา", abouts_path, class: "brand") %>
