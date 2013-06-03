@@ -28,6 +28,11 @@ Globals = {
 
   	var category_id = $("#middle_layout").find("h5").attr("category-id");
   	var cat_id = $("a[cat_id='"+category_id+"']").parents(".left-products-link").addClass("left-link-active");
+
+    if ($("a[cat_id='"+category_id+"']").parents(".left-products-link").hasClass("left-link-active") == true){
+      $("ul.nav").find("li.active").removeClass("active");
+    }
+    
   }
 };
 
