@@ -242,14 +242,13 @@ p.left-link-active {
 
 #middle_layout{
 	vertical-align: top;
-	padding: 0 1%;
+	padding: 0%;
 }
 
 #middle_layout {
 	min-height: 400px;
-	width: 60%;
-	max-width: 66%;
-	margin-left: 2%;
+	width: 100%;
+	max-width: 72%;
 
 	h5 {
 		padding: 10px 0 0 0;
@@ -257,7 +256,7 @@ p.left-link-active {
 
 	div.products{
     div {
-      padding: 10px;
+      padding: 5px;
       margin: 10px;
       display: inline-block;
       text-align: center;
