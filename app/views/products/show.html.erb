@@ -1,11 +1,13 @@
 <h5 class="inline" category-id='<%= "#{@product.category.id}"%>'>หมวดสินค้า: </h5>
 <h5 class="inline"><%= link_to(@product.category.name, show_porducts_product_path(@product.category)) %></h5>
-<div class="products">
+<div>
 	<% @product.photos.each do |photo| %>
-	<div class="inline panel">
-		<%= link_to image_tag(photo.attached_file.url(:thumb), class: "photos-class" ), photo.attached_file.url(:medium), class: "fancy_link" %>
+		<%#= link_to image_tag(photo.attached_file.url(:thumb), class: "photos-class" ), photo.attached_file.url(:medium), class: "fancy_link" %>
 		<!-- <a id="single_image" href="image_big.jpg"><img src="image_small.jpg" alt=""/></a> -->
-	</div>
+
+    <a href='<%= photo.attached_file.url %>' data-lightbox='<%= @product.id %>'>
+      <%= image_tag photo.attached_file.url(:thumb) %>
+    </a>
 	<% end %>
 </div>
 
