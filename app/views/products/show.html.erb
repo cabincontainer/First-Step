@@ -5,7 +5,7 @@
 		<%#= link_to image_tag(photo.attached_file.url(:thumb), class: "photos-class" ), photo.attached_file.url(:medium), class: "fancy_link" %>
 		<!-- <a id="single_image" href="image_big.jpg"><img src="image_small.jpg" alt=""/></a> -->
 
-    <a href='<%= photo.attached_file.url %>' data-lightbox='<%= @product.id %>'>
+    <a href='<%= photo.attached_file.url(:medium) %>' data-lightbox='<%= @product.id %>'>
       <%= image_tag photo.attached_file.url(:thumb) %>
     </a>
 	<% end %>
