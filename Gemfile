@@ -46,7 +46,7 @@ end
 # end
 
 group :ubuntu do
-  gem 'therubyracer'
+  #gem 'therubyracer'
 end
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -62,4 +62,4 @@ gem 'capistrano', '~> 2.15.5'
 
 # To use debugger
 # gem 'debugger'
-gem 'rvm-capistrano'
+gem 'rvm-capistrano', require: false

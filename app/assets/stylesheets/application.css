@@ -9,9 +9,9 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require global
  *= require bootstrap
  *= require bootstrap-responsive
  *= require analog
  *= require digital
+ *= require global
  */
