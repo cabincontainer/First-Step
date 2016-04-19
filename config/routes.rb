@@ -24,5 +24,6 @@ Cabincontainer::Application.routes.draw do
   		get :show_porducts
   	end
   end
+  resources :blogs
   root to: "products#index"
 end
