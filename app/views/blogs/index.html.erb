@@ -1,7 +1,20 @@
 <div id="blogs">
-  <h2>Blog index page</h2>
+  <h5>บล็อกทั้งหมด</h5>
 
-  <% @blogs.each do |blog| %>
-    <%= link_to blog.title, blog_path(blog), target: "_blank" %>
-  <% end %>
+  <%= link_to "เพิ่มบล็อกใหม่", new_blog_path %>
+
+  <table>
+    <thead>
+      <th>ชื่อ</th>
+      <th class="actions" colspan='3'>จัดการ</th>
+    </thead>
+    <% @blogs.each do |blog| %>
+     <tr>
+      <td><%= blog.title %></td>
+      <td><%= link_to "ข้อมูล", blog_path(blog) %></td>
+      <td><%= link_to "แก้ไข", edit_blog_path(blog) %></td>
+      <td><%= link_to "ลบ", blog_path(blog), method: :delete, data: {confirm: "ยืนยันที่จะลบบล็อกนี้?"} %></td>
+    </tr>
+    <% end %>
+  </table>
 </div>

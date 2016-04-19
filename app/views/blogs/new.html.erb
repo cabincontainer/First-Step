@@ -1,6 +1,2 @@
-<h5>เพิ่ม blog ใหม่</h5>
-<%= form_for @blog do |f| %>
-  <%= f.text_field :title, required: true, class: "field" %>
-  <%= f.cktext_area :body, :class => 'blog-body', :ckeditor => {:toolbar => 'mini'} %>
-  <%= f.submit "บันทึก", class: "submit" %>
-<% end %>
+<h5>เพิ่มบล็อกใหม่</h5>
+<%= render partial: "form" %>

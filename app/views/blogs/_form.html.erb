@@ -1,0 +1,5 @@
+<%= form_for @blog do |f| %>
+  <%= f.text_field :title, required: true, class: "field", placeholder: "ระบุชื่อบล็อกที่นี่" %>
+  <%= f.cktext_area :body, :class => 'blog-body', :ckeditor => {:toolbar => 'mini'} %>
+  <%= f.submit "บันทึก", class: "submit" %>
+<% end %>
