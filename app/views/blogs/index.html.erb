@@ -1,3 +1,7 @@
 <div id="blogs">
-  Blog index page
+  <h2>Blog index page</h2>
+
+  <% @blogs.each do |blog| %>
+    <%= link_to blog.title, blog_path(blog), target: "_blank" %>
+  <% end %>
 </div>

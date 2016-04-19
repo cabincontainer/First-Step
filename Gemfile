@@ -25,8 +25,8 @@ gem 'will_paginate'
 gem 'rb-readline', '~> 0.4.2'
 gem 'syslog-logger'
 gem 'paperclip'
-gem 'will_paginate'
-gem "mysql2"
+gem 'mysql2'
+gem 'ckeditor'
 
 group :development, :test do
 	# gem 'capybara'

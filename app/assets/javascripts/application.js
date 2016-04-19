@@ -16,3 +16,4 @@
 //= require jquery.bxslider
 //= require jquery.bxslider.min
 //= require jquery.clock
+//= require ckeditor/init
