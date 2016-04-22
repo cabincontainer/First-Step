@@ -25,7 +25,7 @@ Cabincontainer::Application.routes.draw do
   	end
   end
   resources :blogs
-  root to: "products#index"
+  root to: "homes#index"
 
   
   mount Ckeditor::Engine => '/ckeditor'

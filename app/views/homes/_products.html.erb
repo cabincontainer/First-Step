@@ -1,0 +1,51 @@
+<div class="pt-15 pb-11">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="noo-product-grid-wrap commerce product-style">
+          <div class="noo-sh-title">
+            <h2>Our new products</h2>
+            <p>Maecenas tristique gravida odio, et sagi ttis justo interdum porta. Duis et lacus mattis, tincidunt eronec dictum non nulla.</p>
+          </div>
+          <div class="noo-product-filter masonry-filters">
+            <ul class="noo-header-filter" data-option-key="filter">
+              <li>
+                <a data-option-value="*" href="#all" class="selected">
+                  <img width="30" height="26" src="images/filter/filter_30x30.jpg" alt="" />
+                  <span>All products</span>
+                </a>
+              </li>
+              <li>
+                <a data-option-value=".organic-fruits" href="#organic-fruits">
+                  <img width="30" height="26" src="images/filter/filter_30x30.jpg" alt=""/> 
+                  <span>Fruits</span>
+                </a>
+              </li>
+              <li>
+                <a data-option-value=".vegetable" href="#vegetable">
+                  <img width="30" height="26" src="images/filter/filter_30x30.jpg" alt=""/> 
+                  <span>Vegetable</span>
+                </a>
+              </li>
+              <li>
+                <a data-option-value=".bread" href="#bread">
+                  <img width="30" height="26" src="images/filter/filter_30x30.jpg" alt=""/> 
+                  <span>Bread</span>
+                </a>
+              </li>
+              <li>
+                <a data-option-value=".others" href="#others">
+                  <img width="30" height="26" src="images/filter/filter_30x30.jpg" alt=""/> 
+                  <span>Others</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <%= render partial: "shared/suggested_products", locals: { products: @random_products } %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

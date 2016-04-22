@@ -9,8 +9,16 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require bootstrap
- *= require bootstrap-responsive
+ *= require css/bootstrap.min
+ *= require css/custom
+ *= require css/font-awesome.min
+ *= require css/magnific-popup
+ *= require css/owl.carousel
+ *= require css/owl.theme
+ *= require css/prettyPhoto
+ *= require css/settings
+ *= require css/style
+ *= require css/colors/yellow
  *= require analog
  *= require digital
  *= require global

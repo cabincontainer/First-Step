@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ขาย-เช่า คอนเทนเนอร์ บ้านน็อคดาวน์ ขอนแก่น นครราชสีมา อุบลราชธานี ชัยภูมิ นครพนม บุรีรัมย์ กาฬสินธุ์ มหาสารคาม มุกดาหาร ยโสธร ร้อยเอ็ด เลย ศรีสะเกษ สกลนคร สุรินทร์ หนองคาย หนองบัวลำภู อำนาจเจริญ อุดรธานี บึงกาฬ</title>
+  <meta name="description" content="ขาย-เช่า บ้านน๊อคดาวน์ ตู้สำนักงาน  รีสอร์ท  ร้านค้า บ้าน ป้อมยาม สุขาเคลื่อนที่ ห้องโชว์" />
+  <meta name="keywords" content="ขาย-เช่า, บ้านน๊อคดาวน์, คอนเทนเนอร์ ขอนแก่น, เคเค คอนเทนเนอร์, ขอนแก่น, ราคาถูก, สนใจ, ตู้คอนเทนเนอร์, คอนเทนเนอร์, khon kaen container, container Thailand" />
+  <meta http-equiv="content-language" content="th" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="robots" content="index, follow" />
+  <meta name="revisit-after" content="7 days" />
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag controller_name, media: "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag controller_name %>
+  <%= stylesheet_link_tag    "../assets/font-awesome/css/font-awesome.min", :media => "all" %>
+  <%= javascript_include_tag "lightbox-2.6.min" %>
+  <%= stylesheet_link_tag    "lightbox", media: "all" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="wrap">
+	<h3 id="project-name" class="inline">
+		<%= image_tag("logo.jpg", alt: "ขายตู้คอนเทนเนอร์ราคาถูก คุณภาพเยี่ยม", id: "logo") %>
+	</h3>
+	<h4 class="inline advertise">ขาย-เช่า คอนเทนเนอร์ บ้านน็อคดาวน์  สำนักงาน สำเร็จรูป</h4>
+	<div id="hmenu">
+		<div class="navbar">
+	    	<div class="navbar_inner">
+		    	<ul class="nav">		    		
+		    		<li class='<%= controller_name == "products" ? "active" : "" %>'>
+		    			<%= link_to("สินค้าทั้งหมด", products_path, class: "brand first") %>
+		    		</li>
+		    		<li class='<%= controller_name == "homes" ? "active" : "" %>'>
+		    			<%= link_to("สินค้าขายดี", homes_path, class: "brand") %>
+		    		</li>
+		    		<li class='<%= controller_name == "abouts" ? "active" : "" %>'>
+		    			<%= link_to("เกี่ยวกับเรา", abouts_path, class: "brand") %>
+		    		</li>
+
+		    		<li class='<%= controller_name == "customers" ? "active" : "" %>'>
+		    			<%= link_to("ลูกค้าของเรา", customers_path, class: "brand") unless current_user.present? %>
+		    		</li>
+
+		    		<li class='<%= controller_name == "faqs" ? "active" : "" %>'>
+		    			<%= link_to("คำถามที่พบบ่อย", faqs_path, class: "brand") unless current_user.present? %>
+		    		</li>
+
+		    		<li class='<%= controller_name == "site_maps" ? "active" : "" %>'>
+		    			<%= link_to("site map", site_maps_path, class: "brand") unless current_user.present? %>
+		    		</li>
+
+		    		<li class='<%= controller_name == "contacts" ? "active" : "" %>'>
+		    			<%= link_to("ติดต่อเรา", contacts_path, class: "brand") unless current_user.present? %>
+		    		</li>
+
+		    		<% if current_user.present? && controller_name == "manage_faqs" %>
+		    			<li class="active"><%= link_to "จัดการถามตอบ", manage_faqs_path, class: "brand" if current_user.present? %></li>
+		    		<% else %>
+		    			<li><%= link_to "จัดการถามตอบ", manage_faqs_path, class: "brand" if current_user.present? %></li>
+		    		<% end %>
+
+		    		<% if current_user.present? && controller_name == "sliders" %>
+		    			<li class="active"><%= link_to "จัดดาร sliders", sliders_path, class: "brand" if current_user.present? %></li>
+		    		<% else %>
+		    			<li><%= link_to "จัดการ sliders", sliders_path, class: "brand" if current_user.present? %></li>
+		    		<% end %>
+
+		    		<% if current_user.present? && controller_name == "manage_categories" %>
+		    			<li class="active"><%= link_to "จัดการหมวดหมู่", manage_categories_path, class: "brand" if current_user.present? %></li>
+		    		<% else %>
+		    			<li><%= link_to "จัดการหมวดหมู่", manage_categories_path, class: "brand" if current_user.present? %></li>
+		    		<% end %>
+
+		    		<% if current_user.present? && controller_name == "manage_products" %>
+		    			<li class="active"><%= link_to "จัดการสินค้า", manage_products_path, class: "brand" if current_user.present? %></li>
+		    		<% else %>
+		    			<li><%= link_to "จัดการสินค้า", manage_products_path, class: "brand" if current_user.present? %></li>
+		    		<% end %>
+
+		    		<% if current_user.present? && controller_name == "blogs" %>
+		    			<li class="active"><%= link_to "จัดการบล็อก", blogs_path, class: "brand" if current_user.present? %></li>
+		    		<% else %>
+		    			<li><%= link_to "จัดการบล็อก", blogs_path, class: "brand" if current_user.present? %></li>
+		    		<% end %>
+
+		    		<li>
+		    			<%= link_to("ออกจากระบบ", user_session_path, method: "delete", id: "link_logout", class: "brand") unless current_user.blank? %>
+		    		</li>
+	    		</ul>
+	    	</div>
+	    </div>
+	</div> <!-- END HMENU -->
+
+	<!-- SLIDER -->
+	<ul class="bxslider">
+		<% if (@application_slider.photos.present? rescue false) %>
+		  <% @application_slider.photos.each do |photo| %>
+		  	<li>
+		  		<%= image_tag(photo.attached_file.url(:medium), class: "slider-img-size") %>
+		  	</li>
+		  <% end %>
+		 <% end %>
+	</ul>
+	<!-- END SLIDER -->
+
+	<!-- Search Form -->
+	<div id="comp-name">
+		<div class="navbar">
+			<div class="navbar-inner">
+				<h3 id="company-name">KK CONTAINER (เคเค คอนเทนเนอร์ )</h3>
+	  		</div>
+	  	</div>
+  	</div>
+  	<!-- <hr class="hr-center"> -->
+  <!-- End Search Form -->
+
+    <div>
+    	<%= render partial: "shared/flashes" %>
+
+    	<%= render partial: "shared/left_layout" %>
+			<div id="middle_layout" class="inline">
+				<%= yield %>
+			</div>
+    	<%#= render partial: "shared/right_layout" %>
+	</div>
+</div>
+<div id="footer">
+	<br>
+	<div id="wrap-footer">
+		<div class='map'>
+			<%= image_tag "map.jpg", class: "map-img" %>
+		</div>
+		<div class="address">
+			<p>
+				<b>ติดต่อ</b><br>
+				085-8687906, 094-4686890
+			</p>
+			<br>
+			<p>
+				<b>อีเมล์</b><br>
+				kkcontainer@hotmail.com
+			</p>
+			<br>
+			<p>
+				<b>ที่อยู่</b><br>
+				KK CONTAINER (เคเค คอนเทนเนอร์)<br>
+				ตั้งอยู่ที่ 274 หมู่ 2 ถ.มะลิวัลย์ ต.บ้านทุ่ม<br>
+				อ.เมือง จ.ขอนแก่น 40000
+			</p>
+		</div>
+	</div>
+	<p id="copy-right">&copy; <%= "#{Time.now.localtime.year}" %> by KK CONTAINER</p>
+</div>
+</body>
+</html>

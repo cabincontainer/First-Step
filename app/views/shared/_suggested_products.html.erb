@@ -1,0 +1,18 @@
+<div class="noo-product-grid products row product-grid noo-grid-4">
+  <% products.each do |product| %>
+    <% next if product.photos.blank? %>
+    <div class="fruit organic-fruits masonry-item col-md-4 col-sm-6">
+      <div class="noo-product-inner">
+        <div class="noo-product-thumbnail">
+          <%= link_to product_path(product) do %>
+            <%= image_tag(product.photos.first.attached_file.url(:thumb)) %>
+          <% end %>
+        </div>
+        <div class="noo-product-title"> 
+          <h3><a href="shop-detail.html"><%= product.code %></a></h3>
+          <span class="price"><span class="amount"><%= product.name %></span></span>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

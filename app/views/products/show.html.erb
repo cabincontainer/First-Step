@@ -1,14 +1,69 @@
-<h5 class="inline" category-id='<%= "#{@product.category.id}"%>'>หมวดสินค้า: </h5>
-<h5 class="inline"><%= link_to(@product.category.name, show_porducts_product_path(@product.category)) %></h5>
-<div>
-	<% @product.photos.each do |photo| %>
-		<%#= link_to image_tag(photo.attached_file.url(:thumb), class: "photos-class" ), photo.attached_file.url(:medium), class: "fancy_link" %>
-		<!-- <a id="single_image" href="image_big.jpg"><img src="image_small.jpg" alt=""/></a> -->
-
-    <a href='<%= photo.attached_file.url(:medium) %>' data-lightbox='<%= @product.id %>'>
-      <%= image_tag photo.attached_file.url(:thumb) %>
-    </a>
-	<% end %>
+<div class="main">
+  <div class="commerce single-product noo-shop-main">
+    <div class="container">
+      <div class="row">
+        <div class="noo-main col-md-12">
+          <div class="product">
+            <div class="single-inner">
+              <div class="images">
+                <div class="project-slider">
+                  <div class="owl-carousel sync1">
+                    <% @product.photos.each do |photo| %>
+                      <div class="item"> 
+                        <%= link_to photo.attached_file.url(:medium), "data-rel".to_sym => "prettyPhoto[product-gallery]" do %>
+                          <%= image_tag photo.attached_file.url(:medium) %>
+                        <% end %>
+                      </div>
+                    <% end %>
+                  </div>
+                  <div class="owl-carousel sync2">
+                    <% @product.photos.each do |photo| %>
+                      <%= image_tag photo.attached_file.url(:thumb), width: "150", height: "150" %>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+              <div class="summary entry-summary">
+                <ul class="noo_link_boxes">
+                  <li>
+                    <%= link_to("แก้ไขสินค้า", edit_manage_product_path(@product)) if (current_user.admin? rescue false) %>
+                  </li>
+                </ul>
+                <h1 class="product_title entry-title">
+                  <%= @product.name %>
+                </h1>
+                <p class="price">
+                  <span class="amount">
+                    <%= @product.code %>
+                  </span>
+                </p>
+                <div class="description">
+                  <p>
+                    <% @product.specifications.each do |key, specification| %>
+                      <%= "#{specification['field']}: #{specification['value']}<br />".html_safe %>
+                    <% end %>
+                  </p>
+                </div>
+              </div> 
+            </div>
+            <% if @random_products.present? %>
+              <div class="related products">
+                <h2>สินค้าที่เกี่ยวข้อง</h2>
+                <%= render partial: "shared/suggested_products", locals: { products: @random_products } %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="noo-footer-shop-now">
+    <div class="container">
+      <div class="col-md-7">
+        <h4>- Every day fresh -</h4>
+        <h3>organic food</h3>
+      </div>
+      <img src="images/organici-love-me.png" class="noo-image-footer" alt="" />
+    </div>
+  </div>
 </div>
-
-<%= render template: "manage_products/show" %>

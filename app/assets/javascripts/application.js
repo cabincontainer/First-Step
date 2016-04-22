@@ -12,6 +12,28 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require js/jquery.min
+//= require js/bootstrap.min
+//= require js/jquery-migrate.min
+//= require js/modernizr-2.7.1.min
+//= require js/off-cavnass
+//= require js/script
+//= require js/custom
+//= require js/imagesloaded.pkgd.min
+//= require js/isotope.pkgd.min
+//= require js/portfolio
+//= require js/jquery.touchSwipe.min
+//= require js/jquery.carouFredSel-6.2.1
+//= require js/jquery.isotope.min
+//= require js/owl.carousel.min
+//= require js/jflickrfeed.min
+//= require js/jquery.magnific-popup
+//= require js/modernizr.custom
+//= require js/draggabilly.pkgd.min
+//= require js/elastiStack
+//= require js/jquery.prettyPhoto
+//= require js/jquery.prettyPhoto.init.min.js
+
 //= require global
 //= require jquery.bxslider
 //= require jquery.bxslider.min

@@ -1,65 +1,39 @@
-<div id="edit_product">
-  <h5>แก้ไขสินค้า</h5>
-    <%= form_for @product, :html => { :multipart => true }, url: manage_product_path(@product.id), method: 'put' do |f| %>
-    <table>
-      <tr>
-        <td class="field">หมวดหมู่ : </td>
-        <td class="value"><%= select_tag "category_name", options_for_select(@categories_name, (@product.category.name rescue nil)), class: "field" %></td>
-      </tr>
-      <tr>
-        <td class="field">ชื่อสินค้า : </td>
-        <td class="value"><%= f.text_field "name", required: true, class: "field" %></td>
-      </tr>
-      <tr>
-        <td class="field">รหัสสินค้า : </td>
-        <td class="value"><%= f.text_field "code", required: true, class: "field" %></td>
-      </tr>
-      <tr>
-        <td class="field">สินค้าขายดี : </td>
-        <td class="value"><%= check_box_tag "product[best_seller]", true, @product.best_seller, class: "field" %></td>
-      </tr>
-      <tr>
-        <td class="field">รายละเอียดสินค้า : </td>
-        <td class="value">
-          <% @product.specifications.each do |key, specification| %>
-            <div class="specification_row">
-              <div class="inline">
-                <%= text_field_tag "specifications[#{key}][field]", specification['field'], class: "field", placeholder: "ระบุชื่อ.." %>
+<div class="pt-10 pb-10">
+  <div class="container">
+    <div class="row">
+      <div class="noo_image_left col-sm-6">
+        <div class="noo-image-signature">
+          <div class="img-background-color"></div>
+          <div class="img-background-sign style-2"></div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <%= form_for @product, :html => { :multipart => true, class: "form" }, url: manage_product_path(@product.id), method: 'put' do |f| %>
+          <div class="row">
+            <div class="col-md-12 col-sm-12">
+              <div class="form-control-wrap your-name">
+                ชื่อสินค้า
+                <%= f.text_field "name", required: true, class: "form-control" %>
               </div>
-              :
-              <div class="inline">
-                <%= text_field_tag "specifications[#{key}][value]", specification['value'], class: "field", placeholder: "ระบุค่า.." %>
-              </div>
-              <%= button_tag "-", class: "delete_row", type: 'button' %>
             </div>
-          <% end %>
-
-          <div id="add_new_row">
-            เพิ่มรายละเอียดสินค้า
-            <%= button_tag "+", class: "add_new_row", type: 'button' %>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td class="field">ภาพถ่าย : </td>
-        <td class="value">
-          <% @product.photos.each do |photo| %>
-            <div class="photo_row">
-              <div class="inline">
-                <%= image_tag photo.attached_file.url(:thumb) %>
-                <%= hidden_field_tag "current_photos[]", photo.id %>
+            <div class="col-md-12 col-sm-12">
+              <div class="form-control-wrap your-website">
+                รหัสสินค้า
+                <%= f.text_field "code", required: true, class: "form-control" %>
               </div>
-              <%= button_tag "-", class: "delete_photo", type: 'button' %>
             </div>
-          <% end %>
-          <div id="add_more_photo">
-            เพิ่มภาพถ่าย
-            <%= button_tag "+", class: "add_more_photo", type: 'button' %>
+            <div class="col-md-12">
+              <div class="form-control-wrap your-message">
+                รายละเอียด
+                <%= f.text_area "specifications", cols: "40", rows: "10", class: "form-control" %>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <%= f.submit "บันทึก", class: "form-control submit btn-primary" %>
+            </div>
           </div>
-        </td>
-      </tr>
-    </table>
-    <%= f.submit "Update", class: "submit" %>
-    <%= f.button "Clear form", class: "clear", type: "reset" %>
-  <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>

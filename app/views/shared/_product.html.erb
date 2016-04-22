@@ -1,0 +1,13 @@
+<div class="fruit organic-fruits masonry-item col-md-4 col-sm-6">
+  <%= link_to product_path(product) do %>
+  <div class="noo-product-inner">
+    <div class="noo-product-thumbnail">
+      <%= image_tag(product.photos.first.attached_file.url(:thumb)) if product.photos.present? %>
+    </div>
+    <div class="noo-product-title"> 
+      <h3><%= product.code %></h3>
+      <span class="price"><span class="amount"><%= product.name %></span></span>
+    </div>
+  </div>
+  <% end %>
+</div>
