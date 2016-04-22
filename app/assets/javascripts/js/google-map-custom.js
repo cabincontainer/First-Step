@@ -1,11 +1,11 @@
 if (jQuery("#googleMap").length > 0) {
     $obj = jQuery("#googleMap");
-    var myCenter = new google.maps.LatLng($obj.data("lat"), $obj.data("lon"));
+    var myCenter = new google.maps.LatLng(16.449656, 102.749097);
     var myMaker = new google.maps.LatLng($obj.data("lat"), $obj.data("lon"));
     function initialize() {
         var mapProp = {
             center: myCenter,
-            zoom: 16,
+            zoom: 13,
             scrollwheel: false,
             mapTypeControlOptions: {
                 mapTypeIds: [ google.maps.MapTypeId.ROADMAP, "map_style" ]

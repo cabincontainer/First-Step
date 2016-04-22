@@ -1,12 +1,20 @@
-<h5 category-id='<%= "#{@category.id}"%>'><%= @category.name %></h5>
-<div class="products">
-	<% if @category.products.present? %>
-	<% @category.products.each do |p| %>
-		<% next if p.photos.empty? %>
-			<div class="inline panel">
-				<%= link_to image_tag(p.photos.first.attached_file.url(:thumb), class: "photos-class" ), product_path(p) %>
-				<label><%= p.name %></label>
-			</div>
-	<% end %>
-	<% end %>
+<div class="pt-5 pb-11">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="noo-product-grid-wrap commerce product-style">
+          <div class="noo-sh-title">
+            <h2><%= @category.name %></h2>
+            <p>Maecenas tristique gravida odio, et sagi ttis justo interdum porta. Duis et lacus mattis, tincidunt eronec dictum non nulla.</p>
+          </div>
+          <div class="noo-product-grid products row product-grid noo-grid-4">
+            <% if @category.products.present? %>
+              <%= render partial: "shared/product", collection: @category.products, as: "product" %>
+            <% end %>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
