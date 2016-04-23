@@ -33,6 +33,7 @@
 //= require js/elastiStack
 //= require js/jquery.prettyPhoto
 //= require js/jquery.prettyPhoto.init.min.js
+//= require sliders
 
 //= require global
 //= require jquery.bxslider

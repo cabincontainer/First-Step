@@ -1,10 +1,152 @@
-<section class="noo-page-heading eff heading-3">
-  <div class="container">
-    <div class="noo-heading-content">
-      <h1 class="page-title eff">Header Agency</h1>
-      <div class="noo-page-breadcrumb eff">
-        <a href="./" class="home">Organici</a>/<span>Header Agency</span>
-      </div>
-    </div>
+<div class="rev_slider_wrapper fullscreen-container">
+  <div id="rev_slider_2" class="rev_slider fullscreenbanner">
+    <ul>  
+      <% @application_slider.photos.each do |photo| %>
+        <li data-transition="fade" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="300" data-rotate="0" data-saveperformance="off" data-title="Slide">
+          <%= image_tag photo.attached_file.url, width: "1920", height: "960", "data-bgposition".to_sym => "center center", "data-bgfit".to_sym => "cover", "data-bgrepeat".to_sym => "no-repeat", class: "rev-slidebg" %>
+
+          <div class="tp-caption caption-5 tp-resizeme" 
+             data-x="center" 
+             data-hoffset="" 
+             data-y="center" 
+             data-voffset="-150" 
+             data-width="['auto']" 
+             data-height="['auto']" 
+             data-transform_idle="o:1;" 
+             data-transform_in="y:50px;opacity:0;s:2000;e:Power4.easeOut;" 
+             data-transform_out="opacity:0;s:300;s:300;" 
+             data-start="500" 
+             data-splitin="none" 
+             data-splitout="none" 
+             data-responsive_offset="on">Organic products grown with love!
+          </div>
+
+          <div class="tp-caption tp-resizeme" 
+             data-x="center" 
+             data-hoffset="" 
+             data-y="center" 
+             data-voffset="-95" 
+             data-width="['none','none','none','none']" 
+             data-height="['none','none','none','none']" 
+             data-transform_idle="o:1;" 
+             data-transform_in="x:200px;z:0px;skX:-85px;s:1500;e:Power4.easeOut;" 
+             data-transform_out="opacity:0;s:300;s:300;" 
+             data-start="1400" 
+             data-responsive_offset="on">
+              <%= image_tag "banner/line.png", width: "911", height: "2" %>
+          </div>
+
+          <div class="tp-caption caption-6 tp-resizeme" 
+             data-x="center" 
+             data-hoffset="" 
+             data-y="center" 
+             data-voffset="-50" 
+             data-width="['auto']" 
+             data-height="['auto']" 
+             data-transform_idle="o:1;" 
+             data-transform_in="x:50px;opacity:0;s:2000;e:easeOutExpo;" 
+             data-transform_out="opacity:0;s:300;s:300;" 
+             data-start="2300" 
+             data-splitin="chars" 
+             data-splitout="none" 
+             data-responsive_offset="on" 
+             data-elementdelay="0.05">have a look at our beautiful farm
+          </div>
+
+          <div class="tp-caption tp-resizeme" 
+             data-x="center" 
+             data-hoffset="" 
+             data-y="center" 
+             data-voffset="-5" 
+             data-width="['none','none','none','none']" 
+             data-height="['none','none','none','none']" 
+             data-transform_idle="o:1;" 
+             data-transform_in="x:-200px;skX:45px;s:2200;e:Power4.easeOut;" 
+             data-transform_out="opacity:0;s:300;s:300;" 
+             data-start="1400" 
+             data-responsive_offset="on">
+              <%= image_tag "banner/line.png", width: "911", height: "2" %>
+          </div>
+
+          <div class="tp-caption tp-resizeme" 
+             data-x="center" 
+             data-hoffset="" 
+             data-y="center" 
+             data-voffset="45" 
+             data-width="['none','none','none','none']" 
+             data-height="['none','none','none','none']" 
+             data-transform_idle="o:1;" 
+             data-transform_in="y:50px;opacity:0;s:2000;e:Power4.easeInOut;" 
+             data-transform_out="opacity:0;s:300;s:300;" 
+             data-start="3500" 
+             data-responsive_offset="on">
+              <%= image_tag "banner/shape.png", width: "20", height: "54" %>
+          </div>
+
+          <div class="tp-caption tp-resizeme" 
+             data-x="center" 
+             data-hoffset="-25" 
+             data-y="center" 
+             data-voffset="45" 
+             data-width="['none','none','none','none']" 
+             data-height="['none','none','none','none']" 
+             data-transform_idle="o:1;" 
+             data-transform_in="x:25px;z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
+             data-transform_out="opacity:0;s:300;s:300;" 
+             data-start="4000" 
+             data-responsive_offset="on">
+              <%= image_tag "banner/shape.png", width: "20", height: "54" %>
+          </div>
+
+          <div class="tp-caption tp-resizeme" 
+             data-x="center" 
+             data-hoffset="25" 
+             data-y="center" 
+             data-voffset="45" 
+             data-width="['none','none','none','none']" 
+             data-height="['none','none','none','none']" 
+             data-transform_idle="o:1;" 
+             data-transform_in="x:-25px;y:0px;z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
+             data-transform_out="opacity:0;s:300;s:300;" 
+             data-start="4000" 
+             data-responsive_offset="on">
+              <%= image_tag "banner/shape.png", width: "20", height: "54" %>
+          </div>
+
+          <div class="tp-caption caption-7 tp-resizeme" 
+             data-x="center" 
+             data-hoffset="-220" 
+             data-y="center" 
+             data-voffset="42" 
+             data-width="['auto']" 
+             data-height="['auto']" 
+             data-transform_idle="o:1;" 
+             data-transform_in="x:-50px;opacity:0;s:2000;e:Power4.easeOut;" 
+             data-transform_out="opacity:0;s:300;s:300;" 
+             data-start="5000" 
+             data-splitin="none" 
+             data-splitout="none" 
+             data-responsive_offset="on">REACH FOR A HEALTHIER YOU
+          </div>
+
+          <div class="tp-caption caption-8 tp-resizeme" 
+             data-x="center" 
+             data-hoffset="220" 
+             data-y="center" 
+             data-voffset="42" 
+             data-width="['auto']" 
+             data-height="['auto']" 
+             data-transform_idle="o:1;" 
+             data-transform_in="x:50px;opacity:0;s:2000;e:Power4.easeOut;" 
+             data-transform_out="opacity:0;s:300;s:300;" 
+             data-start="5000" 
+             data-splitin="none" 
+             data-splitout="none" 
+             data-responsive_offset="on">REACH FOR A HEALTHIER YOU
+          </div>
+        </li>
+      <% end %>
+    </ul>
+    <div class="tp-bannertimer"></div>
   </div>
-</section>
+</div>

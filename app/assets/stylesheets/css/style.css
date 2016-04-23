@@ -4444,20 +4444,20 @@ ul.post_list_widget li a .post-date {
     .noo-header.header-3 .navbar-brand {
         padding-top: 25px;
     }
-    .noo-header.header-3 .navbar-header {
+    /*.noo-header.header-3 .navbar-header {
         position: absolute;
         left: 50%;
         -webkit-transform: translate(-50%, 0);
         -ms-transform: translate(-50%, 0);
         -o-transform: translate(-50%, 0);
         transform: translate(-50%, 0);
-    }
+    }*/
     .noo-header.header-3 .noo-main-menu .navbar-nav li > a {
         line-height: 100px;
     }
-    .noo-header.header-3 .noo-main-menu {
+    /*.noo-header.header-3 .noo-main-menu {
         float: left !important;
-    }
+    }*/
 }
 
 @media (max-width: 1549px) {
@@ -5899,7 +5899,7 @@ body.fixed_top .noo-header.header-5.eff .navbar-wrapper {
     color: #ffffff;
     margin: 0;
     text-align: center;
-    font-size: 56px;
+    font-size: 40px;
     opacity: 0;
     filter: alpha(opacity=0);
     -webkit-transform: translate(0, 80px);
