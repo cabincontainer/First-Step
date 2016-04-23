@@ -21,7 +21,6 @@ class ManageProductsController < ApplicationController
     else
       @product.best_seller = false
     end
-    @product.specifications = params[:specifications]
 
     category = Category.where(name: params[:category_name]).first
     @product.category = category if category.present?
@@ -55,7 +54,6 @@ class ManageProductsController < ApplicationController
   def update
     @product = Product.includes(:photos).find(params[:id])
     @product.assign_attributes(params[:product])
-    @product.specifications = params[:specifications]
     if params[:product][:best_seller].present?
       @product.best_seller = true
     else

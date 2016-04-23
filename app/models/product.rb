@@ -7,6 +7,4 @@ class Product < ActiveRecord::Base
 
 	  belongs_to :category
     has_many :photos, as: :attachable
-
-  	serialize :specifications, Hash
 end

@@ -21,20 +21,7 @@
 			<tr>
 				<td class="field">รายละเอียดสินค้า : </td>
 				<td class="value">
-					<div class="specification_row">
-						<div class="inline">
-							<%= text_field_tag "specifications[0][field]", nil, class: "field", placeholder: "ระบุชื่อ.." %>
-						</div>
-						:
-						<div class="inline">
-							<%= text_field_tag "specifications[0][value]", nil, class: "field", placeholder: "ระบุค่า.." %>
-						</div>
-						<%= button_tag "-", class: "delete_row", type: 'button' %>
-					</div>
-					<div id="add_new_row">
-						เพิ่มรายละเอียดสินค้า
-						<%= button_tag "+", class: "add_new_row", type: 'button' %>
-					</div>
+					<%= f.text_area "product[specification]", class: "field" %>
 				</td>
 			</tr>
 			<tr>
