@@ -7,7 +7,13 @@ Cabincontainer::Application.routes.draw do
   resource :user_session, only: [:new, :create, :destroy]
   resource :password_reset, only: [:new, :create, :edit, :update]
   resources :manage_categories, except: [:show]
-  resources :manage_products
+  resources :manage_products do
+    member do
+      get :edit_photos
+      put :upload_photo
+      delete :delete_photo
+    end
+  end
   resources :site_maps, only: [:index]
   resources :faqs, only: [:index]
   resources :customers, only: [:index]

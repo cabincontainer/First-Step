@@ -15801,7 +15801,7 @@ div.product-style2 .product-grid .noo-product-inner:hover .noo-product-title .no
 .commerce .product-list .noo-product-thumbnail {
     text-align: center;
     position: relative;
-    min-height: 270px;
+    padding: 30px;
 }
 
 .commerce .product-list .noo-product-thumbnail img {

@@ -65,6 +65,11 @@
                   <% end %>
                 </ul>
               </li>
+              <% if (current_user.admin? rescue false) %>
+                <li class="menu-item-has-children">
+                  <%= link_to("จัดการสินค้า", manage_products_path) %>
+                </li>
+              <% end %>
               <li class="menu-item-has-children">
                 <a href="blog.html">Blog</a>
                 <ul class="sub-menu">

@@ -6,20 +6,27 @@
           <div class="product">
             <div class="single-inner">
               <div class="images">
-                <div class="project-slider">
-                  <div class="owl-carousel sync1">
-                    <% @product.photos.each do |photo| %>
-                      <div class="item"> 
-                        <%= link_to photo.attached_file.url(:medium), "data-rel".to_sym => "prettyPhoto[product-gallery]" do %>
-                          <%= image_tag photo.attached_file.url(:medium) %>
-                        <% end %>
-                      </div>
-                    <% end %>
+                <% if @product.photos.present? %>
+                  <div class="project-slider pb-5">
+                    <div class="owl-carousel sync1">
+                      <% @product.photos.each do |photo| %>
+                        <div class="item"> 
+                          <%= link_to photo.attached_file.url(:medium), "data-rel".to_sym => "prettyPhoto[product-gallery]" do %>
+                            <%= image_tag photo.attached_file.url(:medium), height: "400px" %>
+                          <% end %>
+                        </div>
+                      <% end %>
+                    </div>
+                    <div class="owl-carousel sync2">
+                      <% @product.photos.each do |photo| %>
+                        <%= image_tag photo.attached_file.url(:thumb), width: "150", height: "150" %>
+                      <% end %>
+                    </div>
                   </div>
-                  <div class="owl-carousel sync2">
-                    <% @product.photos.each do |photo| %>
-                      <%= image_tag photo.attached_file.url(:thumb), width: "150", height: "150" %>
-                    <% end %>
+                <% end %>
+                <div class="noo-our_story pb-10">
+                  <div class="text-center">
+                    <%= link_to("แก้ไขรูปภาพสินค้า", edit_photos_manage_product_path(@product)) if (current_user.admin? rescue false) %>
                   </div>
                 </div>
               </div>

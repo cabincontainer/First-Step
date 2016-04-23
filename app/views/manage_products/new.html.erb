@@ -1,48 +1,9 @@
-<div id="new_product">
-	<h5>เพิ่มสินค้า</h5>
-  	<%= form_for @product, :html => { :multipart => true }, url: manage_products_path, method: 'post' do |f| %>
-		<table>
-			<tr>
-				<td class="field">หมวดหมู่ : </td>
-				<td class="value"><%= select_tag "category_name", options_for_select(@categories_name, nil), class: "field" %></td>
-			</tr>
-			<tr>
-				<td class="field">ชื่อสินค้า : </td>
-				<td class="value"><%= f.text_field "name", required: true, class: "field" %></td>
-			</tr>
-			<tr>
-				<td class="field">รหัสสินค้า : </td>
-				<td class="value"><%= f.text_field "code", required: true, class: "field" %></td>
-			</tr>
-			<tr>
-				<td class="field">สินค้าขายดี : </td>
-				<td class="value"><%= check_box_tag "product[best_seller]", true, false, class: "field" %></td>
-			</tr>
-			<tr>
-				<td class="field">รายละเอียดสินค้า : </td>
-				<td class="value">
-					<%= f.text_area "product[specification]", class: "field" %>
-				</td>
-			</tr>
-			<tr>
-				<td class="field">ภาพถ่าย : </td>
-				<td class="value">
-			    <%= f.fields_for :photos do |photo_field| %>
-			    	<div class="photo_row">
-							<div class="inline">
-				      	<%= photo_field.file_field :attached_file, name: "photos[][attached_file]" %>
-				      </div>
-							<%= button_tag "-", class: "delete_photo", type: 'button' %>
-						</div>
-			    <% end %>
-			    <div id="add_more_photo">
-						เพิ่มภาพถ่าย
-						<%= button_tag "+", class: "add_more_photo", type: 'button' %>
-					</div>
-				</td>
-			</tr>
-		</table>
-		<%= f.submit "บันทึก", class: "submit" %>
-		<%= f.button "ล้างข้อมูล", class: "clear", type: "reset" %>
-	<% end %>
+<div class="pt-10 pb-10">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <%= render partial: "form" %>
+      </div>
+    </div>
+  </div>
 </div>

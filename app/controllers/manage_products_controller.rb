@@ -12,6 +12,7 @@ class ManageProductsController < ApplicationController
 
 	def new
 		@product = Product.new
+    @product.build_category
 	end
 
   def create
@@ -26,14 +27,6 @@ class ManageProductsController < ApplicationController
     @product.category = category if category.present?
 
     if @product.save
-      if params[:photos].present?
-        params[:photos].each do |photo_params|
-          photo = Photo.new(photo_params)
-          photo.attachable = @product
-          photo.save
-        end
-      end
-
       flash[:notice] = "Create product successfully."
       redirect_to manage_products_path
     else
@@ -48,7 +41,7 @@ class ManageProductsController < ApplicationController
   end
 
   def edit
-    @product = Product.includes(:category, :photos).find(params[:id])
+    @product = Product.includes(:category).find(params[:id])
   end
 
   def update
@@ -63,21 +56,6 @@ class ManageProductsController < ApplicationController
     @product.category = category if category.present?
 
     if @product.save
-
-      if params[:current_photos].present?
-        @product.photos.where("id NOT IN (?)", params[:current_photos]).destroy_all
-      else
-        @product.photos.destroy_all
-      end
-
-      if params[:photos].present?
-        params[:photos].each do |photo_params|
-          photo = Photo.new(photo_params)
-          photo.attachable = @product
-          photo.save
-        end
-      end
-
       flash[:notice] = "Update product successfully."
       redirect_to manage_products_path
     else
@@ -85,6 +63,30 @@ class ManageProductsController < ApplicationController
       flash[:error] << "#{@product.errors.full_messages.join(", ")}"
       render(action: "edit")
     end
+  end
+
+  def edit_photos
+    @product = Product.includes(:photos).find(params[:id])
+  end
+
+  def upload_photo
+    @product = Product.find(params[:id])
+
+    if params[:photo].present?
+      photo = Photo.new(params[:photo])
+      photo.attachable = @product
+      photo.save
+    end
+
+    redirect_to edit_photos_manage_product_path(@product)
+  end
+
+  def delete_photo
+    @product = Product.find(params[:id])
+
+    @product.photos.find(params[:photo_id]).destroy
+
+    redirect_to edit_photos_manage_product_path(@product)
   end
 
   def destroy

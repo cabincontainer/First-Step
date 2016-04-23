@@ -1,0 +1,39 @@
+<% if @product.new_record? %>
+  <% url = manage_products_path %>
+  <% method = "post" %>
+<% else %>
+  <% url = manage_product_path(@product.id) %>
+  <% method = "put" %>
+<% end %>
+
+<%= form_for @product, :html => { class: "form" }, url: url, method: method do |f| %>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-control-wrap">
+        ประเภทสินค้า
+        <%= select_tag "category_name", options_for_select(@categories_name, @product.category.name) , required: true, class: "form-control" %>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="form-control-wrap">
+        ชื่อสินค้า
+        <%= f.text_field "name", required: true, class: "form-control" %>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="form-control-wrap">
+        รหัสสินค้า
+        <%= f.text_field "code", required: true, class: "form-control" %>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="form-control-wrap">
+        รายละเอียด
+        <%= f.text_area "specifications", cols: "40", rows: "10", class: "form-control" %>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <%= f.submit "บันทึก", class: "form-control submit btn-primary" %>
+    </div>
+  </div>
+<% end %>

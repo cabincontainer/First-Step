@@ -1,18 +1,61 @@
-<h5>การจัดการสินค้า</h5>
-
-<%= link_to "เพิ่มสินค้า", new_manage_product_path %>
-
-<table id="products_list">
-  <thead>
-    <th>ชื่อ</th>
-    <th class="actions" colspan='3'>จัดการ</th>
-  </thead>
-  <% @products.each do |product| %>
-    <tr>
-      <td><%= product.name %></td>
-      <td><%= link_to "ข้อมูล", manage_product_path(product.id) %></td>
-      <td><%= link_to "แก้ไข", edit_manage_product_path(product.id) %></td>
-      <td><%= link_to "ลบ", manage_product_path(product.id), method: 'delete', confirm: "Are you sure?" %></td>
-    </tr>
-  <% end %>
-</table>
+<div class="main">
+  <div class="commerce noo-shop-main">
+    <div class="container">
+      <div class="row">
+      <div class="col-sm-12">
+        <div class="noo-product-grid-wrap commerce product-style">
+          <div class="noo-sh-title">
+            <h2>จัดการสินค้า</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="row">
+        <div class="noo-main col-md-12">
+          <div class="noo-catalog">
+            <div class="product-style-control pull-right">
+              <%= link_to "เพิ่มสินค้าใหม่", new_manage_product_path, class: "button product_type_simple add_to_cart_button" %>
+            </div>
+            <form class="commerce-ordering">
+              <select name="orderby" class="orderby">
+                <option value="" selected='selected'>Default sorting</option>
+                <option value="">Sort by popularity</option>
+                <option value="">Sort by average rating</option>
+                <option value="">Sort by newness</option>
+                <option value="">Sort by price: low to high</option>
+              </select>
+            </form>
+          </div>
+          <div class="products row product-list">
+            <% @products.each do |product| %>
+              <div class="masonry-item noo-product-column col-md-4 col-sm-6 product">
+                <div class="noo-product-inner">
+                  <div class="noo-product-thumbnail">
+                    <%= link_to product_path(product) do %>
+                      <% if product.photos.present? %>
+                        <%= image_tag product.photos.first.attached_file.url(:thumb) %>
+                      <% end %>
+                    <% end %>
+                  </div>
+                  <div class="noo-product-title"> 
+                    <h3><%= link_to product.name, product_path(product) %></h3>
+                    <span class="price"><span class="amount"><%= product.code %></span></span>
+                    <div class="noo-product-excerpt">
+                      <p><%= product.specifications %></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+          <div class="pagination list-center">
+            <span class="page-numbers current">1</span>
+            <a class="page-numbers" href="#">2</a>
+            <a class="page-numbers" href="#">3</a>
+            <a class="next page-numbers" href="#"><i class="fa fa-long-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
