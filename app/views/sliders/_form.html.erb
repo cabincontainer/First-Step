@@ -1,0 +1,51 @@
+<% if @slider.new_record? %>
+  <% url = sliders_path %>
+  <% method = "post" %>
+<% else %>
+  <% url = slider_path(@slider.id) %>
+  <% method = "put" %>
+<% end %>
+
+<%= form_for @slider, :html => { :multipart => true, class: "form" }, url: url, method: method do |f| %>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-control-wrap col-md-12">
+        ชื่อสไลด์
+        <%= f.text_field "name", required: true, class: "form-control" %>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <% @slider.photos.each do |photo| %>
+        <div class="masonry-item col-md-4 col-sm-6 product photo_row pt-1 pb-1">
+          <div class="noo-product-inner">
+            <div class="noo-product-thumbnail">
+              <%= link_to photo.attached_file.url(:medium), "data-rel".to_sym => "prettyPhoto[product-gallery]" do %>
+                <%= image_tag photo.attached_file.url(:thumb) %>
+                <%= hidden_field_tag "current_photos[]", photo.id %>
+              <% end %>
+            </div>
+            <div class="noo-product-title pt-0"> 
+              <div class="noo-product-action">
+                <div class="noo-action">
+                  <%= button_tag "ลบ", class: "button product_type_simple add_to_cart_button delete_photo", type: 'button' %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-md-12">
+      <div id="add_more_photo" class="masonry-item col-md-4 col-sm-6 product pt-2 pb-2">
+        <div class="noo-product-inner">
+          <%= button_tag "+ เพิ่มภาพถ่าย", class: "button add_more_photo", type: 'button' %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="col-md-12">
+        <%= f.submit "บันทึก", class: "form-control submit btn-primary" %>
+      </div>
+    </div>
+  </div>
+<% end %>

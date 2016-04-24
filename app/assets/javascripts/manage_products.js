@@ -48,31 +48,25 @@ ManageProducts = {
 	},
 	addPhotoField: function(){
 		var row = "<div></div>";
-		row = $(row).addClass("photo_row");
-
-		var div = "<div></div>";
-		div = $(div).addClass("inline");
+		row = $(row).addClass("masonry-item col-md-4 col-sm-6 product photo_row pt-2 pb-2");
 
 		var file_field = "<input></input>";
 		file_field = $(file_field).attr("type","file");
 		file_field = $(file_field).attr("name","photos[][attached_file]");
+		file_field = $(file_field).addClass("form-control");
 
 		var delete_button = "<button></button>";
-		delete_button = $(delete_button).addClass("delete_photo");
+		delete_button = $(delete_button).addClass("delete_photo button");
 		delete_button = $(delete_button).attr("type", "button");
-		delete_button = $(delete_button).text("-");
+		delete_button = $(delete_button).text("ลบ");
 
-		$(div).append(file_field);
-
-		var td = $(this).parents('td.value');
-
-		$(row).append(div);
+		$(row).append(file_field);
 		$(row).append(delete_button);
 
 		$(row).insertBefore($('div#add_more_photo'));
 	},
 	deletePhoto: function(){
-		if (confirm("Are you sure?")){
+		if (confirm("ยืนยันลบภาพนี้?")){
 			$(this).parents('div.photo_row').remove();
 		}
 	},
