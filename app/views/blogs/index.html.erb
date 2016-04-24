@@ -1,20 +1,30 @@
-<div id="blogs">
-  <h5>บล็อกทั้งหมด</h5>
-
-  <%= link_to "เพิ่มบล็อกใหม่", new_blog_path %>
-
-  <table>
-    <thead>
-      <th>ชื่อ</th>
-      <th class="actions" colspan='3'>จัดการ</th>
-    </thead>
-    <% @blogs.each do |blog| %>
-     <tr>
-      <td><%= blog.title %></td>
-      <td><%= link_to "ข้อมูล", blog_path(blog) %></td>
-      <td><%= link_to "แก้ไข", edit_blog_path(blog) %></td>
-      <td><%= link_to "ลบ", blog_path(blog), method: :delete, data: {confirm: "ยืนยันที่จะลบบล็อกนี้?"} %></td>
-    </tr>
-    <% end %>
-  </table>
+<div id='blogs' class="pt-5 pb-11">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="noo-product-grid-wrap commerce product-style">
+          <div class="noo-sh-title">
+            <h2>บล็อกทั้งหมด</h2>
+          </div>
+          <div class='text-right form-group'>
+            <%= link_to "เพิ่มบล็อกใหม่", new_blog_path, class: "btn btn-default" %>
+          </div>
+          <table>
+            <thead>
+              <th>ชื่อ</th>
+              <th class="actions" colspan='3'>จัดการ</th>
+            </thead>
+            <% @blogs.each do |blog| %>
+             <tr>
+              <td><%= blog.title %></td>
+              <td><%= link_to "ข้อมูล", blog_path(blog) %></td>
+              <td><%= link_to "แก้ไข", edit_blog_path(blog) %></td>
+              <td><%= link_to "ลบ", blog_path(blog), method: :delete, data: {confirm: "ยืนยันที่จะลบบล็อกนี้?"} %></td>
+            </tr>
+            <% end %>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

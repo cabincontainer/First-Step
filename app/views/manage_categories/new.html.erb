@@ -1,12 +1,32 @@
-<div id="new_category">
-  <h5>เพิ่มหมวดหมู่สินค้า</h5>
-    <%= form_for @category, url: manage_categories_path, method: 'post' do |f| %>
-    <table>
-      <tr>
-        <td class="field">ชื่อหมวดหมู่ : </td>
-        <td class="value"><%= f.text_field "name", required: true, class: "field" %></td>
-      </tr>
-    </table>
-    <%= f.submit "บันทึก", class: "submit" %>
-  <% end %>
+<div class="pt-5 pb-11">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="noo-product-grid-wrap commerce product-style">
+          <div class="noo-sh-title">
+            <h2>เพิ่มหมวดหมู่สินค้า</h2>
+          </div>
+
+          <%= form_for @category, url: manage_categories_path, method: 'post' do |f| %>
+            <div class='row form-group'>
+              <div class='col-sm-4 col-sm-offset-4'>
+                ชื่อหมวดหมู่
+              </div>
+              <div class='col-sm-4 col-sm-offset-4'>
+                <%= f.text_field "name", required: true, class: "form-control" %>
+              </div>
+            </div>
+            <div class='row form-group'>
+              <div class='col-sm-4 col-sm-offset-4'>
+                <%= f.submit "บันทึก", class: "btn btn-default" %>
+              </div>
+            </div>
+          <% end %>
+
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+

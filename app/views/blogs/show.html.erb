@@ -1,4 +1,12 @@
-<div id='blog-show'>
-  <h5><%= @blog.title %></h5>
-  <%= @blog.body.html_safe %>
+<div id='blogs' class="pt-5 pb-11">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="noo-product-grid-wrap commerce product-style">
+          <h3><%= @blog.title %></h3>
+          <%= @blog.body.html_safe %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

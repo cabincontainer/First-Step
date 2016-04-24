@@ -1,5 +1,17 @@
 <%= form_for @blog do |f| %>
-  <%= f.text_field :title, required: true, class: "field", placeholder: "ระบุชื่อบล็อกที่นี่" %>
-  <%= f.cktext_area :body, :class => 'blog-body', :ckeditor => {:toolbar => 'mini'} %>
-  <%= f.submit "บันทึก", class: "submit" %>
+  <div class='row form-group'>
+    <div class='col-sm-6'>
+      <%= f.text_field :title, required: true, class: "form-control", placeholder: "ระบุชื่อบล็อกที่นี่" %>
+    </div>
+  </div>
+  <div class='row form-group'>
+    <div class='col-xs-12'>
+      <%= f.cktext_area :body, :class => 'blog-body', :ckeditor => {:toolbar => 'mini'} %>
+    </div>
+  </div>
+  <div class='row form-group'>
+    <div class='col-xs-12'>
+      <%= f.submit "บันทึก", class: "btn btn-default" %>
+    </div>
+  </div>
 <% end %>

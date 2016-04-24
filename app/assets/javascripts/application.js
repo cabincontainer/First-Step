@@ -34,6 +34,8 @@
 //= require js/jquery.prettyPhoto
 //= require js/jquery.prettyPhoto.init.min.js
 //= require sliders
+//= require manage_categories
+//= require manage_products
 
 //= require global
 //= require jquery.bxslider

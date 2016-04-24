@@ -1,31 +1,41 @@
-<div id="edit_slider">
-  <h5>แก้ไขสไลด์</h5>
-    <%= form_for @slider, :html => { :multipart => true }, url: slider_path(@slider.id), method: 'put' do |f| %>
-    <table>
-      <tr>
-        <td class="field">ชื่อสไลด์ : </td>
-        <td class="value"><%= f.text_field "name", required: true, class: "field" %></td>
-      </tr>
-      <tr>
-        <td class="field">ภาพถ่าย : </td>
-        <td class="value">
-          <% @slider.photos.each do |photo| %>
-            <div class="photo_row">
-              <div class="inline">
-                <%= image_tag photo.attached_file.url(:thumb) %>
-                <%= hidden_field_tag "current_photos[]", photo.id %>
-              </div>
-              <%= button_tag "-", class: "delete_photo", type: 'button' %>
-            </div>
-          <% end %>
-          <div id="add_more_photo">
-            เพิ่มภาพถ่าย
-            <%= button_tag "+", class: "add_more_photo", type: 'button' %>
-          </div>
-        </td>
-      </tr>
-    </table>
-    <%= f.submit "Update", class: "submit" %>
-    <%= f.button "Clear form", class: "clear", type: "reset" %>
-  <% end %>
+<div id="edit_slider" class="pt-5 pb-11">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+
+        <div class="noo-sh-title">
+          <h2>แก้ไขสไลด์</h2>
+        </div>
+
+        <%= form_for @slider, :html => { :multipart => true }, url: slider_path(@slider.id), method: 'put' do |f| %>
+          <table>
+            <tr>
+              <td class="field">ชื่อสไลด์ : </td>
+              <td class="value"><%= f.text_field "name", required: true, class: "field" %></td>
+            </tr>
+            <tr>
+              <td class="field">ภาพถ่าย : </td>
+              <td class="value">
+                <% @slider.photos.each do |photo| %>
+                  <div class="photo_row">
+                    <div class="inline">
+                      <%= image_tag photo.attached_file.url(:thumb) %>
+                      <%= hidden_field_tag "current_photos[]", photo.id %>
+                    </div>
+                    <%= button_tag "-", class: "delete_photo", type: 'button' %>
+                  </div>
+                <% end %>
+                <div id="add_more_photo">
+                  <%= button_tag "+ เพิ่มภาพถ่าย", class: "add_more_photo", type: 'button' %>
+                </div>
+              </td>
+            </tr>
+          </table>
+          <%= f.submit "Update", class: "submit" %>
+          <%= f.button "Clear form", class: "clear", type: "reset" %>
+        <% end %>
+
+        </div>
+    </div>
+  </div>
 </div>

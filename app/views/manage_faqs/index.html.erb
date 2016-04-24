@@ -1,14 +1,27 @@
-<h5>จัดการถามตอบ</h5>
-<%= link_to("เพิ่มคำถามคำตอบ", new_manage_faq_path) %>
-
-<table>
-	<thead>
-		<th id="question">คำถาม</th>
-		<th id="answer">คำตอบ</th>
-		<th colspan="2" class="actions">Actions</th>
-	</thead>
-	<tbody>
-		<%= render partial: "faq_list", collection: @faqs, as: "faq" %>
-	</tbody>
-</table>
-<div><%= will_paginate @faqs %></div>
+<div class="pt-5 pb-11">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="noo-product-grid-wrap commerce product-style">
+          <div class="noo-sh-title">
+            <h2>จัดการถามตอบ</h2>
+          </div>
+          <div class='text-right form-group'>
+            <%= link_to("เพิ่มคำถามคำตอบ", new_manage_faq_path, class: "btn btn-default") %>
+          </div>
+          <table>
+            <thead>
+              <th id="question">คำถาม</th>
+              <th id="answer">คำตอบ</th>
+              <th colspan="2" class="actions">Actions</th>
+            </thead>
+            <tbody>
+              <%= render partial: "faq_list", collection: @faqs, as: "faq" %>
+            </tbody>
+          </table>
+          <div><%= will_paginate @faqs %></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

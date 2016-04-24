@@ -1,20 +1,19 @@
-<h5><%= @slider.name %></h5>
-
-<div class="panel">
-  <table class="show_product">
-    <tr>
-      <td>ชื่อสไลด์</td>
-      <td><%= @slider.name %></td>
-    </tr>
-    <tr>
-      <td>ภาพถ่าย</td>
-      <td>
-        <% @slider.photos.each do |photo| %>
-          <%= image_tag photo.attached_file.url(:thumb) %><br>
-        <% end %>
-      </td>
-    </tr>
-  </table>
+<div class="pt-5 pb-11">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="noo-product-grid-wrap commerce product-style">
+          <div class="noo-sh-title">
+            <h2><%= @slider.name %></h2>
+          </div>
+          <div class='row form-group'>
+            <% @slider.photos.each do |photo| %>
+              <div class='col-sm-3'><%= image_tag photo.attached_file.url(:thumb) %></div>
+            <% end %>
+          </div>
+          <%= link_to("แก้ไขสไลด์", edit_slider_path(@slider), class: "btn btn-default") if (current_user.admin? rescue false) %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<br>
-<%= link_to("แก้ไขสไลด์", edit_slider_path(@slider)) if (current_user.admin? rescue false) %>

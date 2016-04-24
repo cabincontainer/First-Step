@@ -11,7 +11,7 @@ class BlogsController < ApplicationController
     @blog = Blog.new(params[:blog])
 
     if @blog.save
-      redirect_to blog_path(@blog)
+      redirect_to blogs_path
     end
   end
 
@@ -28,7 +28,7 @@ class BlogsController < ApplicationController
     @blog.assign_attributes(params[:blog])
 
     if @blog.save
-      redirect_to blog_path(@blog)
+      redirect_to blogs_path
     end
   end
 

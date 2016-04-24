@@ -1,23 +1,53 @@
-<h5>Login</h5>
-<div class="sign-in">
-  <%= form_for @user_session, url: user_session_url do |f| %>
-  <div class="in-login-form">
-    <div><%= "Email" %></div>
-    <div><%= f.email_field :email, placeholder: "email@example.com", required: true %></div>
-    <div><%= "Password" %></div>
-    <div><%= f.password_field :password, required: true %></div>
-    <div>
-      <%= f.check_box :remember_me %>
-      <%= "Remember me" %>
-    </div>
-    <br>
-    <div>
-      <%= f.submit "Login", class: "btn btn-primary" %>
-    </div>
-    <br>
-    <div class="forget-password">
-      <%= link_to "forget my password?", new_password_reset_path, class: "a-forget-password" %>
+<div class="pt-5 pb-11">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="noo-product-grid-wrap commerce product-style">
+          <div class="noo-sh-title">
+            <h2>Login</h2>
+          </div>
+          <div class="noo-product-filter masonry-filters">
+            <%= form_for @user_session, url: user_session_url do |f| %>
+              <div class='row form-group'>
+                <div class='col-sm-4 col-sm-offset-4'>
+                  <%= "Email" %>
+                </div>
+                <div class='col-sm-4 col-sm-offset-4'>
+                  <%= f.email_field :email, placeholder: "email@example.com", required: true, class: "form-control" %>
+                </div>
+              </div>
+              <div class='row form-group'>
+                <div class='col-sm-4 col-sm-offset-4'>
+                  <%= "Password" %>
+                </div>
+                <div class='col-sm-4 col-sm-offset-4'>
+                  <%= f.password_field :password, required: true, class: "form-control" %>
+                </div>
+              </div>
+              <div class='row form-group'>
+                <div class='col-sm-4 col-sm-offset-4'>
+                  <%= f.check_box :remember_me %>
+                  <%= "Remember me" %>
+                </div>
+              </div>
+              <br />
+              <div class='row'>
+                <div class='col-sm-4 col-sm-offset-4'>
+                  <%= f.submit "Login", class: "btn btn-primary" %>
+                </div>
+              </div>
+            <%- end -%>
+          </div>
+          <br />
+          <div class='row'>
+            <div class='col-sm-4 col-sm-offset-4'>
+              <%= link_to "forget my password?", new_password_reset_path, class: "a-forget-password" %>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </div>
   </div>
-  <%- end -%>
 </div>
+

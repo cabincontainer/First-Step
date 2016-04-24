@@ -1,17 +1,33 @@
-<h5>แก้ไขคำถาม คำตอบ</h5>
-<%= form_for @faq, url: manage_faq_path, method: 'put' do |f| %>
-<table>
-  <tr>
-    <td class="field">คำถาม : </td>
-    <td class="value"><%= f.text_area "question", required: true, class: "field" %></td>
-  </tr>
-  <tr>
-    <td class="field">คำตอบ : </td>
-    <td class="value"><%= f.text_area "answer", required: true, class: "field" %></td>
-  </tr>
-  <tr>
-  	<td></td>
-  	<td><%= f.submit "บันทึก", class: "submit" %></td>
-  </tr>
-</table>
-<% end %>
+<div class="pt-5 pb-11">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="noo-product-grid-wrap commerce product-style">
+          <div class="noo-sh-title">
+            <h2>แก้ไขคำถาม คำตอบ</h2>
+          </div>
+          <%= form_for @faq, url: manage_faq_path, method: 'put' do |f| %>
+            <div class='row form-group'>
+              <div class='col-sm-6 col-sm-offset-3'>คำถาม</div>
+              <div class='col-sm-6 col-sm-offset-3'>
+                <%= f.text_area "question", required: true, rows: 4, class: "form-control" %>
+              </div>
+            </div>
+            <div class='row form-group'>
+              <div class='col-sm-6 col-sm-offset-3'>คำตอบ</div>
+              <div class='col-sm-6 col-sm-offset-3'>
+                <%= f.text_area "answer", required: true, rows: 4, class: "form-control" %>
+              </div>
+            </div>
+            <div class='row form-group'>
+              <div class='col-sm-6 col-sm-offset-3'></div>
+              <div class='col-sm-6 col-sm-offset-3'>
+                <%= f.submit "บันทึก", class: "btn btn-default" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

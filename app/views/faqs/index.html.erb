@@ -1,3 +1,15 @@
-<h5>คำถามที่พบบ่อย</h5>
-<%= render partial: "faq_list", collection: @faqs, as: "faq" %>
-<div class="paginate-right"><%= will_paginate @faqs %></div>
+<div class="pt-5 pb-11">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="noo-product-grid-wrap commerce product-style">
+          <div class="noo-sh-title">
+            <h2>คำถามที่พบบ่อย</h2>
+          </div>
+          <%= render partial: "faq_list", collection: @faqs, as: "faq" %>
+          <div class="paginate-right"><%= will_paginate @faqs %></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

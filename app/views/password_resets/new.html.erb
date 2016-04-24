@@ -1,6 +1,33 @@
-<div class="frame" id="password-reset-form">
-<%= form_tag(password_reset_url) do %>
-  <%= label_tag "email" %> <%= email_field_tag :email, nil, placeholder: "email@example.com", required: true %><br>
-  <%= submit_tag "Reset my password" %>
-<%- end -%>
+<div class="pt-5 pb-11">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="noo-product-grid-wrap commerce product-style">
+          <div class="noo-sh-title">
+            <h2>ลืมรหัสผ่าน</h2>
+          </div>
+          <div class="noo-product-filter masonry-filters">
+            <%= form_tag(password_reset_url) do %>
+              <div class='row form-group'>
+                <div class='col-sm-4 col-sm-offset-4'>
+                  <%= "Email" %>
+                </div>
+                <div class='col-sm-4 col-sm-offset-4'>
+                  <%= email_field_tag :email, nil, placeholder: "email@example.com", required: true, class: "form-control" %>
+                </div>
+              </div>
+              <div class='row form-group'>
+                <div class='col-sm-4 col-sm-offset-4'>
+                  <%= submit_tag "Reset my password", class: "btn btn-default" %>
+                </div>
+              </div>
+              
+          <%- end -%>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+

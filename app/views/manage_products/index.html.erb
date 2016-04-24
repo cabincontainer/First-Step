@@ -33,7 +33,7 @@
                   <div class="noo-product-thumbnail">
                     <%= link_to product_path(product) do %>
                       <% if product.photos.present? %>
-                        <%= image_tag product.photos.first.attached_file.url(:thumb) %>
+                        <%= image_tag product.photos.first.attached_file.url(:thumb), class: "small-image" %>
                       <% end %>
                     <% end %>
                   </div>

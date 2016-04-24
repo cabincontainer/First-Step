@@ -41,7 +41,14 @@
               </li>
               <% if (current_user.admin? rescue false) %>
                 <li class="menu-item-has-children">
-                  <%= link_to("จัดการสินค้า", manage_products_path) %>
+                  <%= link_to("จัดการ", manage_products_path) %>
+                  <ul class='sub-menu'>
+                    <li><%= link_to "จัดการสินค้า", manage_products_path %></li>
+                    <li><%= link_to "จัดการหมวดหมู่สินค้า", manage_categories_path %></li>
+                    <li><%= link_to "จัดการ sliders", sliders_path %></li>
+                    <li><%= link_to "จัดการถามตอบ", manage_faqs_path %></li>
+                    <li><%= link_to "จัดการบล็อก", blogs_path %></li>
+                  </ul>
                 </li>
               <% end %>
               <li class="menu-item-has-children">
@@ -62,7 +69,11 @@
                   <li><a href="blog-detail-slider.html">Blog Single Slider</a></li>
                 </ul>
               </li>
+              <li><%= link_to("คำถามที่พบบ่อย", faqs_path) %></li>
               <li><%= link_to "ติดต่อเรา", contacts_path %></li>
+              <li>
+                <%= link_to("ออกจากระบบ", user_session_path, method: "delete", id: "link_logout", class: "brand") unless current_user.blank? %>
+              </li>
             </ul>
           </nav>
         </div>
