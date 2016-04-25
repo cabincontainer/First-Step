@@ -39,6 +39,12 @@
                   <% end %>
                 </ul>
               </li>
+              <li class="menu-item-has-children">
+                <%= link_to("บล็อก", blogs_path) %>
+              </li>
+              <li><%= link_to("คำถามที่พบบ่อย", faqs_path) %></li>
+              <li><%= link_to("เกี่ยวกับเรา", abouts_path) %></li>
+              <li><%= link_to "ติดต่อเรา", contacts_path %></li>
               <% if (current_user.admin? rescue false) %>
                 <li class="menu-item-has-children">
                   <%= link_to("จัดการ", manage_products_path) %>
@@ -51,11 +57,6 @@
                   </ul>
                 </li>
               <% end %>
-              <li class="menu-item-has-children">
-                <%= link_to("บล็อก", blogs_path) %>
-              </li>
-              <li><%= link_to("คำถามที่พบบ่อย", faqs_path) %></li>
-              <li><%= link_to "ติดต่อเรา", contacts_path %></li>
               <li>
                 <%= link_to("ออกจากระบบ", user_session_path, method: "delete", id: "link_logout", class: "brand") unless current_user.blank? %>
               </li>
