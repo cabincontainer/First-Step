@@ -27,6 +27,7 @@ gem 'syslog-logger'
 gem 'paperclip'
 gem 'mysql2'
 gem 'ckeditor'
+gem 'nokogiri'
 
 group :development, :test do
 	# gem 'capybara'
