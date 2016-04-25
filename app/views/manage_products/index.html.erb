@@ -30,7 +30,7 @@
             <% @products.each do |product| %>
               <div class="masonry-item noo-product-column col-md-4 col-sm-6 product">
                 <div class="noo-product-inner">
-                  <div class="noo-product-thumbnail">
+                  <div class="noo-product-thumbnail hidden-xs">
                     <%= link_to product_path(product) do %>
                       <% if product.photos.present? %>
                         <%= image_tag product.photos.first.attached_file.url(:thumb), class: "small-image" %>

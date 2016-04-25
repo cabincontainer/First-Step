@@ -1535,6 +1535,10 @@ header .navbar,
 	.noo-menu-extend {
 		display: none;
 	}
+  .commerce .product-list .noo-product-title {
+    width: 100%;
+    padding-left: 6%;
+  }
 }
 @media (max-width: 414px) {
     .noo-clients.noo-clients-3 {

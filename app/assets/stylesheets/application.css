@@ -10,7 +10,6 @@
  *
  *= require_self
  *= require css/bootstrap.min
- *= require css/custom
  *= require css/font-awesome.min
  *= require css/magnific-popup
  *= require css/owl.carousel
@@ -19,6 +18,7 @@
  *= require css/settings
  *= require css/style
  *= require css/colors/yellow
+ *= require css/custom
  *= require analog
  *= require digital
  *= require global
