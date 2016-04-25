@@ -39,16 +39,20 @@
           </div>
         </div>
         <nav class="post-navigation post-navigation-line">
-          <div class="prev-post">
-            <div class="bg-prev-post"></div>
-            <i class="fa fa-long-arrow-left">&nbsp;</i>
-            <a href="#">Health Benefits of a Raw Food</a>
-          </div>
-          <div class="next-post">
-            <div class="bg-next-post"></div>
-            <a href="#">Tips for Ripening your Fruit</a> 
-            <i class="fa fa-long-arrow-right">&nbsp;</i>
-          </div>
+          <% if @blog.prev.present? %>
+            <div class="prev-post">
+              <div class="bg-prev-post"></div>
+              <i class="fa fa-long-arrow-left">&nbsp;</i>
+              <%= link_to truncate(@blog.prev.title, length: 50), blog_path(@blog.prev) %>
+            </div>
+          <% end %>
+          <% if @blog.next.present? %>
+            <div class="next-post">
+              <div class="bg-next-post"></div>
+              <%= link_to truncate(@blog.next.title, length: 50), blog_path(@blog.next) %>
+              <i class="fa fa-long-arrow-right">&nbsp;</i>
+            </div>
+          <% end %>
         </nav>
       </div>
     </div>

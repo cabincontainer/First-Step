@@ -8,4 +8,12 @@ class Blog < ActiveRecord::Base
 
     return [contents[0].content, contents[1].content]
   end
+
+  def next
+    self.class.where("id > ?", id).first
+  end
+
+  def prev
+    self.class.where("id < ?", id).last
+  end
 end
