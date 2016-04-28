@@ -32,7 +32,7 @@ Cabincontainer::Application.configure do
   # config.force_ssl = true
 
   # See everything in the log (default is :info)
-  # config.log_level = :debug
+  config.log_level = :info
 
   # Prepend all log lines with the following tags
   # config.log_tags = [ :subdomain, :uuid ]
@@ -48,7 +48,7 @@ Cabincontainer::Application.configure do
   # config.action_controller.asset_host = "http://assets.example.com"
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  config.assets.precompile += %w( search.js )
+  # config.assets.precompile += %w( search.js )
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
@@ -69,7 +69,7 @@ Cabincontainer::Application.configure do
   
   config.notifier_default_host = "localhost"
   config.notifier_default_port = "3000"
-  config.notifier_from_field = "do-not-reply@cabincontainer.com"
+  config.notifier_from_field = "do-not-reply@kk-container.com"
 
 
 config.action_mailer.delivery_method = :smtp
