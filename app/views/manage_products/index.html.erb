@@ -17,18 +17,17 @@
               <%= link_to "เพิ่มสินค้าใหม่", new_manage_product_path, class: "button product_type_simple add_to_cart_button" %>
             </div>
             <form class="commerce-ordering">
-              <select name="orderby" class="orderby">
-                <option value="" selected='selected'>Default sorting</option>
-                <option value="">Sort by popularity</option>
-                <option value="">Sort by average rating</option>
-                <option value="">Sort by newness</option>
-                <option value="">Sort by price: low to high</option>
+              <select id="filter_by" class="orderby">
+                <option value='*" %>'>ทั้งหมด</option>
+                <% Category.all.each do |category| %>
+                  <option value='.category_<%= "#{category.id}" %>'><%= category.name %></option>
+                <% end %>
               </select>
             </form>
           </div>
           <div class="products row product-list">
             <% @products.each do |product| %>
-              <div class="masonry-item noo-product-column col-md-4 col-sm-6 product">
+              <div class="masonry-item noo-product-column col-md-4 col-sm-6 product category_<%= product.category.id rescue nil %>">
                 <div class="noo-product-inner">
                   <div class="noo-product-thumbnail hidden-xs">
                     <%= link_to product_path(product) do %>
@@ -47,12 +46,6 @@
                 </div>
               </div>
             <% end %>
-          </div>
-          <div class="pagination list-center">
-            <span class="page-numbers current">1</span>
-            <a class="page-numbers" href="#">2</a>
-            <a class="page-numbers" href="#">3</a>
-            <a class="next page-numbers" href="#"><i class="fa fa-long-arrow-right"></i></a>
           </div>
         </div>
       </div>

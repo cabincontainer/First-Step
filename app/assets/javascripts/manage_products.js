@@ -70,11 +70,19 @@ ManageProducts = {
 			$(this).parents('div.photo_row').remove();
 		}
 	},
+	filterProducts: function(){
+		var filter_value = $(this).val();
+		$(".product-list").isotope({ filter: filter_value })
+	},
 	init: function(){
 		$('button.delete_row').live('click', ManageProducts.deleteSpecRow);
 		$('button.add_new_row').click(ManageProducts.addSpecRow);
 		$('button.add_more_photo').click(ManageProducts.addPhotoField);
 		$('button.delete_photo').live('click', ManageProducts.deletePhoto);
+
+		$(".product-list").isotope({ filter: '*' })
+
+		$("#filter_by").change(ManageProducts.filterProducts);
 	}
 };
 

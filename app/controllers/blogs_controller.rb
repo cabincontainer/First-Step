@@ -1,4 +1,6 @@
 class BlogsController < ApplicationController
+  skip_filter :require_user, only: [:index, :show]
+
   def index
     @blogs = Blog.all
   end
