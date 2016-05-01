@@ -6,7 +6,13 @@ class Blog < ActiveRecord::Base
     content = content[0, 400]
     contents = Nokogiri::HTML.parse(content).css('p')
 
-    return [contents[0].content, contents[1].content]
+    if contents.count > 1
+      new_contents = [contents[0].content, contents[1].content]
+    else
+      new_contents = [contents[0].content]
+    end
+
+    return new_contents
   end
 
   def next
