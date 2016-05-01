@@ -29,7 +29,9 @@
     <div class="site">
       <%= render partial: "shared/header" %>
       
-      <%= yield %>
+      <div id="main-container">
+        <%= yield %>
+      </div>
       
       <%= render partial: "shared/footer" %>
     </div>
