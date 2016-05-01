@@ -40,7 +40,7 @@
                     <h3><%= link_to product.name, product_path(product) %></h3>
                     <span class="price"><span class="amount"><%= product.code %></span></span>
                     <div class="noo-product-excerpt">
-                      <p><%= product.specifications %></p>
+                      <p><%= simple_format product.specifications %></p>
                     </div>
                   </div>
                 </div>

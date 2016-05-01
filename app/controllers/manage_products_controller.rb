@@ -35,11 +35,7 @@ class ManageProductsController < ApplicationController
       render(action: "new")
     end
   end
-
-  def show
-    @product = Product.includes(:category, :photos).find(params[:id])
-  end
-
+  
   def edit
     @product = Product.includes(:category).find(params[:id])
   end
