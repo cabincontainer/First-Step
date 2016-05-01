@@ -29,7 +29,7 @@
     <div class="site">
       <%= render partial: "shared/header" %>
       
-      <div id="main-container">
+      <div id='<%= "main-container" if ["homes", "products", "blogs"].include?(controller_name) %>'>
         <%= yield %>
       </div>
       
@@ -68,8 +68,11 @@
     <a href="#" class="go-to-top hidden-print"><i class="fa fa-angle-up"></i></a>
 
     <%= javascript_include_tag "application" %>
-    <script type='text/javascript' src='https://maps.googleapis.com/maps/api/js?sensor=false'></script>
-    <%= javascript_include_tag "js/google-map-custom.js" %>
+
+    <% if controller_name == "contacts" %>
+      <script type='text/javascript' src='https://maps.googleapis.com/maps/api/js?sensor=false'></script>
+      <%= javascript_include_tag "js/google-map-custom.js" %>
+    <% end %>
 
     <script type='text/javascript' src='/assets/js/jquery.themepunch.tools.min.js'></script>
     <script type='text/javascript' src='/assets/js/jquery.themepunch.revolution.min.js'></script>
@@ -82,23 +85,5 @@
     <script type='text/javascript' src='/assets/js/extensions/revolution.extension.navigation.min.js'></script>
     <script type='text/javascript' src='/assets/js/extensions/revolution.extension.migration.min.js'></script>
     <script type='text/javascript' src='/assets/js/extensions/revolution.extension.parallax.min.js'></script>
-    
-    <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '1612023695787422',
-          xfbml      : true,
-          version    : 'v2.6'
-        });
-      };
-
-      (function(d, s, id){
-         var js, fjs = d.getElementsByTagName(s)[0];
-         if (d.getElementById(id)) {return;}
-         js = d.createElement(s); js.id = id;
-         js.src = "//connect.facebook.net/en_US/sdk.js";
-         fjs.parentNode.insertBefore(js, fjs);
-       }(document, 'script', 'facebook-jssdk'));
-    </script>
   </body>
 </html>
