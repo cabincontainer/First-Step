@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
 	skip_filter :require_user
 
 	def index
-		@products = Product.all
+		@products = Product.order("created_at DESC")
 	end
 
 	def show

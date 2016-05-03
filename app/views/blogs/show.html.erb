@@ -15,22 +15,24 @@
             </div>
           </div>
         </article>
-        <nav class="post-navigation post-navigation-line">
-          <% if @blog.prev.present? %>
-            <div class="prev-post">
-              <div class="bg-prev-post"></div>
-              <i class="fa fa-long-arrow-left">&nbsp;</i>
-              <%= link_to truncate(@blog.prev.title, length: 50), blog_path(@blog.prev) %>
-            </div>
-          <% end %>
-          <% if @blog.next.present? %>
-            <div class="next-post">
-              <div class="bg-next-post"></div>
-              <%= link_to truncate(@blog.next.title, length: 50), blog_path(@blog.next) %>
-              <i class="fa fa-long-arrow-right">&nbsp;</i>
-            </div>
-          <% end %>
-        </nav>
+        <% if @blog.prev.present? || @blog.next.present? %>
+          <nav class="post-navigation post-navigation-line">
+            <% if @blog.prev.present? %>
+              <div class="prev-post">
+                <div class="bg-prev-post"></div>
+                <i class="fa fa-long-arrow-left">&nbsp;</i>
+                <%= link_to truncate(@blog.prev.title, length: 50), blog_path(@blog.prev) %>
+              </div>
+            <% end %>
+            <% if @blog.next.present? %>
+              <div class="next-post">
+                <div class="bg-next-post"></div>
+                <%= link_to truncate(@blog.next.title, length: 50), blog_path(@blog.next) %>
+                <i class="fa fa-long-arrow-right">&nbsp;</i>
+              </div>
+            <% end %>
+          </nav>
+        <% end %>
       </div>
     </div>
   </div>
