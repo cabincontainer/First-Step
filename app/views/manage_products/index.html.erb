@@ -33,19 +33,21 @@
                     <%= link_to product_path(product) do %>
                       <% if product.photos.present? %>
                         <%= image_tag product.photos.first.attached_file.url(:thumb), class: "small-image" %>
+                      <% else %>
+                        IMAGE
                       <% end %>
                     <% end %>
                   </div>
                   <div class="noo-product-title"> 
                     <h3><%= link_to product.name, product_path(product) %></h3>
                     <span class="price"><span class="amount"><%= product.code %></span></span>
-                    <div class="noo-product-excerpt">
-                      <p><%= simple_format product.specifications %></p>
-                    </div>
                   </div>
                 </div>
               </div>
             <% end %>
+          </div>
+          <div class="digg_pagination">
+            <%= will_paginate @products, :container => false %>
           </div>
         </div>
       </div>

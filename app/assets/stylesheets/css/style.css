@@ -15797,7 +15797,7 @@ div.product-style2 .product-grid .noo-product-inner:hover .noo-product-title .no
 }
 
 .commerce .product-list .noo-product-thumbnail {
-    text-align: center;
+    /*text-align: center;*/
     position: relative;
     padding: 30px;
 }
@@ -15805,8 +15805,8 @@ div.product-style2 .product-grid .noo-product-inner:hover .noo-product-title .no
 .commerce .product-list .noo-product-thumbnail img {
     max-width: none;
     width: auto;
-    min-height: 120px;
-    max-height: 120px;
+    min-height: 80px;
+    max-height: 80px;
     -webkit-transition: all 0.6s ease 0s;
     -o-transition: all 0.6s ease 0s;
     transition: all 0.6s ease 0s;
