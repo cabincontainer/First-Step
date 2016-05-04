@@ -8,6 +8,7 @@
       <title><%= @blog.title %></title>
       <meta property="og:title" content='<%= @blog.title %>'>
       <meta property="og:description" content='<%= strip_tags(@blog.body)[0, 200] %>'>
+      <meta property="og:url" content='<%= blog_url(@blog) %>'>
     <% else %>
       <title>ขาย-เช่า คอนเทนเนอร์ บ้านน็อคดาวน์ ขอนแก่น นครราชสีมา อุบลราชธานี ชัยภูมิ นครพนม บุรีรัมย์ กาฬสินธุ์ มหาสารคาม มุกดาหาร ยโสธร ร้อยเอ็ด เลย ศรีสะเกษ สกลนคร สุรินทร์ หนองคาย หนองบัวลำภู อำนาจเจริญ อุดรธานี บึงกาฬ</title>
       <meta property="og:title" content="เคเค คอนเทนเนอร์">
