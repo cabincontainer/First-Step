@@ -1,4 +1,4 @@
-<div class="pt-5 pb-11">
+<div class="pt-5 pb-5">
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
@@ -7,7 +7,7 @@
             <h2>คำถามที่พบบ่อย</h2>
           </div>
           <%= render partial: "faq_list", collection: @faqs, as: "faq" %>
-          <div class="paginate-right"><%= will_paginate @faqs %></div>
+          <!-- <div class="digg_pagination"><%#= will_paginate @faqs, :container => false %></div> -->
         </div>
       </div>
     </div>

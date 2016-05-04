@@ -6,8 +6,12 @@
           <div class="noo-sh-title">
             <h2>สินค้าของเรา</h2>
           </div>
-          <div class="noo-product-grid products row product-grid noo-grid-4">
+          <div class="noo-product-grid products row product-grid noo-grid-4 form-group">
             <%= render partial: "shared/product", collection: @products, as: "product" %>
+          </div>
+
+          <div class="digg_pagination">
+            <%= will_paginate @products, :container => false %>
           </div>
 
         </div>

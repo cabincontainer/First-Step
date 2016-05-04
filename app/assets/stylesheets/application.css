@@ -21,5 +21,6 @@
  *= require css/custom
  *= require analog
  *= require digital
+ *= require pagination
  *= require global
  */
