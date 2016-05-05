@@ -20,8 +20,12 @@ class BlogsController < ApplicationController
   def show
     @blog = Blog.find(params[:id])
 
-    html = Nokogiri::HTML.fragment(@blog.body)
-    @meta_image = "#{request.host_with_port}#{html.css('img').first['src']}"
+    begin
+      html = Nokogiri::HTML.fragment(@blog.body)
+      @meta_image = html.css('img').first['src']
+    rescue
+      @meta_image = nil
+    end
   end
 
   def edit
