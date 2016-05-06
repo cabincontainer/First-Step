@@ -1,6 +1,6 @@
 <tr>
 	<td><%= faq.question %></td>
 	<td><%= faq.answer %></td>
-	<td><%= link_to("แก้ข", edit_manage_faq_path(faq)) %></td>
-	<td><%= link_to("ลบ", manage_faq_path(faq), method: "delete", data: {confirm: "Are you sure?"}) %></td>
+	<td class="text-center"><%= link_to("แก้ข", edit_manage_faq_path(faq)) %></td>
+	<td class="text-center"><%= link_to("ลบ", manage_faq_path(faq), method: "delete", data: {confirm: "Are you sure?"}) %></td>
 </tr>

@@ -17,13 +17,13 @@
           <table id="categories_list">
             <thead>
               <th>ชื่อ</th>
-              <th colspan='2'>จัดการ</th>
+              <th colspan='2' class='text-center'>จัดการ</th>
             </thead>
             <% @categories.each do |category| %>
               <tr>
                 <td><%= category.name %></td>
-                <td><%= link_to "แก้ไข", edit_manage_category_path(category.id) %></td>
-                <td><%= link_to "ลบ", manage_category_path(category.id), method: 'delete', confirm: "Are you sure?" %></td>
+                <td class="text-center"><%= link_to "แก้ไข", edit_manage_category_path(category.id) %></td>
+                <td class="text-center"><%= link_to "ลบ", manage_category_path(category.id), method: 'delete', confirm: "Are you sure?" %></td>
               </tr>
             <% end %>
           </table>

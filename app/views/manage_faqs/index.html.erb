@@ -13,13 +13,15 @@
             <thead>
               <th id="question">คำถาม</th>
               <th id="answer">คำตอบ</th>
-              <th colspan="2" class="actions">Actions</th>
+              <th colspan="2" class="actions text-center">Actions</th>
             </thead>
             <tbody>
               <%= render partial: "faq_list", collection: @faqs, as: "faq" %>
             </tbody>
           </table>
-          <div><%= will_paginate @faqs %></div>
+          <div class="digg_pagination">
+            <%= will_paginate @faqs, :container => false %>
+          </div>
         </div>
       </div>
     </div>

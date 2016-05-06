@@ -26,25 +26,19 @@
             </form>
           </div>
           <div class="products row product-list">
-            <% @products.each do |product| %>
-              <div class="masonry-item noo-product-column col-md-4 col-sm-6 product category_<%= product.category.id rescue nil %>">
-                <div class="noo-product-inner">
-                  <div class="noo-product-thumbnail hidden-xs">
-                    <%= link_to product_path(product) do %>
-                      <% if product.photos.present? %>
-                        <%= image_tag product.photos.first.attached_file.url(:thumb), class: "small-image" %>
-                      <% else %>
-                        IMAGE
-                      <% end %>
-                    <% end %>
-                  </div>
-                  <div class="noo-product-title"> 
-                    <h3><%= link_to product.name, product_path(product) %></h3>
-                    <span class="price"><span class="amount"><%= product.code %></span></span>
-                  </div>
-                </div>
-              </div>
-            <% end %>
+            <table class='table'>
+              <thead>
+                <tr>
+                  <th>Code</th>
+                  <th>ชื่อสินค้า</th>
+                  <th>รูปภาพ</th>
+                  <th class='text-center'>จัดการ</th>
+                </tr>
+              </thead>
+              <tbody>
+                <%= render partial: "product", collection: @products, as: "product" %>
+              </tbody>
+            </table>
           </div>
           <div class="digg_pagination">
             <%= will_paginate @products, :container => false %>

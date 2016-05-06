@@ -1,0 +1,14 @@
+<tr>
+	<td><%= product.code %></td>
+	<td><%= product.name %></td>
+	<td>
+		<%= link_to product_path(product) do %>
+          <% if product.photos.present? %>
+            <%= image_tag product.photos.first.attached_file.url(:thumb), class: "small-image" %>
+          <% else %>
+            IMAGE
+          <% end %>
+        <% end %>
+	</td>
+	<td class='text-center'><%= link_to "แก้ไข", product_path(product) %></td>
+</tr>
