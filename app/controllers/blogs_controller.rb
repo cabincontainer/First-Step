@@ -2,7 +2,7 @@ class BlogsController < ApplicationController
   skip_filter :require_user, only: [:index, :show]
 
   def index
-    @blogs = Blog.order("created_at DESC").paginate(:page => params[:page], :per_page => 2)
+    @blogs = Blog.order("created_at DESC").paginate(:page => params[:page], :per_page => 10)
   end
 
   def new
