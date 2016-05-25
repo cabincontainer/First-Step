@@ -28,7 +28,7 @@ class ManageProductsController < ApplicationController
 
     if @product.save
       flash[:notice] = "Create product successfully."
-      redirect_to manage_products_path
+      redirect_to edit_photos_manage_product_path(@product)
     else
       flash.now[:error] ||= []
       flash[:error] << "#{@product.errors.full_messages.join(", ")}"
