@@ -28,6 +28,12 @@
     </div>
     <div class="col-md-12">
       <div class="form-control-wrap">
+        ราคา (บาท)
+        <%= f.number_field "price", required: true, class: "form-control" %>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="form-control-wrap">
         รายละเอียด
         <%= f.text_area "specifications", cols: "40", rows: "10", class: "form-control" %>
       </div>

@@ -9,8 +9,12 @@
           <% end %>
         </div>
         <div class="noo-product-title"> 
-          <h3><a href="shop-detail.html"><%= product.code %></a></h3>
-          <span class="price"><span class="amount"><%= product.name %></span></span>
+          <h3>
+            <a href="shop-detail.html">
+              <%= "#{number_to_currency(product.price, format: '%n', precision: 0)} บาท" %>
+            </a>
+          </h3>
+          <span class="price"><span class="amount"><%= "#{product.name} (#{product.code})" %></span></span>
         </div>
       </div>
     </div>

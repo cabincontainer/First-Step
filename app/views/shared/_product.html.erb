@@ -5,8 +5,8 @@
       <%= image_tag(product.photos.first.attached_file.url(:thumb)) if product.photos.present? %>
     </div>
     <div class="noo-product-title"> 
-      <h3><%= product.code %></h3>
-      <span class="price"><span class="amount"><%= product.name %></span></span>
+      <h3><%= "#{number_to_currency(product.price, format: '%n', precision: 0)} บาท" %></h3>
+      <span class="price"><span class="amount"><%= "#{product.name} (#{product.code})" %></span></span>
     </div>
   </div>
   <% end %>

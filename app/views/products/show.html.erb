@@ -12,11 +12,11 @@
                   </li>
                 </ul>
                 <h1 class="product_title entry-title">
-                  <%= @product.name %>
+                  <%= "#{@product.name} (#{@product.code})" %>
                 </h1>
                 <p class="price">
                   <span class="amount">
-                    <%= @product.code %>
+                    <%= "#{number_to_currency(@product.price, format: '%n', precision: 0)} บาท" %>
                   </span>
                 </p>
                 <div class="description">

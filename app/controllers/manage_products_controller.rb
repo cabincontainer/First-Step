@@ -1,6 +1,6 @@
 class ManageProductsController < ApplicationController
 
-  before_filter :load_categories_name, only: [:new, :edit]
+  before_filter :load_categories_name, only: [:new, :edit, :create, :update]
 
   def load_categories_name
     @categories_name = Category.all.map(&:name)

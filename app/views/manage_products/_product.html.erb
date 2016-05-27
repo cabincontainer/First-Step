@@ -1,6 +1,7 @@
 <tr>
 	<td><%= product.code %></td>
-	<td><%= product.name %></td>
+  <td><%= product.name %></td>
+	<td><%= "#{number_to_currency(product.price, format: '%n', precision: 0)} บาท" %></td>
 	<td>
 		<%= link_to product_path(product) do %>
           <% if product.photos.present? %>
