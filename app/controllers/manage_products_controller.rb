@@ -67,11 +67,12 @@ class ManageProductsController < ApplicationController
 
   def upload_photo
     @product = Product.find(params[:id])
-
-    if params[:photo].present?
-      photo = Photo.new(params[:photo])
-      photo.attachable = @product
-      photo.save
+    if params[:photos].present?
+      params[:photos].each do |attachment|
+        photo = Photo.new(attachment)
+        photo.attachable = @product
+        photo.save
+      end
     end
 
     redirect_to edit_photos_manage_product_path(@product)

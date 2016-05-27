@@ -7,20 +7,25 @@
         <% end %>
         <hr />
         <%= form_for @product, :html => { multipart: true, class: "form" }, url: upload_photo_manage_product_path(@product.id), method: 'put' do |f| %>
-          <div class="row">
-            <div class="col-md-8">
+          <div class="row blueprint">
+            <div class="col-md-12">
               <div class="form-control-wrap">
-                <%= file_field_tag "photo[attached_file]", required: true, class: "form-control" %>
+                <%= file_field_tag "photos[][attached_file]", class: "form-control" %>
               </div>
             </div>
-            <div class="col-md-4">
-              <%= f.submit "อัพโหลด", class: "form-control submit btn-primary" %>
+          </div>
+          <div class="row add-image-button">
+            <div class="col-md-12">
+              <div class="form-control-wrap">
+                <%= link_to "เพิ่มรูป", "javascript:void(0)", id: "add-more-image", class: "btn btn-default" %>
+              </div>
             </div>
           </div>
           <div class="row">
             <div class="col-md-12">
               <div class="form-control-wrap">
-              <%= link_to "ย้อนกลับ", product_path(@product), class: "btn btn-default" %>
+                <%= f.submit "อัพโหลด", class: "form-control submit btn-primary" %>
+                <%= link_to "ย้อนกลับ", product_path(@product), class: "btn btn-default" %>
               </div>
             </div>
           </div>
