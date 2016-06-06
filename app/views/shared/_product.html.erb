@@ -6,7 +6,7 @@
     </div>
     <div class="noo-product-title"> 
       <h3><%= "#{number_to_currency(product.price, format: '%n', precision: 0)} บาท" %></h3>
-      <span class="price"><span class="amount"><%= "#{product.name} (#{product.code})" %></span></span>
+      <div class="product-title-show"><%= "#{product.name} (#{product.code})" %></div>
     </div>
   </div>
   <% end %>

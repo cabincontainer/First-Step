@@ -2932,7 +2932,7 @@ div.wpb_content_element {
 }
 
 img {
-    height: auto;
+    height: 200px;
     max-width: 100%;
     vertical-align: middle;
 }

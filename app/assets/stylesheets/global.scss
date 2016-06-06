@@ -49,3 +49,10 @@ img.noo-logo-img.noo-logo-normal {
 img.small-image {
   max-height: 80px !important;
 }
+
+.commerce .product-grid .noo-product-title .product-title-show {
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  margin: 15px;
+}
