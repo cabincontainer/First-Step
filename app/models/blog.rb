@@ -2,6 +2,8 @@ class Blog < ActiveRecord::Base
   attr_accessible :title, :body
 
   def preview_contents
+    return "" if self.body.blank?
+
     content = self.body.gsub(/<img.*\/>/, "")
     content = content[0, 400]
     contents = Nokogiri::HTML.parse(content).css('p')
