@@ -19,8 +19,10 @@
                   <%= blog.updated_at.strftime("%B %d, %Y") %>
                 </span>
                 <div class="blog_excerpt">
-                  <%= blog.preview_contents.map{|content| "<p>#{content}</p>" }.join("\r\n").html_safe %>
-                  <%= link_to "อ่านต่อ", blog_path(blog), class: "view-more" %>
+                  <% if blog.preview_contents.present? %>
+                    <%= blog.preview_contents.map{|content| "<p>#{content}</p>" }.join("\r\n").html_safe %>
+                    <%= link_to "อ่านต่อ", blog_path(blog), class: "view-more" %>
+                  <% end %>
                 </div>
                 <% if (current_user.admin? rescue false) %>
                   <div class="content-meta">
