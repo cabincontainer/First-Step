@@ -57,3 +57,20 @@ img.small-image {
   text-overflow: ellipsis; 
   margin: 15px;
 }
+
+/* Black and White theme */
+img {
+  /* IE */
+  filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1) !important;
+  /* Chrome, Safari */
+  -webkit-filter: grayscale(1) !important;
+  /* Firefox */
+  filter: grayscale(1) !important;
+}
+
+body {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+}
+/* Black and White theme */
