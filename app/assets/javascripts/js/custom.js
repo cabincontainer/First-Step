@@ -347,7 +347,7 @@ $(document).ready(function() {
 function revSlider_1(){
 	$("#rev_slider_1").show().revolution({
 	  sliderType:"standard",
-	  sliderLayout:"fullscreen",
+	  sliderLayout:"auto",
 	  dottedOverlay:"none",
 	  delay:9000,
 	  navigation: {
@@ -419,7 +419,7 @@ function revSlider_1(){
 function revSlider_2(){
 	$("#rev_slider_2").show().revolution({
 		sliderType:"standard",
-		sliderLayout:"fullscreen",
+		sliderLayout:"auto",
 		dottedOverlay:"none",
 		delay:9000,
 		navigation: {
@@ -478,7 +478,7 @@ function revSlider_2(){
 function revSlider_3(){
 	$("#rev_slider_3").show().revolution({
 		sliderType:"standard",
-		sliderLayout:"fullscreen",
+		sliderLayout:"auto",
 		dottedOverlay:"none",
 		delay:9000,
 		navigation: {
